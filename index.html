@@ -1,149 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoshone Odess</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --ink-light: #4a4a45;
+      --ink-muted: #8a8a82;
+      --rule: #d8d5cc;
+      --bg: #f7f5f0;
+      --bg-section: #f2f0eb;
+      --accent: #2d4a3e;
+      --accent-warm: #8b4513;
+      --serif: 'Libre Baskerville', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 40px 100px;
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .hero {
+      padding-bottom: 56px;
+      margin-bottom: 56px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .hero h2 {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 32px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--ink-light);
+      margin-bottom: 16px;
+      max-width: 600px;
+    }
+
+    .hero p:last-child { margin-bottom: 0; }
+
+    .section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+      transition: background 0.2s ease;
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .section-num {
+      font-family: var(--serif);
+      font-size: 0.72rem;
+      font-style: italic;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .section h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .section p {
+      font-size: 0.97rem;
+      color: var(--ink-light);
+      margin-bottom: 14px;
+      padding-left: 46px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section p em {
+      font-style: italic;
+      color: var(--ink);
+    }
+
+    .section.perspective {
+      background: var(--bg-section);
+      padding: 40px 32px;
+      border-radius: 4px;
+      border: 1px solid var(--rule);
+      margin-top: 8px;
+    }
+
+    .section.perspective .section-num {
+      color: var(--accent);
+    }
+
+    .section.perspective p {
+      color: var(--ink);
+    }
+
+    .contact {
+      padding-top: 48px;
+      margin-top: 8px;
+    }
+
+    .contact p {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      line-height: 2;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .contact a:hover {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
+
+    .section:not(.perspective) {
+      padding-left: 0;
+      border-left: 2px solid transparent;
+      transition: border-color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .section:not(.perspective):hover {
+      border-left-color: var(--accent);
+      padding-left: 12px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 8px 0;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 48px 24px 80px; }
+      .section p { padding-left: 0; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
 <body>
+<div class="page">
 
-<section class="hero">
+  <section class="hero">
+    <h1>Shoshone Odess</h1>
+    <h2>Research Operations &nbsp;·&nbsp; AI Workflow Systems &nbsp;·&nbsp; Human-in-the-Loop Quality</h2>
+    <p>
+      Operations specialist focused on AI-assisted production workflows,
+      quality systems, technical documentation, and operational reliability
+      at scale.
+    </p>
+    <p>
+      My work centers on the problem of maintaining contextual fidelity
+      inside large-scale automated systems: preventing workflow drift,
+      preserving weak signals, and building operational safeguards
+      that keep metrics from collapsing into self-reinforcing feedback loops.
+    </p>
+  </section>
 
-  <h1>Shoshone Odess</h1>
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h3>Workflow Operations &amp; Production Systems</h3>
+    </div>
+    <p>
+      Coordinated real-time production workflows for Citizen's public safety
+      platform, supporting operational pipelines responsible for dispatching
+      1–3 million geofenced notifications per workday across a system serving
+      9M+ users and 10B+ total notifications.
+    </p>
+    <p>
+      Managed open operational threads across engineering, safety, research,
+      and data teams to maintain delivery timelines, terminology consistency,
+      and publishing reliability under high-volume conditions.
+    </p>
+  </section>
 
-  <h2>
-    Research Operations • AI Workflow Systems • Human-in-the-Loop Quality
-  </h2>
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h3>Human-in-the-Loop Quality Systems</h3>
+    </div>
+    <p>
+      Provided human-in-the-loop review for production publishing workflows,
+      partnering with Process Improvement teams to verify privacy and safety
+      compliance before release.
+    </p>
+    <p>
+      Contributed to workflow reliability by identifying edge cases,
+      monitoring terminology drift, refining escalation paths,
+      and supporting operational process updates for model-assisted systems.
+    </p>
+    <p>
+      Focused particularly on the limits of purely statistical optimization:
+      preserving contextual judgment and weak-signal awareness inside
+      increasingly automated workflows.
+    </p>
+  </section>
 
-  <p>
-    Operations specialist focused on AI-assisted production workflows,
-    quality systems, technical documentation, and operational reliability
-    at scale.
-  </p>
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h3>LLM-Assisted Workflow Development</h3>
+    </div>
+    <p>
+      Led transition from manual drafting toward model-assisted operational
+      workflows beginning in 2022, editing LLM-generated outputs from
+      unstructured emergency-services logging into clear, publishable prose.
+    </p>
+    <p>
+      Built reusable JSON templates, contributor guidance,
+      editorial checklists, and operational safeguards that improved
+      consistency while reducing manual production overhead.
+    </p>
+    <p>
+      Operational experience with Claude and ChatGPT Enterprise,
+      including context-window management, evaluation support,
+      prompt refinement, and documentation workflows.
+    </p>
+  </section>
 
-  <p>
-    My work centers on the problem of maintaining contextual fidelity
-    inside large-scale automated systems: preventing workflow drift,
-    preserving weak signals, and building operational safeguards
-    that keep metrics from collapsing into self-reinforcing feedback loops.
-  </p>
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h3>Documentation &amp; Research Operations</h3>
+    </div>
+    <p>
+      Produced technical documentation, SOPs, compliance reviews,
+      and long-form editorial systems for academic, media,
+      and institutional projects over 15+ years.
+    </p>
+    <p>
+      Work includes research synthesis, version-controlled documentation,
+      terminology management, linguistic data mapping,
+      and translating dense technical material into operationally useful prose.
+    </p>
+    <p>
+      Co-authored <em>Learning to Use the Cherokee Verb</em>,
+      managing structured linguistic documentation and multi-source revision workflows.
+    </p>
+  </section>
 
-</section>
+  <section class="section perspective">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h3>Perspective</h3>
+    </div>
+    <p>
+      AI systems optimize toward what they can measure.
+      Operational failures often emerge when workflows begin reinforcing
+      their own historical outputs while suppressing emerging contextual signals.
+    </p>
+    <p>
+      My interest is in the operational layer surrounding AI systems:
+      evaluation workflows, escalation structures, quality review,
+      documentation standards, and human oversight processes that help
+      maintain alignment between automated systems and changing reality.
+    </p>
+  </section>
 
-<hr>
+  <hr class="divider">
 
-<section>
+  <div class="contact">
+    <p>
+      shimshonodess@gmail.com<br>
+      <a href="https://linkedin.com/in/shoshone" target="_blank">linkedin.com/in/shoshone</a><br>
+      <a href="https://github.com/s-odess" target="_blank">github.com/s-odess</a>
+    </p>
+  </div>
 
-  <h3>01 — Workflow Operations & Production Systems</h3>
-
-  <p>
-    Coordinated real-time production workflows for Citizen’s public safety
-    platform, supporting operational pipelines responsible for dispatching
-    1–3 million geofenced notifications per workday across a system serving
-    9M+ users and 10B+ total notifications.
-  </p>
-
-  <p>
-    Managed open operational threads across engineering, safety, research,
-    and data teams to maintain delivery timelines, terminology consistency,
-    and publishing reliability under high-volume conditions.
-  </p>
-
-</section>
-
-<section>
-
-  <h3>02 — Human-in-the-Loop Quality Systems</h3>
-
-  <p>
-    Provided human-in-the-loop review for production publishing workflows,
-    partnering with Process Improvement teams to verify privacy and safety
-    compliance before release.
-  </p>
-
-  <p>
-    Contributed to workflow reliability by identifying edge cases,
-    monitoring terminology drift, refining escalation paths,
-    and supporting operational process updates for model-assisted systems.
-  </p>
-
-  <p>
-    Focused particularly on the limits of purely statistical optimization:
-    preserving contextual judgment and weak-signal awareness inside
-    increasingly automated workflows.
-  </p>
-
-</section>
-
-<section>
-
-  <h3>03 — LLM-Assisted Workflow Development</h3>
-
-  <p>
-    Led transition from manual drafting toward model-assisted operational
-    workflows beginning in 2022, editing LLM-generated outputs from
-    unstructured emergency-services logging into clear, publishable prose.
-  </p>
-
-  <p>
-    Built reusable JSON templates, contributor guidance,
-    editorial checklists, and operational safeguards that improved
-    consistency while reducing manual production overhead.
-  </p>
-
-  <p>
-    Operational experience with Claude and ChatGPT Enterprise,
-    including context-window management, evaluation support,
-    prompt refinement, and documentation workflows.
-  </p>
-
-</section>
-
-<section>
-
-  <h3>04 — Documentation & Research Operations</h3>
-
-  <p>
-    Produced technical documentation, SOPs, compliance reviews,
-    and long-form editorial systems for academic, media,
-    and institutional projects over 15+ years.
-  </p>
-
-  <p>
-    Work includes research synthesis, version-controlled documentation,
-    terminology management, linguistic data mapping,
-    and translating dense technical material into operationally useful prose.
-  </p>
-
-  <p>
-    Co-authored <em>Learning to Use the Cherokee Verb</em>,
-    managing structured linguistic documentation and multi-source revision workflows.
-  </p>
-
-</section>
-
-<section>
-
-  <h3>05 — Perspective</h3>
-
-  <p>
-    AI systems optimize toward what they can measure.
-    Operational failures often emerge when workflows begin reinforcing
-    their own historical outputs while suppressing emerging contextual signals.
-  </p>
-
-  <p>
-    My interest is in the operational layer surrounding AI systems:
-    evaluation workflows, escalation structures, quality review,
-    documentation standards, and human oversight processes that help
-    maintain alignment between automated systems and changing reality.
-  </p>
-
-</section>
-
-<hr style="margin:32px 0;border:none;border-top:1px solid #eee">
-
-<section>
-
-  <p>
-    Email: shimshonodess@gmail.com<br>
-    LinkedIn: linkedin.com/in/shoshone<br>
-    GitHub: github.com/s-odess
-  </p>
-
-</section>
-
+</div>
 </body>
+</html>
