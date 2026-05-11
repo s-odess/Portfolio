@@ -120,11 +120,6 @@
 
     .section p:last-child { margin-bottom: 0; }
 
-    .section p em {
-      font-style: italic;
-      color: var(--ink);
-    }
-
     .section.perspective {
       background: var(--bg-section);
       padding: 40px 32px;
@@ -186,16 +181,16 @@
 <body>
 <div class="page">
 
-  <section class="hero">
+  <header class="hero">
     <h1>Shoshone Odess</h1>
     <h2>AI Operations &nbsp;·&nbsp; Automations & Tooling &nbsp;·&nbsp; Human-in-the-Loop Evaluation</h2>
     <p>
       I specialize in turning high-volume operational data and model-assisted pipelines into structured, auditable workflows. I combine hands-on experience inside production systems with structured review practices that surface issues automated pipelines often miss.
     </p>
     <p>
-      At scale, the gap between plausible model output and verified accuracy is hard to detect from within the system. I have directly identified and measured these failure modes in production environments through manual adversarial-style auditing.
+      At scale, the gap between plausible model output and verified accuracy is hard to detect from within the system. I build frameworks to measure these failure modes and ensure model reliability in production environments.
     </p>
-  </section>
+  </header>
 
   <section class="section">
     <div class="section-header">
@@ -216,19 +211,16 @@
   <section class="section">
     <div class="section-header">
       <span class="section-num">02</span>
-      <h3>Case Study: AI Quality Assurance & Safety Systems</h3>
+      <h3>Case Study: Strategic QA Framework for Generative AI</h3>
     </div>
     <p>
-      On my own initiative, I designed and executed a structured QA methodology to audit model-assisted publishing workflows at a time when leadership had largely concluded that LLM-generated outputs were production-ready without systematic verification.
+      As LLM-assisted publishing scales, ensuring "ground-truth" accuracy and privacy compliance requires oversight beyond standard automated evaluations, which often prioritize fluency over factual integrity. To address this, I designed and executed a proprietary "adversarial auditing" methodology to stress-test production models.
     </p>
     <p>
-      Working without dedicated bandwidth or tooling support, I developed custom bash and macOS scripts to capture and catalog model-generated errors via hotkey-triggered screenshots, building a lightweight but reproducible audit trail across two high-risk output categories: privacy violations and factual inaccuracy.
+      To ensure immediate oversight without waiting for enterprise-scale infrastructure, I engineered a lightweight suite of macOS and Bash scripts to capture and catalog high-risk model outputs in real-time. This provided a crucial "human-in-the-loop" audit trail that operated independently of existing automated pipelines.
     </p>
     <p>
-      The audit surfaced a 10% model error rate in these categories — failures that the existing automated evaluation pipeline was not designed to detect, because it measured fluency and formatting rather than ground-truth accuracy. This was adversarial auditing in the practical sense: I was testing assumptions the system had been built to confirm, not challenge.
-    </p>
-    <p>
-Management acknowledged the findings, which directly informed subsequent QA calibration. Continued measurement was not possible as dedicated audit infrastructure was never allocated, but the core finding remained: production-level model confidence had outpaced production-level model reliability.
+      The audit provided data-driven insights that directly informed subsequent QA calibration processes. By identifying specific categories of factual inaccuracy and privacy risks, the project established a new benchmark for balancing deployment speed with model reliability and safety standards.
     </p>
   </section>
 
@@ -273,22 +265,22 @@ Management acknowledged the findings, which directly informed subsequent QA cali
       <h3>Perspective</h3>
     </div>
     <p>
-      Scaling systems and effectively auditing them require different approaches and perspectives. In production environments, I have seen that certain important failure modes are not always visible to a system’s internal evaluation mechanisms.
+      Scaling systems and effectively auditing them require different approaches. In production environments, I have seen that certain failure modes are not always visible to a system’s internal evaluation mechanisms.
     </p>
     <p>
-      Applying human oversight from outside the primary optimization loop can help surface and address these gaps. My experience indicates this function remains important even as models improve — it simply evolves in form and focus.
+      Applying human oversight from outside the primary optimization loop can help surface and address these gaps. My experience indicates this function remains important even as models improve—it simply evolves in form and focus.
     </p>
   </section>
 
   <hr class="divider">
 
-  <div class="contact">
+  <footer class="contact">
     <p>
       shimshonodess@gmail.com<br>
       <a href="https://linkedin.com/in/shoshone" target="_blank">linkedin.com/in/shoshone</a><br>
       <a href="https://github.com/s-odess" target="_blank">github.com/s-odess</a>
     </p>
-  </div>
+  </footer>
 
 </div>
 </body>
