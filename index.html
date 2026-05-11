@@ -219,13 +219,17 @@
       <h3>Case Study: AI Quality Assurance & Safety Systems</h3>
     </div>
     <p>
-      On my own initiative, I designed and executed a structured QA methodology to audit model-assisted publishing workflows. I developed custom bash and macOS scripts to screenshot and audit model-generated errors using hotkeys across two high-risk categories: privacy and factual accuracy.
+      On my own initiative, I designed and executed a structured QA methodology to audit model-assisted publishing workflows at a time when leadership had largely concluded that LLM-generated outputs were production-ready without systematic verification.
     </p>
     <p>
-      This independent adversarial-style audit surfaced a 10% model error rate that automated evaluation pipelines were not designed to detect. I subsequently refined prompts and data pipelines using government source URLs to improve output fidelity and lower the signal-to-noise ratio.
+      Working without dedicated bandwidth or tooling support, I developed custom bash and macOS scripts to capture and catalog model-generated errors via hotkey-triggered screenshots, building a lightweight but reproducible audit trail across two high-risk output categories: privacy violations and factual inaccuracy.
     </p>
     <p>
-      To further operationalize safety, I developed rule-based safeguards, editorial guardrails, and escalation paths to detect high-risk outputs. These safeguards established clearer boundaries between automated generation and public release in sensitive, real-world scenarios.
+      The audit surfaced a 10% model error rate in these categories — failures that the existing automated evaluation pipeline was not designed to detect, because it measured fluency and formatting rather than ground-truth accuracy. This was adversarial auditing in the practical sense: I was testing assumptions the system had been built to confirm, not challenge.
+    </p>
+    <p>
+      Management acknowledged the findings, which then supported QA calibration. Continued measurement was not possible as dedicated audit infrastructure was not available, but the core finding stood: production-level model confidence had outpaced production-level model reliability, and the gap required human-in-the-loop intervention that the existing workflow hadn’t accounted for.
+Following the audit, I developed rule-based safeguards to institutionalize that human oversight layer, establishing clearer boundaries between automated generation and public release in sensitive, real-world scenarios.
     </p>
   </section>
 
