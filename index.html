@@ -228,8 +228,7 @@
       The audit surfaced a 10% model error rate in these categories — failures that the existing automated evaluation pipeline was not designed to detect, because it measured fluency and formatting rather than ground-truth accuracy. This was adversarial auditing in the practical sense: I was testing assumptions the system had been built to confirm, not challenge.
     </p>
     <p>
-      Management acknowledged the findings, which then supported QA calibration. Continued measurement was not possible as dedicated audit infrastructure was not available, but the core finding stood: production-level model confidence had outpaced production-level model reliability, and the gap required human-in-the-loop intervention that the existing workflow hadn’t accounted for.
-Following the audit, I developed rule-based safeguards to institutionalize that human oversight layer, establishing clearer boundaries between automated generation and public release in sensitive, real-world scenarios.
+Management acknowledged the findings, which directly informed subsequent QA calibration. Continued measurement was not possible as dedicated audit infrastructure was never allocated, but the core finding remained: production-level model confidence had outpaced production-level model reliability.
     </p>
   </section>
 
