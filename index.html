@@ -1,299 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shoshone Odess</title>
-  
-  <script>
-    (function() {
-      var secretCode = "CITIZEN_QA_2026";
-      var entry = prompt("Confidentiality Notice: This portfolio contains proprietary workflow methodologies. Please enter the access code provided on Shoshone Odess's resume to proceed:");
-      
-      if (entry !== secretCode) {
-        alert("Incorrect access code. Access denied.");
-        window.location.href = "https://www.linkedin.com/in/shoshone";
-      }
-    })();
-  </script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Shoshone Odess</title>
+ 
+ <script>
+ (function() {
+ var secretCode = "CITIZEN_QA_2026";
+ var entry = prompt("Confidentiality Notice: This portfolio contains proprietary workflow methodologies. Please enter the access code provided on Shoshone Odess's resume to proceed:");
+ 
+ if (entry !== secretCode) {
+ alert("Incorrect access code. Access denied.");
+ window.location.href = "https://www.linkedin.com/in/shoshone";
+ }
+ })();
+ </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+ <style>
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --ink: #1a1a18;
-      --ink-light: #4a4a45;
-      --ink-muted: #8a8a82;
-      --rule: #d8d5cc;
-      --bg: #f7f5f0;
-      --bg-section: #f2f0eb;
-      --accent: #2d4a3e;
-      --serif: 'Libre Baskerville', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
-    }
+ :root {
+ --ink: #1a1a18;
+ --ink-light: #4a4a45;
+ --ink-muted: #8a8a82;
+ --rule: #d8d5cc;
+ --bg: #f7f5f0;
+ --bg-section: #f2f0eb;
+ --accent: #2d4a3e;
+ --serif: 'Libre Baskerville', Georgia, serif;
+ --sans: 'DM Sans', sans-serif;
+ }
 
-    html { font-size: 16px; scroll-behavior: smooth; }
+ html { font-size: 16px; scroll-behavior: smooth; }
 
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.7;
-      min-height: 100vh;
-    }
+ body {
+ background: var(--bg);
+ color: var(--ink);
+ font-family: var(--sans);
+ font-weight: 300;
+ line-height: 1.7;
+ min-height: 100vh;
+ }
 
-    .page {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 80px 40px 100px;
-      opacity: 0;
-      animation: fadeIn 0.6s ease forwards;
-    }
+ .page {
+ max-width: 720px;
+ margin: 0 auto;
+ padding: 80px 40px 100px;
+ opacity: 0;
+ animation: fadeIn 0.6s ease forwards;
+ }
 
-    @keyframes fadeIn { to { opacity: 1; } }
+ @keyframes fadeIn { to { opacity: 1; } }
 
-    .hero {
-      padding-bottom: 56px;
-      margin-bottom: 56px;
-      border-bottom: 1px solid var(--rule);
-    }
+ .hero {
+ padding-bottom: 56px;
+ margin-bottom: 56px;
+ border-bottom: 1px solid var(--rule);
+ }
 
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 5vw, 2.75rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      color: var(--ink);
-      margin-bottom: 16px;
-    }
+ .hero h1 {
+ font-family: var(--serif);
+ font-size: clamp(2rem, 5vw, 2.75rem);
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ line-height: 1.15;
+ color: var(--ink);
+ margin-bottom: 16px;
+ }
 
-    .hero h2 {
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 32px;
-    }
+ .hero h2 {
+ font-family: var(--sans);
+ font-size: 0.8rem;
+ font-weight: 500;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ color: var(--accent);
+ margin-bottom: 32px;
+ }
 
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--ink-light);
-      margin-bottom: 16px;
-      max-width: 600px;
-    }
+ .hero p {
+ font-size: 1.05rem;
+ color: var(--ink-light);
+ margin-bottom: 16px;
+ max-width: 600px;
+ }
 
-    .hero p:last-child { margin-bottom: 0; }
+ .hero p:last-child { margin-bottom: 0; }
 
-    .section {
-      padding: 40px 0;
-      border-bottom: 1px solid var(--rule);
-      position: relative;
-    }
+ .section {
+ padding: 40px 0;
+ border-bottom: 1px solid var(--rule);
+ position: relative;
+ }
 
-    .section:last-of-type { border-bottom: none; }
+ .section:last-of-type { border-bottom: none; }
 
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
+ .section-header {
+ display: flex;
+ align-items: baseline;
+ gap: 16px;
+ margin-bottom: 24px;
+ }
 
-    .section-num {
-      font-family: var(--serif);
-      font-size: 0.72rem;
-      font-style: italic;
-      color: var(--ink-muted);
-      letter-spacing: 0.04em;
-      flex-shrink: 0;
-      padding-top: 2px;
-    }
+ .section-num {
+ font-family: var(--serif);
+ font-size: 0.72rem;
+ font-style: italic;
+ color: var(--ink-muted);
+ letter-spacing: 0.04em;
+ flex-shrink: 0;
+ padding-top: 2px;
+ }
 
-    .section h3 {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.3;
-    }
+ .section h3 {
+ font-family: var(--serif);
+ font-size: 1.15rem;
+ font-weight: 700;
+ color: var(--ink);
+ line-height: 1.3;
+ }
 
-    .section p {
-      font-size: 0.97rem;
-      color: var(--ink-light);
-      margin-bottom: 14px;
-      padding-left: 46px;
-    }
+ .section p {
+ font-size: 0.97rem;
+ color: var(--ink-light);
+ margin-bottom: 14px;
+ padding-left: 46px;
+ }
 
-    .section p:last-child { margin-bottom: 0; }
+ .section p:last-child { margin-bottom: 0; }
 
-    .section.perspective {
-      background: var(--bg-section);
-      padding: 40px 32px;
-      border-radius: 4px;
-      border: 1px solid var(--rule);
-      margin-top: 8px;
-    }
+ .section.perspective {
+ background: var(--bg-section);
+ padding: 40px 32px;
+ border-radius: 4px;
+ border: 1px solid var(--rule);
+ margin-top: 8px;
+ }
 
-    .section.perspective .section-num { color: var(--accent); }
-    .section.perspective p { color: var(--ink); }
+ .section.perspective .section-num { color: var(--accent); }
+ .section.perspective p { color: var(--ink); }
 
-    .contact {
-      padding-top: 48px;
-      margin-top: 8px;
-    }
+ .contact {
+ padding-top: 48px;
+ margin-top: 8px;
+ }
 
-    .contact p {
-      font-size: 0.88rem;
-      color: var(--ink-muted);
-      line-height: 2;
-    }
+ .contact p {
+ font-size: 0.88rem;
+ color: var(--ink-muted);
+ line-height: 2;
+ }
 
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.15s ease, color 0.15s ease;
-    }
+ .contact a {
+ color: var(--accent);
+ text-decoration: none;
+ border-bottom: 1px solid transparent;
+ transition: border-color 0.15s ease, color 0.15s ease;
+ }
 
-    .contact a:hover {
-      color: var(--ink);
-      border-bottom-color: var(--ink);
-    }
+ .contact a:hover {
+ color: var(--ink);
+ border-bottom-color: var(--ink);
+ }
 
-    .section:not(.perspective) {
-      padding-left: 0;
-      border-left: 2px solid transparent;
-      transition: border-color 0.2s ease, padding-left 0.2s ease;
-    }
+ .section:not(.perspective) {
+ padding-left: 0;
+ border-left: 2px solid transparent;
+ transition: border-color 0.2s ease, padding-left 0.2s ease;
+ }
 
-    .section:not(.perspective):hover {
-      border-left-color: var(--accent);
-      padding-left: 12px;
-    }
+ .section:not(.perspective):hover {
+ border-left-color: var(--accent);
+ padding-left: 12px;
+ }
 
-    .divider {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 8px 0;
-    }
+ .divider {
+ border: none;
+ border-top: 1px solid var(--rule);
+ margin: 8px 0;
+ }
 
-    @media (max-width: 600px) {
-      .page { padding: 48px 24px 80px; }
-      .section p { padding-left: 0; }
-      .section-header { flex-direction: column; gap: 4px; }
-    }
-  </style>
+ @media (max-width: 600px) {
+ .page { padding: 48px 24px 80px; }
+ .section p { padding-left: 0; }
+ .section-header { flex-direction: column; gap: 4px; }
+ }
+ </style>
 </head>
 <body>
 <div class="page">
 
-  <header class="hero">
-    <h1>Shoshone Odess</h1>
-    <h2>AI Operations &nbsp;·&nbsp; Automations & Tooling &nbsp;·&nbsp; Human-in-the-Loop Evaluation</h2>
-    <p>
-      I specialize in turning high-volume operational data and model-assisted pipelines into structured, auditable workflows. I combine hands-on experience inside production systems with structured review practices that surface issues automated pipelines often miss.
-    </p>
-    <p>
-      At scale, the gap between plausible model output and verified accuracy is hard to detect from within the system. I build frameworks to measure these failure modes and ensure model reliability in production environments.
-    </p>
-  </header>
+ <header class="hero">
+ <h1>Shoshone Odess</h1>
+ <h2>AI Operations &nbsp;·&nbsp; Automations & Tooling &nbsp;·&nbsp; Human-in-the-Loop Evaluation</h2>
+ <p>
+ I specialize in turning high-volume operational data and model-assisted pipelines into structured, auditable workflows. I combine hands-on experience inside production systems with structured review practices that surface issues automated pipelines often miss.
+ </p>
+ <p>
+ At scale, the gap between plausible model output and verified accuracy is hard to detect from within the system. I build frameworks to measure these failure modes and ensure model reliability in production environments.
+ </p>
+ </header>
 
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">01</span>
-      <h3>Case Study: Scaling Production & Automations</h3>
-    </div>
-    <p>
-      [span_2](start_span)[span_3](start_span)For 5.5 years at Citizen, I supported real-time geofenced notifications on a platform serving over 9 million users[span_2](end_span)[span_3](end_span). [span_4](start_span)[span_5](start_span)I increased operational throughput by 280% in a key service area by automating workflows using JSON payloads, Python, and Zapier[span_4](end_span)[span_5](end_span).
-    </p>
-    <p>
-      [span_6](start_span)I managed real-time data dissemination for major breaking news events, ensuring sub-second latency and factual accuracy under strict deadlines[span_6](end_span). [span_7](start_span)Additionally, I successfully pitched and implemented automated traffic camera integrations and workflow analytics during company hackathons, which were integrated into production infrastructure[span_7](end_span).
-    </p>
-    <p>
-      [span_8](start_span)[span_9](start_span)I analyzed large incident datasets using Sisense, Tableau, and Sigma to support real-time operational decisions, partnering with researchers to diagnose pipeline issues and author SOPs that became team standards[span_8](end_span)[span_9](end_span).
-    </p>
-  </section>
+ <section class="section">
+ <div class="section-header">
+ <span class="section-num">01</span>
+ <h3>Case Study: Scaling Production & Automations</h3>
+ </div>
+ <p>
+ For 5.5 years at Citizen, I supported real-time geofenced notifications on a platform serving over 9 million users. I increased operational throughput by 280% in a key service area by automating workflows using JSON payloads, Python, and Zapier.
+ </p>
+ <p>
+ I managed real-time data dissemination for major breaking news events, ensuring sub-second latency and factual accuracy under strict deadlines. Additionally, I successfully pitched and implemented automated traffic camera integrations and workflow analytics during company hackathons, which were integrated into production infrastructure.
+ </p>
+ <p>
+ I analyzed large incident datasets using Sisense, Tableau, and Sigma to support real-time operational decisions, partnering with researchers to diagnose pipeline issues and author SOPs that became team standards.
+ </p>
+ </section>
 
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">02</span>
-      <h3>Case Study: Strategic QA Framework for Generative AI</h3>
-    </div>
-    <p>
-      [span_10](start_span)As LLM-assisted publishing scales, ensuring "ground-truth" accuracy and privacy compliance requires oversight beyond standard automated evaluations, which often prioritize fluency over factual integrity[span_10](end_span). [span_11](start_span)[span_12](start_span)To address this, I designed and executed a proprietary "adversarial auditing" methodology to stress-test production models[span_11](end_span)[span_12](end_span).
-    </p>
-    <p>
-      [span_13](start_span)To ensure immediate oversight without waiting for enterprise-scale infrastructure, I engineered a lightweight suite of macOS and Bash scripts to capture and catalog high-risk model outputs in real-time[span_13](end_span). [span_14](start_span)[span_15](start_span)This provided a crucial "human-in-the-loop" audit trail that operated independently of existing automated pipelines[span_14](end_span)[span_15](end_span).
-    </p>
-    <p>
-      [span_16](start_span)The audit provided data-driven insights that directly informed subsequent QA calibration processes[span_16](end_span). [span_17](start_span)[span_18](start_span)[span_19](start_span)By identifying specific categories of factual inaccuracy and privacy risks, the project established a new benchmark for balancing deployment speed with model reliability and safety standards[span_17](end_span)[span_18](end_span)[span_19](end_span).
-    </p>
-  </section>
+ <section class="section">
+ <div class="section-header">
+ <span class="section-num">02</span>
+ <h3>Case Study: Strategic QA Framework for Generative AI</h3>
+ </div>
+ <p>
+ As LLM-assisted publishing scales, ensuring "ground-truth" accuracy and privacy compliance requires oversight beyond standard automated evaluations, which often prioritize fluency over factual integrity. To address this, I designed and executed a proprietary "adversarial auditing" methodology to stress-test production models.
+ </p>
+ <p>
+ To ensure immediate oversight without waiting for enterprise-scale infrastructure, I engineered a lightweight suite of macOS and Bash scripts to capture and catalog high-risk model outputs in real-time. This provided a crucial "human-in-the-loop" audit trail that operated independently of existing automated pipelines.
+ </p>
+ <p>
+ The audit provided data-driven insights that directly informed subsequent QA calibration processes. By identifying specific categories of factual inaccuracy and privacy risks, the project established a new benchmark for balancing deployment speed with model reliability and safety standards.
+ </p>
+ </section>
 
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">03</span>
-      <h3>Case Study: AI Product Support & Policy Leadership</h3>
-    </div>
-    <p>
-      [span_20](start_span)I contributed to the 2022 transition to model-assisted workflows, refining LLM-generated content from unstructured emergency logs and introducing operational guardrails to ensure notification accuracy[span_20](end_span).
-    </p>
-    <p>
-      My work required a deep understanding of both technical systems and user impact. [span_21](start_span)I spearheaded missing persons advocacy that drove policy changes regarding notification nomenclature; these process improvements supported the successful reunion of a high-risk patient with dementia and multiple families[span_21](end_span).
-    </p>
-    <p>
-      [span_22](start_span)Hands-on experience with frontier LLM ecosystems (including Claude, ChatGPT Enterprise, Gemini, and Mistral) allowed me to evaluate outputs, refine prompts, and build reusable JSON templates seamlessly integrated into daily operational workflows[span_22](end_span).
-    </p>
-  </section>
+ <section class="section">
+ <div class="section-header">
+ <span class="section-num">03</span>
+ <h3>Case Study: AI Product Support & Policy Leadership</h3>
+ </div>
+ <p>
+ I contributed to the 2022 transition to model-assisted workflows, refining LLM-generated content from unstructured emergency logs and introducing operational guardrails to ensure notification accuracy.
+ </p>
+ <p>
+ My work required a deep understanding of both technical systems and user impact. I spearheaded missing persons advocacy that drove policy changes regarding notification nomenclature; these process improvements supported the successful reunion of a high-risk patient with dementia and multiple families.
+ </p>
+ <p>
+ Hands-on experience with frontier LLM ecosystems (including Claude, ChatGPT Enterprise, Gemini, and Mistral) allowed me to evaluate outputs, refine prompts, and build reusable JSON templates seamlessly integrated into daily operational workflows.
+ </p>
+ </section>
 
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">04</span>
-      <h3>Documentation, Research and Institutional Operations</h3>
-    </div>
-    <p>
-      [span_23](start_span)Over 15+ years I have developed technical documentation, SOPs, compliance materials, and structured knowledge systems for academic, media, and institutional clients[span_23](end_span).
-    </p>
-    <p>
-      My work has focused on translating complex technical and domain-specific material into clear, maintainable documentation. [span_24](start_span)Areas of expertise include research synthesis, version-controlled workflows, terminology standardization, linguistic data mapping, and structured knowledge systems[span_24](end_span).
-    </p>
-    <p>
-      [span_25](start_span)Co-authored <em>Learning to Use the Cherokee Verb</em>, managing structured linguistic data and multi-contributor revision processes while maintaining fidelity to source materials[span_25](end_span).
-    </p>
-    <p>
-      [span_26](start_span)Earlier work at Occidental College’s Clinical Psychology Laboratory involved administering structured evaluations under federal guidelines and synthesizing qualitative and quantitative data into defensible documentation[span_26](end_span).
-    </p>
-  </section>
+ <section class="section">
+ <div class="section-header">
+ <span class="section-num">04</span>
+ <h3>Documentation, Research and Institutional Operations</h3>
+ </div>
+ <p>
+ Over 15+ years I have developed technical documentation, SOPs, compliance materials, and structured knowledge systems for academic, media, and institutional clients.
+ </p>
+ <p>
+ My work has focused on translating complex technical and domain-specific material into clear, maintainable documentation. Areas of expertise include research synthesis, version-controlled workflows, terminology standardization, linguistic data mapping, and structured knowledge systems.
+ </p>
+ <p>
+ Co-authored <em>Learning to Use the Cherokee Verb</em>, managing structured linguistic data and multi-contributor revision processes while maintaining fidelity to source materials.
+ </p>
+ <p>
+ Earlier work at Occidental College’s Clinical Psychology Laboratory involved administering structured evaluations under federal guidelines and synthesizing qualitative and quantitative data into defensible documentation.
+ </p>
+ </section>
 
-  <section class="section perspective">
-    <div class="section-header">
-      <span class="section-num">05</span>
-      <h3>Perspective</h3>
-    </div>
-    <p>
-      Scaling systems and effectively auditing them require different approaches. In production environments, I have seen that certain failure modes are not always visible to a system’s internal evaluation mechanisms.
-    </p>
-    <p>
-      Applying human oversight from outside the primary optimization loop can help surface and address these gaps. My experience indicates this function remains important even as models improve—it simply evolves in form and focus.
-    </p>
-  </section>
+ <section class="section perspective">
+ <div class="section-header">
+ <span class="section-num">05</span>
+ <h3>Perspective</h3>
+ </div>
+ <p>
+ Scaling systems and effectively auditing them require different approaches. In production environments, I have seen that certain failure modes are not always visible to a system’s internal evaluation mechanisms.
+ </p>
+ <p>
+ Applying human oversight from outside the primary optimization loop can help surface and address these gaps. My experience indicates this function remains important even as models improve—it simply evolves in form and focus.
+ </p>
+ </section>
 
-  <hr class="divider">
+ <hr class="divider">
 
-  <footer class="contact">
-    <p>
-      shimshonodess@gmail.com<br>
-      <a href="https://linkedin.com/in/shoshone" target="_blank">linkedin.com/in/shoshone</a><br>
-      <a href="https://github.com/s-odess" target="_blank">github.com/s-odess</a>
-    </p>
-  </footer>
+ <footer class="contact">
+ <p>
+ shimshonodess@gmail.com<br>
+ <a href="https://linkedin.com/in/shoshone" target="_blank">linkedin.com/in/shoshone</a><br>
+ <a href="https://github.com/s-odess" target="_blank">github.com/s-odess</a>
+ </p>
+ </footer>
 
 </div>
 </body>
