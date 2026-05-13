@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
  <meta charset="UTF-8">
@@ -8,175 +7,181 @@
 
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
  <style>
  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-–ink: #1a1a18;
-–ink-light: #4a4a45;
-–ink-muted: #8a8a82;
-–rule: #d8d5cc;
-–bg: #f7f5f0;
-–bg-section: #f2f0eb;
-–accent: #2d4a3e;
-–serif: ‘Libre Baskerville’, Georgia, serif;
-–sans: ‘DM Sans’, sans-serif;
+  --ink: #1a1a18;
+  --ink-light: #4a4a45;
+  --ink-muted: #8a8a82;
+  --rule: #d8d5cc;
+  --bg: #f7f5f0;
+  --bg-section: #f2f0eb;
+  --accent: #2d4a3e;
+  --serif: ‘Libre Baskerville’, Georgia, serif;
+  --sans: ‘DM Sans’, sans-serif;
 }
 
 html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
-background: var(–bg);
-color: var(–ink);
-font-family: var(–sans);
-font-weight: 300;
-line-height: 1.7;
-min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  min-height: 100vh;
 }
 
 .page {
-max-width: 720px;
-margin: 0 auto;
-padding: 80px 40px 100px;
-opacity: 0;
-animation: fadeIn 0.6s ease forwards;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 80px 40px 120px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
 }
 
 @keyframes fadeIn { to { opacity: 1; } }
 
 .hero {
-padding-bottom: 56px;
-margin-bottom: 56px;
-border-bottom: 1px solid var(–rule);
+  padding-bottom: 64px;
+  margin-bottom: 64px;
+  border-bottom: 1px solid var(--rule);
 }
 
 .hero h1 {
-font-family: var(–serif);
-font-size: clamp(2rem, 5vw, 2.75rem);
-font-weight: 700;
-letter-spacing: -0.02em;
-line-height: 1.15;
-color: var(–ink);
-margin-bottom: 16px;
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 12px;
 }
 
 .hero h2 {
-font-family: var(–sans);
-font-size: 0.8rem;
-font-weight: 500;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(–accent);
-margin-bottom: 32px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
 }
 
 .hero p {
-font-size: 1.05rem;
-color: var(–ink-light);
-margin-bottom: 16px;
-max-width: 600px;
+  font-size: 1.08rem;
+  color: var(--ink-light);
+  margin-bottom: 20px;
+  max-width: 620px;
 }
 
 .hero p:last-child { margin-bottom: 0; }
 
 .section {
-padding: 40px 0;
-border-bottom: 1px solid var(–rule);
-position: relative;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
 }
 
 .section:last-of-type { border-bottom: none; }
 
 .section-header {
-display: flex;
-align-items: baseline;
-gap: 16px;
-margin-bottom: 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 28px;
 }
 
 .section-num {
-font-family: var(–serif);
-font-size: 0.72rem;
-font-style: italic;
-color: var(–ink-muted);
-letter-spacing: 0.04em;
-flex-shrink: 0;
-padding-top: 2px;
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  padding-top: 3px;
 }
 
 .section h3 {
-font-family: var(–serif);
-font-size: 1.15rem;
-font-weight: 700;
-color: var(–ink);
-line-height: 1.3;
+  font-family: var(--serif);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
 }
 
-.section p {
-font-size: 0.97rem;
-color: var(–ink-light);
-margin-bottom: 14px;
-padding-left: 46px;
+.section ul {
+  padding-left: 46px;
+  margin-bottom: 20px;
 }
 
-.section p:last-child { margin-bottom: 0; }
+.section li {
+  font-size: 0.97rem;
+  color: var(--ink-light);
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.section li:last-child { margin-bottom: 0; }
 
 .section.perspective {
-background: var(–bg-section);
-padding: 40px 32px;
-border-radius: 4px;
-border: 1px solid var(–rule);
-margin-top: 8px;
+  background: var(--bg-section);
+  padding: 48px 40px;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+  margin: 32px 0;
 }
 
-.section.perspective .section-num { color: var(–accent); }
-.section.perspective p { color: var(–ink); }
+.section.perspective .section-num { color: var(--accent); }
+.section.perspective p { color: var(--ink); font-size: 1.02rem; }
 
 .contact {
-padding-top: 48px;
-margin-top: 8px;
+  padding-top: 56px;
+  margin-top: 8px;
 }
 
 .contact p {
-font-size: 0.88rem;
-color: var(–ink-muted);
-line-height: 2;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 2;
 }
 
 .contact a {
-color: var(–accent);
-text-decoration: none;
-border-bottom: 1px solid transparent;
-transition: border-color 0.15s ease, color 0.15s ease;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .contact a:hover {
-color: var(–ink);
-border-bottom-color: var(–ink);
+  color: var(--ink);
+  border-bottom-color: var(--ink);
 }
 
 .section:not(.perspective) {
-padding-left: 0;
-border-left: 2px solid transparent;
-transition: border-color 0.2s ease, padding-left 0.2s ease;
+  padding-left: 0;
+  border-left: 3px solid transparent;
+  transition: border-color 0.25s ease, padding-left 0.25s ease;
 }
 
 .section:not(.perspective):hover {
-border-left-color: var(–accent);
-padding-left: 12px;
+  border-left-color: var(--accent);
+  padding-left: 16px;
 }
 
 .divider {
-border: none;
-border-top: 1px solid var(–rule);
-margin: 8px 0;
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 12px 0 32px;
 }
 
 @media (max-width: 600px) {
-.page { padding: 48px 24px 80px; }
-.section p { padding-left: 0; }
-.section-header { flex-direction: column; gap: 4px; }
+  .page { padding: 48px 24px 80px; }
+  .section ul { padding-left: 24px; }
+  .section-header { flex-direction: column; gap: 6px; align-items: flex-start; }
+  .section li { margin-bottom: 14px; }
 }
 </style>
 
@@ -185,104 +190,88 @@ margin: 8px 0;
 <div class="page">
 
  <header class="hero">
- <h1>Shoshone Odess</h1>
- <h2>AI Operations &nbsp;·&nbsp; Automations & Tooling &nbsp;·&nbsp; Human-in-the-Loop Evaluation</h2>
- <p>
- I specialize in turning high-volume operational data and model-assisted pipelines into structured, auditable workflows. I combine hands-on experience inside production systems with structured review practices that surface issues automated pipelines often miss.
- </p>
- <p>
- At scale, the gap between plausible model output and verified accuracy is hard to detect from within the system. I build frameworks to measure these failure modes and ensure model reliability in production environments.
- </p>
+  <h1>Shoshone Odess</h1>
+  <h2>AI Operations &nbsp;·&nbsp; Automations & Tooling &nbsp;·&nbsp; Human-in-the-Loop Evaluation</h2>
+  <p>
+   I turn high-volume operational data and model-assisted pipelines into structured, auditable workflows. I combine deep production system experience with structured review practices that surface issues automated pipelines often miss.
+  </p>
+  <p>
+   At scale, teams struggle to detect the gap between plausible model output and verified accuracy from inside the system. I build frameworks that measure these failure modes and ensure model reliability in production.
+  </p>
  </header>
 
  <section class="section">
- <div class="section-header">
- <span class="section-num">01</span>
- <h3>Case Study: Scaling Production & Automations</h3>
- </div>
- <p>
- For 5.5 years at Citizen, I supported real-time geofenced notifications on a platform serving over 9 million users. I increased operational throughput by 280% in a key service area by automating workflows using JSON payloads, Python, and Zapier.
- </p>
- <p>
- I managed real-time data dissemination for major breaking news events, ensuring sub-second latency and factual accuracy under strict deadlines. Additionally, I successfully pitched and implemented automated traffic camera integrations and workflow analytics during company hackathons, which were integrated into production infrastructure.
- </p>
- <p>
- I analyzed large incident datasets using Sisense, Tableau, and Sigma to support real-time operational decisions, partnering with researchers to diagnose pipeline issues and author SOPs that became team standards.
- </p>
+  <div class="section-header">
+   <span class="section-num">01</span>
+   <h3>Scaling Production & Automations</h3>
+  </div>
+  <ul>
+   <li><strong>Citizen (5.5 years)</strong> — Supported real-time geofenced notifications for a platform serving over 9 million users. Increased operational throughput by 280% in a key service area by automating workflows with JSON payloads, Python, and Zapier.</li>
+   <li>Managed real-time data dissemination during major breaking news events, consistently delivering sub-second latency and factual accuracy under tight deadlines.</li>
+   <li>Pitched and implemented automated traffic camera integrations and workflow analytics during company hackathons; both became part of production infrastructure.</li>
+   <li>Analyzed large incident datasets in Sisense, Tableau, and Sigma to drive real-time operational decisions. Partnered with researchers to diagnose pipeline issues and authored SOPs that became team standards.</li>
+  </ul>
  </section>
 
  <section class="section">
- <div class="section-header">
- <span class="section-num">02</span>
- <h3>Case Study: Independent AI Audit Under Production Constraints</h3>
- </div>
- <p>
- When production LLMs were integrated into a high-stakes publishing workflow, team output began being evaluated against a quality rubric originally designed for human-authored content. Automated evaluation mechanisms were not designed to distinguish model-generated errors from human ones — creating a measurement problem with direct consequences for team performance assessments.
- </p>
- <p>
- Working independently and within existing bandwidth, I designed and executed an adversarial auditing methodology to document model failure modes in production. Using a lightweight suite of macOS Shortcuts and Bash scripts — built without dedicated infrastructure or enterprise tooling — I captured and catalogued over 1,000 model outputs across two error categories: factual inaccuracy and editorial/privacy guideline violations. The audit documented error rates exceeding 10%, with some evaluation periods reaching 12%.
- </p>
- <p>
- The findings were presented to organizational leadership and directly informed subsequent QA calibration processes. My own quality assessment scores improved in the immediately following evaluation cycle, validating that the error source had been correctly identified. The project demonstrated that lightweight, human-driven audit infrastructure can surface failure modes that automated pipelines are structurally unable to detect — and that doing so has measurable operational impact.
- </p>
+  <div class="section-header">
+   <span class="section-num">02</span>
+   <h3>Independent AI Audit Under Production Constraints</h3>
+  </div>
+  <ul>
+   <li>When production LLMs entered a high-stakes publishing workflow, the existing quality rubric (designed for human content) created unfair evaluation of team output.</li>
+   <li>I designed and executed an adversarial auditing methodology using lightweight macOS Shortcuts and Bash scripts. Without dedicated infrastructure, I captured and catalogued over 1,000 model outputs across factual inaccuracy and editorial/privacy violations.</li>
+   <li>The audit revealed error rates exceeding 10% (peaking at 12%). I presented findings to leadership, which directly informed QA calibration processes.</li>
+   <li>My own quality scores improved immediately after, confirming the root cause. This project proved lightweight human-driven audits can detect failure modes that automated systems miss.</li>
+  </ul>
  </section>
 
  <section class="section">
- <div class="section-header">
- <span class="section-num">03</span>
- <h3>Case Study: AI Product Support & Policy Leadership</h3>
- </div>
- <p>
- I contributed to the 2022 transition to model-assisted workflows, refining LLM-generated content from unstructured emergency logs and introducing operational guardrails to ensure notification accuracy.
- </p>
- <p>
- My work required a deep understanding of both technical systems and user impact. I spearheaded missing persons advocacy that drove policy changes regarding notification nomenclature; these process improvements supported the successful reunion of a high-risk patient with dementia and multiple families.
- </p>
- <p>
- Hands-on experience with frontier LLM ecosystems — including Claude, ChatGPT Enterprise, Gemini, and Mistral — allowed me to evaluate outputs, refine prompts, and build reusable JSON templates seamlessly integrated into daily operational workflows.
- </p>
+  <div class="section-header">
+   <span class="section-num">03</span>
+   <h3>AI Product Support & Policy Leadership</h3>
+  </div>
+  <ul>
+   <li>Played a key role in the 2022 transition to model-assisted workflows. Refined LLM-generated content from unstructured emergency logs and introduced operational guardrails that improved notification accuracy.</li>
+   <li>Spearheaded missing persons advocacy that drove policy changes in notification nomenclature. These improvements helped reunite a high-risk dementia patient with multiple families.</li>
+   <li>Gained hands-on experience with frontier LLMs (Claude, ChatGPT Enterprise, Gemini, Mistral). Evaluated outputs, refined prompts, and built reusable JSON templates that integrated directly into daily operations.</li>
+  </ul>
  </section>
 
  <section class="section">
- <div class="section-header">
- <span class="section-num">04</span>
- <h3>Documentation, Research and Institutional Operations</h3>
- </div>
- <p>
- Over 15+ years I have developed technical documentation, SOPs, compliance materials, and structured knowledge systems for academic, media, and institutional clients.
- </p>
- <p>
- My work has focused on translating complex technical and domain-specific material into clear, maintainable documentation. Areas of expertise include research synthesis, version-controlled workflows, terminology standardization, linguistic data mapping, and structured knowledge systems.
- </p>
- <p>
- Co-authored <em>Learning to Use the Cherokee Verb</em>, managing structured linguistic data and multi-contributor revision processes while maintaining fidelity to source materials.
- </p>
- <p>
- Earlier work at Occidental College's Clinical Psychology Laboratory involved administering structured evaluations under federal guidelines and synthesizing qualitative and quantitative data into defensible documentation.
- </p>
+  <div class="section-header">
+   <span class="section-num">04</span>
+   <h3>Documentation, Research & Institutional Operations</h3>
+  </div>
+  <ul>
+   <li>Over 15 years I have created technical documentation, SOPs, compliance materials, and structured knowledge systems for academic, media, and institutional clients.</li>
+   <li>Excel at translating complex technical and domain-specific material into clear, maintainable documentation. Expertise includes research synthesis, version-controlled workflows, terminology standardization, and structured knowledge systems.</li>
+   <li>Co-authored <em>Learning to Use the Cherokee Verb</em>, managing structured linguistic data and multi-contributor revision processes while preserving source fidelity.</li>
+   <li>At Occidental College’s Clinical Psychology Laboratory, administered structured evaluations under federal guidelines and synthesized qualitative and quantitative data into defensible documentation.</li>
+  </ul>
  </section>
 
  <section class="section perspective">
- <div class="section-header">
- <span class="section-num">05</span>
- <h3>Perspective</h3>
- </div>
- <p>
- Scaling systems and effectively auditing them require different approaches. In production environments, I have seen that certain failure modes are not always visible to a system's internal evaluation mechanisms.
- </p>
- <p>
- Applying human oversight from outside the primary optimization loop can help surface and address these gaps. My experience indicates this function remains important even as models improve — it simply evolves in form and focus.
- </p>
+  <div class="section-header">
+   <span class="section-num">05</span>
+   <h3>Perspective</h3>
+  </div>
+  <p>
+   Scaling systems and effectively auditing them require different approaches. Production environments often hide certain failure modes from internal evaluation mechanisms.
+  </p>
+  <p>
+   Human oversight from outside the primary optimization loop surfaces these gaps. This function remains essential even as models improve — it simply evolves in form and focus.
+  </p>
  </section>
 
  <hr class="divider">
 
  <footer class="contact">
- <p>
- shimshonodess@gmail.com<br>
- <a href="https://linkedin.com/in/shoshone" target="_blank">linkedin.com/in/shoshone</a><br>
- <a href="https://github.com/s-odess" target="_blank">github.com/s-odess</a>
- </p>
+  <p>
+   shimshonodess@gmail.com<br>
+   <a href="https://linkedin.com/in/shoshone" target="_blank">linkedin.com/in/shoshone</a><br>
+   <a href="https://github.com/s-odess" target="_blank">github.com/s-odess</a>
+  </p>
  </footer>
 
 </div>
