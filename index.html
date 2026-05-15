@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Shoshone Odess</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoshone Odess</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
- <style>
- *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+```
 :root {
   --ink: #1a1a18;
   --ink-light: #4a4a45;
@@ -19,8 +20,8 @@
   --bg: #f7f5f0;
   --bg-section: #f2f0eb;
   --accent: #2d4a3e;
-  --serif: ‘Libre Baskerville’, Georgia, serif;
-  --sans: ‘DM Sans’, sans-serif;
+  --serif: 'Libre Baskerville', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
 }
 
 html { font-size: 16px; scroll-behavior: smooth; }
@@ -112,6 +113,14 @@ body {
   line-height: 1.25;
 }
 
+.section p {
+  font-size: 0.97rem;
+  color: var(--ink-light);
+  margin-bottom: 16px;
+}
+
+.section p:last-child { margin-bottom: 0; }
+
 .section ul {
   padding-left: 46px;
   margin-bottom: 20px;
@@ -182,97 +191,137 @@ body {
   .section ul { padding-left: 24px; }
   .section-header { flex-direction: column; gap: 6px; align-items: flex-start; }
   .section li { margin-bottom: 14px; }
+  .section.perspective { padding: 32px 24px; }
 }
-</style>
+```
 
+  </style>
 </head>
 <body>
 <div class="page">
 
- <header class="hero">
-  <h1>Shoshone Odess</h1>
-  <h2>AI Operations &nbsp;·&nbsp; Automations & Tooling &nbsp;·&nbsp; Human-in-the-Loop Evaluation</h2>
-  <p>
-   I turn high-volume operational data and model-assisted pipelines into structured, auditable workflows. I combine deep production system experience with structured review practices that surface issues automated pipelines often miss.
-  </p>
-  <p>
-   At scale, teams struggle to detect the gap between plausible model output and verified accuracy from inside the system. I build frameworks that measure these failure modes and ensure model reliability in production.
-  </p>
- </header>
+  <header class="hero">
+    <h1>Shoshone Odess</h1>
+    <h2>AI Process &amp; Productivity &nbsp;·&nbsp; LLM Workflow Design &nbsp;·&nbsp; Human-in-the-Loop QA</h2>
+    <p>
+      I identify where AI can drive measurable operational improvement, build the case for it, implement it, measure it honestly, and bring the people along who need to change how they work.
+    </p>
+    <p>
+      At scale, the gap between plausible model output and verified accuracy is rarely visible from inside the system. I build the frameworks that surface it — and the governance structures that keep it closed.
+    </p>
+  </header>
 
- <section class="section">
-  <div class="section-header">
-   <span class="section-num">01</span>
-   <h3>Scaling Production & Automations</h3>
-  </div>
-  <ul>
-   <li><strong>Citizen (5.5 years)</strong> — Supported real-time geofenced notifications for a platform serving over 9 million users and sending more than 29 million push notifications per day. Increased operational throughput by 280% in a key service area by automating workflows with JSON payloads, Python, and Zapier.</li>
-   <li>Managed real-time data dissemination during major breaking news events, consistently delivering sub-second latency and factual accuracy under tight deadlines.</li>
-   <li>Pitched and implemented automated traffic camera integrations and workflow analytics during company hackathons; both became part of production infrastructure.</li>
-   <li>Analyzed large incident datasets in Sisense, Tableau, and Sigma to drive real-time operational decisions. Partnered with researchers to diagnose pipeline issues and authored SOPs that became team standards.</li>
-  </ul>
- </section>
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h3>Enterprise LLM Deployment: Full Lifecycle</h3>
+    </div>
+    <p>
+      When Citizen began evaluating LLMs for converting terse government emergency data into user-facing notifications, there was no existing framework for assessing whether model output would hold up at production scale — factually, editorially, or under SLA constraints.
+    </p>
+    <p>
+      I authored a formal written business case assessing the expected impact and risks of the workflow, presented it to management under critical questioning, and secured approval to deploy. Then I co-built the automated pipeline from the government URL source using Python, JSON payloads, and Zapier — increasing operational throughput 280% in that service area.
+    </p>
+    <p>
+      After deployment, I designed the performance measurement framework and directed the engineering build of Tableau dashboards tracking CTR, push volume, engagement velocity, comments, video performance, and automated flagging signals. Retention uplift was confirmed across Tableau, Sigma, and our internal platform analytics.
+    </p>
+    <p>
+      The full cycle — business case, pipeline build, measurement design, outcome tracking — ran on a platform serving 9 million users with over 10 billion notifications delivered.
+    </p>
+  </section>
 
- <section class="section">
-  <div class="section-header">
-   <span class="section-num">02</span>
-   <h3>Independent AI Audit Under Production Constraints</h3>
-  </div>
-  <ul>
-   <li>When production LLMs entered a high-stakes publishing workflow, the existing quality rubric, designed for human analysts, created inaccurate evaluations of team output.</li>
-   <li>I designed and executed an adversarial auditing methodology using macOS Shortcuts and Bash scripts. Without dedicated infrastructure, I captured and catalogued over 1,000 model outputs across factual inaccuracy and editorial/privacy violations.</li>
-   <li>The audit revealed error rates exceeding 10% (peaking at 12%). The team presented findings to leadership, which directly informed QA calibration processes.</li>
-   <li>The findings were presented to organizational leadership and directly informed subsequent QA calibration processes. My own quality assessment scores improved in the immediately following evaluation cycle, validating that the error source had been correctly identified. The project demonstrated that lightweight, human-driven audit infrastructure can surface failure modes that automated pipelines are structurally unable to detect and that doing so has measurable operational impact.</li>
-  </ul>
- </section>
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h3>Independent LLM Audit Under Production Constraints</h3>
+    </div>
+    <p>
+      When production LLMs entered a high-stakes publishing workflow, the existing quality rubric — designed for human analysts — produced inaccurate evaluations of model output. No systematic QA infrastructure existed for the new pipeline.
+    </p>
+    <p>
+      I built one independently. Using macOS Shortcuts and Bash scripts, I designed and executed an adversarial auditing methodology that captured and catalogued over 1,000 model outputs across factual inaccuracy, editorial violations, and privacy failures — without dedicated infrastructure, and without being asked.
+    </p>
+    <p>
+      The audit surfaced error rates exceeding 10%, peaking at 12%. I presented the findings to organizational leadership; they directly informed subsequent QA calibration processes. My own quality assessment scores improved in the immediately following evaluation cycle — confirming that the error source had been correctly identified, not just described.
+    </p>
+    <p>
+      I then extended the same methodology to two additional use cases: ongoing output verification of LLM-generated notifications against primary government source data, and LLM-assisted deduplication of over 100 redundant notification series generated from unverified user-generated content where no authoritative narrative context existed.
+    </p>
+    <p>
+      The project demonstrated something that matters beyond Citizen: lightweight, human-driven audit infrastructure surfaces failure modes that automated pipelines are structurally unable to detect — and doing so has measurable operational impact.
+    </p>
+  </section>
 
- <section class="section">
-  <div class="section-header">
-   <span class="section-num">03</span>
-   <h3>AI Product Support & Policy Leadership</h3>
-  </div>
-  <ul>
-   <li>Played a key role in the 2022 transition to model-assisted workflows. Refined LLM-generated content from unstructured emergency logs and introduced operational guardrails that improved notification accuracy.</li>
-   <li>Spearheaded missing persons advocacy that drove policy changes in notification nomenclature. Worked to successfully locate a high-risk dementia patient and other families, as documented in my LinkedIn portfolio.</li>
-   <li>Gained hands-on experience with frontier LLMs (Claude, ChatGPT Enterprise, Gemini, Mistral). Evaluated outputs, refined prompts, and built reusable JSON templates that integrated directly into daily operations.</li>
-  </ul>
- </section>
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h3>Cross-Functional Program Delivery: Creators Rollout</h3>
+    </div>
+    <p>
+      Citizen's shift to a video-first platform required building a new capability across Marketing and Product that didn't exist: the ability to onboard influencer creators to our editorial and QA standards at scale.
+    </p>
+    <p>
+      I served as the de facto subject matter expert and training lead for that rollout — more available and more knowledgeable in the relevant workflows than the compensated manager in the role. Working directly with the Head of Marketing and a Product Manager across Slack, Zoom, email, and the proprietary platform OS, I built their capability in editorial workflow, quality standards, and platform operations so they could execute influencer onboarding independently.
+    </p>
+    <p>
+      The program contributed to significant DAU growth and ultimately to Citizen's video partnership with Axon, integrating real-time video into government RTS centers. When the scope of the engagement began conflicting with my own SLA obligations, I made a deliberate decision to step back — a prioritization call, not an exit.
+    </p>
+    <p>
+      This is what cross-functional influence without authority looks like in practice: you show up with relevant expertise, you deliver real capability transfer, and you manage your own constraints honestly.
+    </p>
+  </section>
 
- <section class="section">
-  <div class="section-header">
-   <span class="section-num">04</span>
-   <h3>Documentation, Research & Institutional Operations</h3>
-  </div>
-  <ul>
-   <li>Over 15 years I have created technical documentation, SOPs, compliance materials, and structured knowledge systems for academic, media, and institutional clients.</li>
-   <li>Excel at translating complex technical and domain-specific material into clear, maintainable documentation. Expertise includes research synthesis, version-controlled workflows, terminology standardization, and structured knowledge systems.</li>
-   <li>Co-authored <em>Learning to Use the Cherokee Verb</em>, managing structured linguistic data and multi-contributor revision processes while preserving source fidelity.</li>
-   <li>At a clinical psychology laboratory, administered structured evaluations under federal guidelines and synthesized qualitative and quantitative data into defensible documentation.</li>
-  </ul>
- </section>
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h3>Governance, Playbooks &amp; Adoption Without Authority</h3>
+    </div>
+    <ul>
+      <li><strong>Playbook institutionalization.</strong> Built 7+ AI workflow playbooks adopted across a 100+ person analyst organization — standardizing pipeline diagnostics, prompt engineering protocols, and governance standards. Authored the SOPs; the team ran them autonomously.</li>
+      <li><strong>Prototype-to-production.</strong> Identified two automation opportunities that were not on anyone's roadmap, built working prototypes to demonstrate feasibility and ROI, and secured cross-functional technical buy-in without direct authority. Both were approved and integrated into core production infrastructure.</li>
+      <li><strong>Flagging model QA loop.</strong> Evaluated outputs of engineering-built automated flagging models and provided structured performance feedback to the engineering team — closing the quality loop between model behavior and production accuracy standards.</li>
+      <li><strong>Executive risk reporting.</strong> Presented structured LLM risk assessments and quantified error-rate analyses to organizational leadership, developing investment-level recommendations that shifted platform QA calibration and drove prioritization of verified accuracy standards.</li>
+      <li><strong>Safety policy re-engineering.</strong> Drove mission-critical changes to notification nomenclature and user safety policy, managing high-stakes missing persons cases involving high-risk dementia patients under tight operational constraints.</li>
+    </ul>
+  </section>
 
- <section class="section perspective">
-  <div class="section-header">
-   <span class="section-num">05</span>
-   <h3>Perspective</h3>
-  </div>
-  <p>
-   Scaling systems and effectively auditing them require different approaches. Production environments often hide certain failure modes from internal evaluation mechanisms.
-  </p>
-  <p>
-   Human oversight from outside the primary optimization loop surfaces these gaps. This function remains essential even as models improve — it simply evolves in form and focus.
-  </p>
- </section>
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h3>Documentation, Research &amp; Institutional Operations</h3>
+    </div>
+    <ul>
+      <li>Over 15 years I have created technical documentation, SOPs, compliance materials, and structured knowledge systems for academic, media, and institutional clients — translating complex technical and domain-specific material into clear, maintainable frameworks.</li>
+      <li>Co-authored <em>Learning to Use the Cherokee Verb</em>, managing structured linguistic data validation pipelines and multi-contributor version control while preserving raw source fidelity across a long-running institutional project.</li>
+      <li>At a clinical psychology laboratory, administered structured evaluations under federal compliance guidelines and synthesized qualitative and quantitative data into legally and medically defensible documentation.</li>
+    </ul>
+  </section>
 
- <hr class="divider">
+  <section class="section perspective">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h3>Perspective</h3>
+    </div>
+    <p>
+      Scaling AI systems and honestly evaluating them require different orientations. Production environments are optimized to surface what works — which means they tend to obscure what doesn't, especially at the boundaries of model reliability.
+    </p>
+    <p>
+      Human oversight from outside the primary optimization loop surfaces these gaps. It also builds the institutional trust that lets organizations move faster on AI adoption, because the measurement infrastructure exists to catch failures early rather than at scale.
+    </p>
+    <p>
+      This function doesn't disappear as models improve. It evolves in form and focus — from catching factual errors to evaluating reasoning quality, from single-model audits to cross-model governance. The need for structured, honest measurement is durable.
+    </p>
+  </section>
 
- <footer class="contact">
-  <p>
-   shimshonodess@gmail.com<br>
-   <a href="https://linkedin.com/in/shoshone" target="_blank">linkedin.com/in/shoshone</a><br>
-   <a href="https://github.com/s-odess" target="_blank">github.com/s-odess</a>
-  </p>
- </footer>
+  <hr class="divider">
+
+  <footer class="contact">
+    <p>
+      shimshonodess@gmail.com<br>
+      <a href="https://linkedin.com/in/shoshone" target="_blank">linkedin.com/in/shoshone</a><br>
+      <a href="https://github.com/s-odess" target="_blank">github.com/s-odess</a>
+    </p>
+  </footer>
 
 </div>
 </body>
