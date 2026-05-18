@@ -198,112 +198,100 @@
 
   <header class="hero">
     <h1>Shoshone Odess</h1>
-    <h2>AI Process &amp; Productivity &nbsp;·&nbsp; LLM Workflow Design &nbsp;·&nbsp; Human-in-the-Loop QA</h2>
+    <h2>Technical Enablement &nbsp;·&nbsp; Process Optimization &nbsp;·&nbsp; LLM Workflow Architecture &nbsp;·&nbsp; Quality Assurance</h2>
     <p>
-      I identify where automation can drive measurable operational improvement, build the case for it, implement it, measure it honestly, and coordinate the team.
+      I identify where process automation and clear documentation can drive measurable operational improvement, build the business case for adoption, engineer the technical pipelines, and enable cross-functional teams to execute with confidence.
     </p>
     <p>
-      At scale, the gap between plausible model output and verified accuracy is rarely visible from inside the system. I build the frameworks that surface it and the governance structures that contain it.
+      At scale, the gap between rapid software feature updates and verified team execution is rarely visible from inside the system. I build the training frameworks that surface gaps and the governance structures that de-risk technical change.
     </p>
   </header>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">01</span>
-      <h3>Automation Pipeline: Build, Measure, Confirm</h3>
+      <h3>Automation Pipeline &amp; Operational Analytics: Build, Measure, Confirm</h3>
     </div>
     <p>
-      Before LLMs entered Citizen's production workflow, I co-built an automated pipeline ingesting real-time government emergency data into the platform using Python, JSON payloads, and Zapier. The goal was operational throughput: cutting the manual load of translating terse official source data into user-facing notifications in a service area handling significant volume.
+      Before LLMs entered Citizen's production environment, I co-built an automated pipeline ingesting real-time government emergency data into the platform using Python, JSON payloads, and Zapier. The goal was operational throughput: eliminating manual bottlenecks involved in translating terse official source data into context-rich user-facing alerts in a high-volume market.
     </p>
     <p>
-      The pipeline increased throughput nearly threefold.
+      The engineering pipeline increased team operational throughput nearly threefold (280%).
     </p>
     <p>
-      After deployment, I designed the performance measurement framework and directed the engineering team's build of Tableau dashboards tracking CTR, push volume, and related metrics. Tableau data confirmed the retention uplift. The pipeline ran continuously on a platform that serves 9 million users and has delivered over 10 billion notifications.
+      Following deployment, I designed the comprehensive performance measurement framework and directed engineering teams in building centralized Tableau dashboards. By pulling and visualizing historical core metrics alongside Salesforce Service Cloud data trends, I monitored push volumes, click-through rates (CTR), and engagement velocity to identify workflow patterns and confirm sustained baseline user retention. The pipeline ran continuously on a platform serving 9 million users with over 10 billion notifications delivered.
     </p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">02</span>
-      <h3>LLM Business Case: From Experiment to Backbone</h3>
+      <h3>LLM Business Case &amp; Deployment: From Experiment to Operational Backbone</h3>
     </div>
     <p>
-      When Citizen began evaluating LLMs for converting terse government emergency data into user-facing notifications, I built frameworks for assessing whether model output would hold up at production scale: factually, editorially, and under SLA constraints.
+      When Citizen began evaluating generative LLMs to automate complex narrative text modifications, I developed formal validation blueprints to evaluate whether model outputs could hold up under strict production constraints: editorially, factually, and within rigid breaking-news SLAs.
     </p>
     <p>
-      The core experiment used ChatGPT Enterprise to translate real-time first-responder data from a government source into context-rich narratives, adding granular detail that no other source in our workflow provided. I built the case for it in a formal written document that grew over several weeks into at least five case studies, with Tableau data tracking CTR, push volume, retention, estimated net growth, share/disable ratio, and video quantity.
+      The core experiment used ChatGPT Enterprise to convert real-time data feeds into clear, granular narratives, introducing custom prompt guardrails to protect output integrity. I built the operational case for it in a comprehensive written document backed by five extensive case studies and Tableau performance indicators. 
     </p>
     <p>
-      The government source carried stronger privacy protections than other existing sources, and the granular detail it provided was exactly what users consistently asked for. My supervisor approved it, but raised several possible objections, which I documented in the proposal before I continued the experiment. The experiment ran for over two years and became a backbone of my workflow for the platform's largest market by user volume. At least three other team members adopted it, including the video team manager. A second supervisor reviewed and approved the document. 
-    </p>
-    <p>
-      This is what a real business case for LLM adoption looks like: a disputed proposal, sustained evidence-gathering, documented objections, and a two-year production track record.
+      The proposal addressed executive data security concerns and successfully defended the infrastructure's privacy advantages. Upon approval, the experiment evolved into a critical production backbone for our largest user market, running continuously for over two years. I scaled adoption across the wider department by training multiple multi-team cohorts, including the video moderation team manager, establishing a documented track record of rigorous, evidence-backed AI implementation.
     </p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">03</span>
-      <h3>Independent LLM Audit Under Production Constraints</h3>
+      <h3>Independent LLM QA Auditing, Ticket Triage &amp; Queue Management</h3>
     </div>
     <p>
-      When production LLMs entered a high-stakes publishing workflow, the existing quality rubric, which teams had built for human analysts, produced inaccurate evaluations of model output.
+      When automated language models were deployed into high-stakes publishing workflows, existing evaluation rubrics designed for human analysts failed to capture critical model edge cases and hallucinations. 
     </p>
     <p>
-      I built systematic QA infrastructure independently. Using macOS Shortcuts and Bash scripts, I designed and executed an adversarial auditing methodology that captured and catalogued over 1,000 model outputs across factual inaccuracy, editorial violations, and privacy failures, with no dedicated infrastructure, while meeting simultaneous SLA obligations.
+      To resolve these hidden product errors, I independently built a lightweight quality assurance infrastructure. Using macOS Shortcuts and Bash scripts, I designed an adversarial auditing framework that captured and cataloged over 1,000 live model outputs across factual inaccuracy, compliance gaps, and formatting bugs while maintaining daily turnaround SLAs. The audit exposed an implicit 12% peak error rate, which I presented to organizational leadership to immediately recalibrate cross-functional QA standards and update frontline guidelines.
     </p>
     <p>
-      The audit surfaced error rates exceeding 10%, peaking at 12%. I presented the findings to organizational leadership, and the findings directly shaped subsequent QA calibration processes.
-    </p>
-    <p>
-      In parallel, I applied the same methodology as a continuous accuracy check, verifying LLM-generated notifications against primary government source data in real time. This extended the workflow I built in Section 02 into an ongoing production accuracy layer.
-    </p>
-    <p>
-      Separately, as OpenAI LLMs expanded into every part of the production workflow after 2022, duplicate push notification series multiplied exponentially. I had previously submitted a formal ticket proposing a merge feature for deduplicating these series across geofenced notification sets. Engineering built it, though it covered only push series with associated video. To address the rest, I manually merged hundreds of additional push series during daily work, alongside unrelated SLA quotas, cleaning up the narrative record for communities amidst ongoing major emergencies documented in the push series.
-    </p>
-    <p>
-      The combined work showed that lightweight, human-driven audit infrastructure catches failure modes that automated pipelines structurally cannot, and that catching them carries measurable operational impact.
+      In parallel, I managed continuous error-triage queues, converting automated system discrepancies into clear engineering tickets to bridge the communication gap between support operations and backend developers. To mitigate exponential model duplication errors after 2022, I spearheaded a merge workflow for geofenced notification sets, manually resolving and deduplicating over 100 broken notification paths to maintain production integrity under pressure.
     </p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">04</span>
-      <h3>Cross-Functional Program Delivery: Creators Rollout</h3>
+      <h3>Cross-Functional Enablement Delivery: Multimedia Creators Rollout</h3>
     </div>
     <p>
-      Citizen's shift to becoming a video-first platform required building a capability across Marketing and Product that did not yet exist: onboarding influencer creators to editorial and QA standards at scale.
+      Citizen’s transformation into a video-first platform required building an operational capability that did not yet exist within the organization: onboarding and training external creators to rigid editorial and quality assurance standards at scale.
     </p>
     <p>
-      I served as subject matter expert and training lead for that rollout. Over several months I worked directly with the Head of Marketing, a Product Manager, and the manager of the video moderation team across Slack, Zoom, email, and the proprietary platform OS, building their capability in editorial workflow, quality standards, and platform operations. That included teaching the Marketing team to read Tableau metrics, particularly signals of negative user sentiment when a push series pushed too far, and logging each creator push series meticulously to find what worked and where the limits were.
+      I served as the primary subject matter expert and technical enablement lead for this rollout. Over several months, I partnered directly with the Head of Marketing, Product Managers, and moderation teams across Zoom, Slack, and the proprietary platform OS to engineer comprehensive learning assets. 
     </p>
     <p>
-      The program contributed to significant DAU growth and ultimately to Citizen's video partnership with Axon Fusus, integrating real-time video into government Real-Time Safety centers.
+      I authored step-by-step written standard operating procedures (SOPs) on Slite and recorded clear, asynchronous tutorial videos using Loom to explain shifting system logic. Additionally, I trained the Marketing team to monitor negative user sentiment signals inside Tableau dashboards. This cross-functional training program contributed directly to significant DAU growth and supported a strategic enterprise video integration partnership with Axon Fusus for public safety centers.
     </p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">05</span>
-      <h3>Governance, Playbooks &amp; Adoption Without Authority</h3>
+      <h3>Governance, Playbooks &amp; Prototype Adoption Without Authority</h3>
     </div>
     <ul>
-      <li><strong>Playbook institutionalization.</strong> I built 7+ AI workflow playbooks that a 100+ person analyst organization adopted, standardizing pipeline diagnostics, prompt engineering protocols, and governance standards. I authored the SOPs; the team ran them autonomously.</li>
-      <li><strong>Prototype-to-production.</strong> I brought at least three workflow opportunities to internal hackathons. Two involved automation, and leadership approved and integrated both: one surfaced additional behavioral metrics, including signals of user disinterest, directly in the proprietary production OS; the other automated a manual summarization task management assigned to the team, and engineering shipped it in 2026. Leadership twice approved a third proposal, integrating a public real-time data source into the app, which reached a working prototype.</li>
-      <li><strong>Safety policy re-engineering.</strong> I drove mission-critical changes to notification nomenclature and user safety policy, managing high-stakes missing persons cases involving high-risk dementia patients under tight operational constraints.</li>
+      <li><strong>Playbook Institutionalization:</strong> Authored and institutionalized 7+ technical AI workflow playbooks adopted across a 100+ person analyst organization. These documents standardized pipeline diagnostics, prompt engineering rules, and verification guardrails, allowing distributed teams to run processes autonomously.</li>
+      <li><strong>Prototype-to-Production Triage:</strong> Brought three high-leverage automation opportunities to internal hackathons, securing executive sign-off for core product updates. I designed an interface tool that surfaced user sentiment signals directly within the internal platform OS, and engineered a manual task-summarization utility shipped into production.</li>
+      <li><strong>Safety Policy Re-engineering:</strong> Directed mission-critical updates to operational guidelines and user notification nomenclature, managing high-stakes emergency workflows under tight regulatory compliance windows during missing persons cases involving high-risk dementia patients.</li>
     </ul>
   </section>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">06</span>
-      <h3>Documentation, Research &amp; Institutional Operations</h3>
+      <h3>Technical Documentation, Systems Mapping &amp; Compliance Operations</h3>
     </div>
     <ul>
-      <li>Over 15 years I have created technical documentation, SOPs, compliance materials, and structured knowledge systems for academic, media, and institutional clients, translating complex technical and domain-specific material into clear, maintainable frameworks.</li>
-      <li>I co-authored <em>Learning to Use the Cherokee Verb</em>, managing structured linguistic data validation pipelines and multi-contributor version control while preserving raw source fidelity across a long-running institutional project.</li>
-      <li>At a clinical psychology laboratory, I administered structured evaluations under federal compliance guidelines and synthesized qualitative and quantitative data into legally and medically defensible documentation.</li>
+      <li>Over 15 years of experience creating technical reference materials, standard operating procedures, and searchable knowledge management frameworks for corporate, media, and institutional clients, translating abstract software structures into clear documentation.</li>
+      <li>Co-authored <em>Learning to Use the Cherokee Verb</em>, designing structured linguistic data validation pipelines, morphological classification rules, and multi-contributor version control systems to protect data fidelity.</li>
+      <li>Administered structured clinical evaluations within a psychology research laboratory under strict federal regulatory compliance protocols, translating detailed qualitative metrics into legally and medically defensible audit materials.</li>
     </ul>
   </section>
 
