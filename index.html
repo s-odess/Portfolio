@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,190 +10,187 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-``` hi
-:root {
-  --ink: #1a1a18;
-  --ink-light: #4a4a45;
-  --ink-muted: #8a8a82;
-  --rule: #d8d5cc;
-  --bg: #f7f5f0;
-  --bg-section: #f2f0eb;
-  --accent: #2d4a3e;
-  --serif: 'Libre Baskerville', Georgia, serif;
-  --sans: 'DM Sans', sans-serif;
-}
+    :root {
+      --ink: #1a1a18;
+      --ink-light: #4a4a45;
+      --ink-muted: #8a8a82;
+      --rule: #d8d5cc;
+      --bg: #f7f5f0;
+      --bg-section: #f2f0eb;
+      --accent: #2d4a3e;
+      --serif: 'Libre Baskerville', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
 
-html { font-size: 16px; scroll-behavior: smooth; }
+    html { font-size: 16px; scroll-behavior: smooth; }
 
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-weight: 300;
-  line-height: 1.7;
-  min-height: 100vh;
-}
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
 
-.page {
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 80px 40px 120px;
-  opacity: 0;
-  animation: fadeIn 0.6s ease forwards;
-}
+    .page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 80px 40px 120px;
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+    }
 
-@keyframes fadeIn { to { opacity: 1; } }
+    @keyframes fadeIn { to { opacity: 1; } }
 
-.hero {
-  padding-bottom: 64px;
-  margin-bottom: 64px;
-  border-bottom: 1px solid var(--rule);
-}
+    .hero {
+      padding-bottom: 64px;
+      margin-bottom: 64px;
+      border-bottom: 1px solid var(--rule);
+    }
 
-.hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(2.4rem, 6vw, 3.2rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  color: var(--ink);
-  margin-bottom: 12px;
-}
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 6vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
 
-.hero h2 {
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 32px;
-}
+    .hero h2 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 32px;
+    }
 
-.hero p {
-  font-size: 1.08rem;
-  color: var(--ink-light);
-  margin-bottom: 20px;
-  max-width: 620px;
-}
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--ink-light);
+      margin-bottom: 20px;
+      max-width: 620px;
+    }
 
-.hero p:last-child { margin-bottom: 0; }
+    .hero p:last-child { margin-bottom: 0; }
 
-.section {
-  padding: 48px 0;
-  border-bottom: 1px solid var(--rule);
-  position: relative;
-}
+    .section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
 
-.section:last-of-type { border-bottom: none; }
+    .section:last-of-type { border-bottom: none; }
 
-.section-header {
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-  margin-bottom: 28px;
-}
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
 
-.section-num {
-  font-family: var(--serif);
-  font-size: 0.8rem;
-  font-style: italic;
-  color: var(--ink-muted);
-  letter-spacing: 0.06em;
-  flex-shrink: 0;
-  padding-top: 3px;
-}
+    .section-num {
+      font-family: var(--serif);
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--ink-muted);
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+      padding-top: 3px;
+    }
 
-.section h3 {
-  font-family: var(--serif);
-  font-size: 1.28rem;
-  font-weight: 700;
-  color: var(--ink);
-  line-height: 1.25;
-}
+    .section h3 {
+      font-family: var(--serif);
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+    }
 
-.section p {
-  font-size: 0.97rem;
-  color: var(--ink-light);
-  margin-bottom: 16px;
-}
+    .section p {
+      font-size: 0.97rem;
+      color: var(--ink-light);
+      margin-bottom: 16px;
+    }
 
-.section p:last-child { margin-bottom: 0; }
+    .section p:last-child { margin-bottom: 0; }
 
-.section ul {
-  padding-left: 46px;
-  margin-bottom: 20px;
-}
+    .section ul {
+      padding-left: 46px;
+      margin-bottom: 20px;
+    }
 
-.section li {
-  font-size: 0.97rem;
-  color: var(--ink-light);
-  margin-bottom: 12px;
-  position: relative;
-}
+    .section li {
+      font-size: 0.97rem;
+      color: var(--ink-light);
+      margin-bottom: 12px;
+      position: relative;
+    }
 
-.section li:last-child { margin-bottom: 0; }
+    .section li:last-child { margin-bottom: 0; }
 
-.section.perspective {
-  background: var(--bg-section);
-  padding: 48px 40px;
-  border-radius: 6px;
-  border: 1px solid var(--rule);
-  margin: 32px 0;
-}
+    .section.perspective {
+      background: var(--bg-section);
+      padding: 48px 40px;
+      border-radius: 6px;
+      border: 1px solid var(--rule);
+      margin: 32px 0;
+    }
 
-.section.perspective .section-num { color: var(--accent); }
-.section.perspective p { color: var(--ink); font-size: 1.02rem; }
+    .section.perspective .section-num { color: var(--accent); }
+    .section.perspective p { color: var(--ink); font-size: 1.02rem; }
 
-.contact {
-  padding-top: 56px;
-  margin-top: 8px;
-}
+    .contact {
+      padding-top: 56px;
+      margin-top: 8px;
+    }
 
-.contact p {
-  font-size: 0.9rem;
-  color: var(--ink-muted);
-  line-height: 2;
-}
+    .contact p {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 2;
+    }
 
-.contact a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
 
-.contact a:hover {
-  color: var(--ink);
-  border-bottom-color: var(--ink);
-}
+    .contact a:hover {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
 
-.section:not(.perspective) {
-  padding-left: 0;
-  border-left: 3px solid transparent;
-  transition: border-color 0.25s ease, padding-left 0.25s ease;
-}
+    .section:not(.perspective) {
+      padding-left: 0;
+      border-left: 3px solid transparent;
+      transition: border-color 0.25s ease, padding-left 0.25s ease;
+    }
 
-.section:not(.perspective):hover {
-  border-left-color: var(--accent);
-  padding-left: 16px;
-}
+    .section:not(.perspective):hover {
+      border-left-color: var(--accent);
+      padding-left: 16px;
+    }
 
-.divider {
-  border: none;
-  border-top: 1px solid var(--rule);
-  margin: 12px 0 32px;
-}
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 12px 0 32px;
+    }
 
-@media (max-width: 600px) {
-  .page { padding: 48px 24px 80px; }
-  .section ul { padding-left: 24px; }
-  .section-header { flex-direction: column; gap: 6px; align-items: flex-start; }
-  .section li { margin-bottom: 14px; }
-  .section.perspective { padding: 32px 24px; }
-}
-```
-
+    @media (max-width: 600px) {
+      .page { padding: 48px 24px 80px; }
+      .section ul { padding-left: 24px; }
+      .section-header { flex-direction: column; gap: 6px; align-items: flex-start; }
+      .section li { margin-bottom: 14px; }
+      .section.perspective { padding: 32px 24px; }
+    }
   </style>
 </head>
 <body>
@@ -204,109 +200,126 @@ body {
     <h1>Shoshone Odess</h1>
     <h2>AI Process &amp; Productivity &nbsp;·&nbsp; LLM Workflow Design &nbsp;·&nbsp; Human-in-the-Loop QA</h2>
     <p>
-      I identify where AI can drive measurable operational improvement, build the case for it, implement it, measure it honestly, and bring the people along who need to change how they work.
+      I identify where automation can drive measurable operational improvement, build the case for it, implement it, measure it honestly, and coordinate the team.
     </p>
     <p>
-      At scale, the gap between plausible model output and verified accuracy is rarely visible from inside the system. I build the frameworks that surface it, and the governance structures that contain it.
+      At scale, the gap between plausible model output and verified accuracy is rarely visible from inside the system. I build the frameworks that surface it and the governance structures that contain it.
     </p>
   </header>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">01</span>
-      <h3>Enterprise LLM Deployment: Full Lifecycle</h3>
+      <h3>Automation Pipeline: Build, Measure, Confirm</h3>
     </div>
     <p>
-      When Citizen began evaluating LLMs for converting terse government emergency data into user-facing notifications, I worked to develop frameworks for assessing whether model output would hold up at production scale: factually, editorially, and under SLA constraints.
+      Before LLMs entered Citizen's production workflow, I co-built an automated pipeline ingesting real-time government emergency data into the platform using Python, JSON payloads, and Zapier. The goal was operational throughput: cutting the manual load of translating terse official source data into user-facing notifications in a service area handling significant volume.
     </p>
     <p>
-      I co-built an automated pipeline from an official source using Python, JSON payloads, and Zapier, increasing operational throughput nearly threefold in that service area.
+      The pipeline increased throughput nearly threefold.
     </p>
     <p>
-      After deployment, I designed the performance measurement framework and directed the engineering build of Tableau dashboards tracking CTR, push volume, and other metrics. Retention uplift was confirmed via Tableau.
-    </p>
-    <p>
-      The full cycle (pipeline build, measurement design, outcome tracking) ran on a platform serving 9 million users with over 10 billion notifications delivered.
+      After deployment, I designed the performance measurement framework and directed the engineering team's build of Tableau dashboards tracking CTR, push volume, and related metrics. Tableau data confirmed the retention uplift. The pipeline ran continuously on a platform that serves 9 million users and has delivered over 10 billion notifications.
     </p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">02</span>
-      <h3>Independent LLM Audit Under Production Constraints</h3>
+      <h3>LLM Business Case: From Experiment to Backbone</h3>
     </div>
     <p>
-      When production LLMs entered a high-stakes publishing workflow, the existing quality rubric (designed for human analysts) produced inaccurate evaluations of model output. 
+      When Citizen began evaluating LLMs for converting terse government emergency data into user-facing notifications, I built frameworks for assessing whether model output would hold up at production scale: factually, editorially, and under SLA constraints.
     </p>
     <p>
-      I built a systematic QA infrastructure independently. Using macOS Shortcuts and Bash scripts, I designed and executed an adversarial auditing methodology that captured and catalogued over 1,000 model outputs across factual inaccuracy, editorial violations, and privacy failures, without dedicated infrastructure, and without being asked.
+      The core experiment used ChatGPT Enterprise to translate real-time first-responder data from a government source into context-rich narratives, adding granular detail that no other source in our workflow provided. I built the case for it in a formal written document that grew over several weeks into at least five case studies, with Tableau data tracking CTR, push volume, retention, estimated net growth, share/disable ratio, and video quantity.
     </p>
     <p>
-      The audit surfaced error rates exceeding 10%, peaking at 12%. I presented the findings to organizational leadership; they directly informed subsequent QA calibration processes. 
+      The government source carried stronger privacy protections than other existing sources, and the granular detail it provided was exactly what users consistently asked for. My supervisor approved it, but raised several possible objections, which I documented in the proposal before I continued the experiment. The experiment ran for over two years and became a backbone of my workflow for the platform's largest market by user volume. At least three other team members adopted it, including the video team manager. A second supervisor reviewed and approved the document. 
     </p>
     <p>
-      I then extended the same methodology to two additional use cases: ongoing output verification of LLM-generated notifications against primary government source data, and LLM-assisted deduplication of over 100 redundant notification series generated from unverified user-generated content where no authoritative narrative context existed. I authored a formal written business case assessing the expected impact and risks of a new automation workflow, presented it to management under critical questioning, and secured approval to deploy it. 
-    </p>
-    <p>
-      The project demonstrated that lightweight, human-driven audit infrastructure surfaces failure modes that automated pipelines are structurally unable to detect, and doing so has measurable operational impact.
+      This is what a real business case for LLM adoption looks like: a disputed proposal, sustained evidence-gathering, documented objections, and a two-year production track record.
     </p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">03</span>
-      <h3>Cross-Functional Program Delivery: Creators Rollout</h3>
+      <h3>Independent LLM Audit Under Production Constraints</h3>
     </div>
     <p>
-      Citizen's shift to a video-first platform required building a new capability across Marketing and Product that didn't exist: the ability to onboard influencer creators to our editorial and QA standards at scale.
+      When production LLMs entered a high-stakes publishing workflow, the existing quality rubric, which teams had built for human analysts, produced inaccurate evaluations of model output.
     </p>
     <p>
-      I served as a de facto subject matter expert and training lead for that rollout. Working directly with the Head of Marketing and a Product Manager across Slack, Zoom, email, and the proprietary platform OS, I co-built their capability in editorial workflow, quality standards, and platform operations so they could execute influencer onboarding independently.
+      I built systematic QA infrastructure independently. Using macOS Shortcuts and Bash scripts, I designed and executed an adversarial auditing methodology that captured and catalogued over 1,000 model outputs across factual inaccuracy, editorial violations, and privacy failures, with no dedicated infrastructure, while meeting simultaneous SLA obligations.
     </p>
     <p>
-      The program contributed to significant DAU growth and ultimately to Citizen's video partnership with Axon, integrating real-time video into government RTS centers. 
+      The audit surfaced error rates exceeding 10%, peaking at 12%. I presented the findings to organizational leadership, and the findings directly shaped subsequent QA calibration processes.
+    </p>
+    <p>
+      In parallel, I applied the same methodology as a continuous accuracy check, verifying LLM-generated notifications against primary government source data in real time. This extended the workflow I built in Section 02 into an ongoing production accuracy layer.
+    </p>
+    <p>
+      Separately, as OpenAI LLMs expanded into every part of the production workflow after 2022, duplicate push notification series multiplied exponentially. I had previously submitted a formal ticket proposing a merge feature for deduplicating these series across geofenced notification sets. Engineering built it, though it covered only push series with associated video. To address the rest, I manually merged hundreds of additional push series during daily work, alongside unrelated SLA quotas, cleaning up the narrative record for communities amidst ongoing major emergencies documented in the push series.
+    </p>
+    <p>
+      The combined work showed that lightweight, human-driven audit infrastructure catches failure modes that automated pipelines structurally cannot, and that catching them carries measurable operational impact.
     </p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">04</span>
-      <h3>Governance, Playbooks &amp; Adoption Without Authority</h3>
+      <h3>Cross-Functional Program Delivery: Creators Rollout</h3>
     </div>
-    <ul>
-      <li><strong>Playbook institutionalization.</strong> Built 7+ AI workflow playbooks adopted across a 100+ person analyst organization, standardizing pipeline diagnostics, prompt engineering protocols, and governance standards. Authored the SOPs; the team ran them autonomously.</li>
-      <li><strong>Prototype-to-production.</strong> Identified two automation opportunities that were not on anyone's roadmap, built working prototypes to demonstrate feasibility and ROI, and secured cross-functional technical buy-in without direct authority. Both were approved and integrated into core production infrastructure.</li>
-      <li><strong>Flagging model QA loop.</strong> Evaluated outputs of engineering-built automated flagging models and provided structured performance feedback to the engineering team, closing the quality loop between model behavior and production accuracy standards.</li>
-      <li><strong>Executive risk reporting.</strong> Presented structured LLM risk assessments and quantified error-rate analyses to organizational leadership, developing investment-level recommendations that shifted platform QA calibration and drove prioritization of verified accuracy standards.</li>
-      <li><strong>Safety policy re-engineering.</strong> Drove mission-critical changes to notification nomenclature and user safety policy, managing high-stakes missing persons cases involving high-risk dementia patients under tight operational constraints.</li>
-    </ul>
+    <p>
+      Citizen's shift to becoming a video-first platform required building a capability across Marketing and Product that did not yet exist: onboarding influencer creators to editorial and QA standards at scale.
+    </p>
+    <p>
+      I served as subject matter expert and training lead for that rollout. Over several months I worked directly with the Head of Marketing, a Product Manager, and the manager of the video moderation team across Slack, Zoom, email, and the proprietary platform OS, building their capability in editorial workflow, quality standards, and platform operations. That included teaching the Marketing team to read Tableau metrics, particularly signals of negative user sentiment when a push series pushed too far, and logging each creator push series meticulously to find what worked and where the limits were.
+    </p>
+    <p>
+      The program contributed to significant DAU growth and ultimately to Citizen's video partnership with Axon Fusus, integrating real-time video into government Real-Time Safety centers.
+    </p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <span class="section-num">05</span>
+      <h3>Governance, Playbooks &amp; Adoption Without Authority</h3>
+    </div>
+    <ul>
+      <li><strong>Playbook institutionalization.</strong> I built 7+ AI workflow playbooks that a 100+ person analyst organization adopted, standardizing pipeline diagnostics, prompt engineering protocols, and governance standards. I authored the SOPs; the team ran them autonomously.</li>
+      <li><strong>Prototype-to-production.</strong> I brought at least three workflow opportunities to internal hackathons. Two involved automation, and leadership approved and integrated both: one surfaced additional behavioral metrics, including signals of user disinterest, directly in the proprietary production OS; the other automated a manual summarization task management assigned to the team, and engineering shipped it in 2026. Leadership twice approved a third proposal, integrating a public real-time data source into the app, which reached a working prototype.</li>
+      <li><strong>Safety policy re-engineering.</strong> I drove mission-critical changes to notification nomenclature and user safety policy, managing high-stakes missing persons cases involving high-risk dementia patients under tight operational constraints.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">06</span>
       <h3>Documentation, Research &amp; Institutional Operations</h3>
     </div>
     <ul>
       <li>Over 15 years I have created technical documentation, SOPs, compliance materials, and structured knowledge systems for academic, media, and institutional clients, translating complex technical and domain-specific material into clear, maintainable frameworks.</li>
-      <li>Co-authored <em>Learning to Use the Cherokee Verb</em>, managing structured linguistic data validation pipelines and multi-contributor version control while preserving raw source fidelity across a long-running institutional project.</li>
-      <li>At a clinical psychology laboratory, administered structured evaluations under federal compliance guidelines and synthesized qualitative and quantitative data into legally and medically defensible documentation.</li>
+      <li>I co-authored <em>Learning to Use the Cherokee Verb</em>, managing structured linguistic data validation pipelines and multi-contributor version control while preserving raw source fidelity across a long-running institutional project.</li>
+      <li>At a clinical psychology laboratory, I administered structured evaluations under federal compliance guidelines and synthesized qualitative and quantitative data into legally and medically defensible documentation.</li>
     </ul>
   </section>
 
   <section class="section perspective">
     <div class="section-header">
-      <span class="section-num">06</span>
+      <span class="section-num">07</span>
       <h3>Perspective</h3>
     </div>
     <p>
-      Scaling AI systems and honestly evaluating them require different orientations. Production environments are optimized to surface what works, which means they tend to obscure what doesn't, especially at the boundaries of model reliability.
+      Scaling language AI systems and honestly evaluating them require different orientations. Production environments optimize to surface what works, which means they tend to obscure what does not, particularly at the boundaries of model reliability.
     </p>
     <p>
-      Human oversight from outside the primary optimization loop surfaces these gaps. It also builds the institutional trust that lets organizations move faster on AI adoption, because the measurement infrastructure exists to catch failures early rather than at scale.
+      Human oversight from outside the primary optimization loop surfaces these gaps. It also builds the institutional trust that lets organizations move faster on AI adoption, because the measurement infrastructure catches failures early rather than at scale.
     </p>
     <p>
-      This function doesn't disappear as models improve. It evolves in form and focus, from catching factual errors to evaluating reasoning quality, from single-model audits to cross-model governance. The need for structured, honest measurement is durable.
+      This function does not disappear as models improve. It evolves in form and focus, shifting from catching factual errors to evaluating reasoning quality, from single-model audits to cross-model governance. The need for structured, honest measurement is durable.
     </p>
   </section>
 
