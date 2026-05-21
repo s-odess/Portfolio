@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Shoshone Odess
-  </title>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoshone Odess</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #1a1a18;
-      --ink-light: #4a4a45;
-      --ink-muted: #8a8a82;
+      --ink: #111111;
+      --ink-light: #1e1e1c;
+      --ink-muted: #6a6a62;
       --rule: #d8d5cc;
       --bg: #f7f5f0;
       --bg-section: #f2f0eb;
       --accent: #2d4a3e;
-      --serif: 'Libre Baskerville', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
+      --accent-light: #3d6354;
+      --serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+      --sans: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
-    html { font-size: 16px; scroll-behavior: smooth; }
+    html { font-size: 17px; scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
       color: var(--ink);
       font-family: var(--sans);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.7;
       min-height: 100vh;
     }
@@ -63,25 +62,25 @@
 
     .hero h2 {
       font-family: var(--sans);
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 500;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 32px;
+      margin-bottom: 36px;
     }
 
     .hero p {
-      font-size: 1.08rem;
+      font-size: 1.12rem;
       color: var(--ink-light);
-      margin-bottom: 20px;
-      max-width: 620px;
+      margin-bottom: 16px;
+      max-width: 600px;
     }
 
     .hero p:last-child { margin-bottom: 0; }
 
     .section {
-      padding: 48px 0;
+      padding: 52px 0;
       border-bottom: 1px solid var(--rule);
       position: relative;
     }
@@ -107,16 +106,16 @@
 
     .section h3 {
       font-family: var(--serif);
-      font-size: 1.28rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--ink);
-      line-height: 1.25;
+      line-height: 1.3;
     }
 
     .section p {
-      font-size: 0.97rem;
+      font-size: 1.0rem;
       color: var(--ink-light);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .section p:last-child { margin-bottom: 0; }
@@ -127,10 +126,9 @@
     }
 
     .section li {
-      font-size: 0.97rem;
+      font-size: 1.0rem;
       color: var(--ink-light);
-      margin-bottom: 12px;
-      position: relative;
+      margin-bottom: 10px;
     }
 
     .section li:last-child { margin-bottom: 0; }
@@ -138,13 +136,66 @@
     .section.perspective {
       background: var(--bg-section);
       padding: 48px 40px;
-      border-radius: 6px;
+      border-radius: 4px;
       border: 1px solid var(--rule);
       margin: 32px 0;
     }
 
     .section.perspective .section-num { color: var(--accent); }
-    .section.perspective p { color: var(--ink); font-size: 1.02rem; }
+    .section.perspective p { color: var(--ink); font-size: 1.0rem; }
+
+    .section:not(.perspective) {
+      padding-left: 0;
+      border-left: 3px solid transparent;
+      transition: border-color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .section:not(.perspective):hover {
+      border-left-color: var(--accent);
+      padding-left: 14px;
+    }
+
+    /* SVG diagram wrapper */
+    .diagram {
+      margin: 32px 0 8px;
+      overflow: visible;
+    }
+
+    .diagram svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* diagram text */
+    .diagram text {
+      font-family: var(--sans), sans-serif;
+    }
+
+    .metric {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 6px;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 40px;
+      margin: 24px 0;
+      flex-wrap: wrap;
+    }
+
+    .metric-block { display: flex; flex-direction: column; }
 
     .contact {
       padding-top: 56px;
@@ -154,31 +205,17 @@
     .contact p {
       font-size: 0.9rem;
       color: var(--ink-muted);
-      line-height: 2;
+      line-height: 2.2;
     }
 
     .contact a {
       color: var(--accent);
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease, color 0.2s ease;
+      transition: border-color 0.2s ease;
     }
 
-    .contact a:hover {
-      color: var(--ink);
-      border-bottom-color: var(--ink);
-    }
-
-    .section:not(.perspective) {
-      padding-left: 0;
-      border-left: 3px solid transparent;
-      transition: border-color 0.25s ease, padding-left 0.25s ease;
-    }
-
-    .section:not(.perspective):hover {
-      border-left-color: var(--accent);
-      padding-left: 16px;
-    }
+    .contact a:hover { border-bottom-color: var(--accent); }
 
     .divider {
       border: none;
@@ -189,447 +226,340 @@
     @media (max-width: 600px) {
       .page { padding: 48px 24px 80px; }
       .section ul { padding-left: 24px; }
-      .section-header { flex-direction: column; gap: 6px; align-items: flex-start; }
-      .section li { margin-bottom: 14px; }
+      .section-header { flex-direction: column; gap: 6px; }
       .section.perspective { padding: 32px 24px; }
+      .metrics-row { gap: 24px; }
     }
-  
-    .desktop-diagram { display: block; }
-    .mobile-diagram { display: none; }
-    @media (max-width: 740px) {
-      .desktop-diagram { display: none; }
-      .mobile-diagram { display: block; }
-    }
-    .diagram-svg { width: 100%; height: auto; display: block; }
-
   </style>
- </head>
- <body>
-  <div class="page">
-   <header class="hero">
-    <h1>
-     Shoshone Odess
-    </h1>
-    <h2>
-     Technical Enablement  ·  Process Optimization  ·  LLM Workflow Architecture  ·  Quality Assurance
-    </h2>
-    <p>
-     I identify where process automation and clear documentation can drive measurable operational improvement, build the business case for adoption, engineer the technical pipelines, and enable cross-functional teams to execute with confidence.
-    </p>
-    <p>
-     At scale, the gap between rapid software feature updates and verified team execution is rarely visible from inside the system. I build the training frameworks that surface gaps and the governance structures that de-risk technical change.
-    </p>
-   </header>
-   <section class="section">
-    <div class="section-header">
-     <span class="section-num">
-      01
-     </span>
-     <h3>
-      Automation Pipeline &amp; Operational Analytics: Build, Measure, Confirm
-     </h3>
-    </div>
-    <p>
-     Before LLMs entered Citizen's production environment, I co-built an automated pipeline ingesting real-time government emergency data into the platform using Python, JSON payloads, and Zapier. The goal was operational throughput: eliminating manual bottlenecks involved in translating terse official source data into context-rich user-facing alerts in a high-volume market.
-    </p>
-    <p>
-     The pipeline increased service area throughput nearly threefold (280%) and retention fourfold. I recorded clear, asynchronous tutorial videos using Loom to explain the process by which we built the pipeline for technical and nontechnical internal audiences.
-    </p>
-    <div style="margin: 28px 0 32px;">
-     <svg preserveaspectratio="xMidYMid meet" style="height:auto" viewbox="0 0 360 520" width="100%" xmlns="http://www.w3.org/2000/svg">
-      <style>
-       .bg { fill: #ffffff; }
-    .box { fill: #ffffff; stroke: #d8d5cc; stroke-width: 1.5; rx: 8; }
-    .title { font-family: 'Libre Baskerville', Georgia, serif; font-size: 16px; font-weight: 700; fill: #1a1a18; }
-    .label { font-family: 'DM Sans', sans-serif; font-size: 14px; fill: #1a1a18; }
-    .sub { font-family: 'DM Sans', sans-serif; font-size: 12px; fill: #4a4a45; }
-    .arrow { stroke: #2d4a3e; stroke-width: 2; fill: none; marker-end: url(#a1); }
-      
-    .desktop-diagram { display: block; }
-    .mobile-diagram { display: none; }
-    @media (max-width: 740px) {
-      .desktop-diagram { display: none; }
-      .mobile-diagram { display: block; }
-    }
-    .diagram-svg { width: 100%; height: auto; display: block; }
+</head>
+<body>
+<div class="page">
 
-  </style>
-      <rect fill="#f7f5f0" height="520" width="360">
-      </rect>
-      <defs>
-       <marker id="a1" markerheight="6" markerwidth="8" orient="auto" refx="4" refy="3">
-        <polygon fill="#2d4a3e" points="0 0, 8 3, 0 6">
-        </polygon>
-       </marker>
-      </defs>
-      <text class="title" x="18" y="28">
-       Automation Pipeline
-      </text>
-      <text class="sub" x="18" y="48">
-       Build, Measure, Confirm
-      </text>
-      <rect class="box" height="80" width="300" x="30" y="70">
-      </rect>
-      <text class="label" text-anchor="middle" x="180" y="100">
-       Government Emergency Data
-      </text>
-      <text class="sub" text-anchor="middle" x="180" y="120">
-       real-time • live source
-      </text>
-      <line class="arrow" x1="180" x2="180" y1="150" y2="175">
-      </line>
-      <rect class="box" height="80" width="300" x="30" y="175">
-      </rect>
-      <text class="label" text-anchor="middle" x="180" y="205">
-       Python / JSON / Zapier
-      </text>
-      <text class="sub" text-anchor="middle" x="180" y="225">
-       automated ingestion
-      </text>
-      <line class="arrow" x1="180" x2="180" y1="255" y2="280">
-      </line>
-      <rect class="box" height="80" width="300" x="30" y="280">
-      </rect>
-      <text class="label" text-anchor="middle" x="180" y="310">
-       Citizen Platform
-      </text>
-      <text class="sub" text-anchor="middle" x="180" y="330">
-       9M users • 10B+ notifications
-      </text>
-      <line class="arrow" x1="180" x2="180" y1="360" y2="385">
-      </line>
-      <rect class="box" height="80" width="300" x="30" y="385">
-      </rect>
-      <text class="label" text-anchor="middle" x="180" y="415">
-       Tableau + Salesforce
-      </text>
-      <text class="sub" text-anchor="middle" x="180" y="435">
-       CTR, retention, velocity
-      </text>
-     </svg>
-    </div>
+  <header class="hero">
+    <h1>Shoshone Odess</h1>
+    <h2>Workflow Systems &nbsp;&middot;&nbsp; Model Output Evaluation &nbsp;&middot;&nbsp; Training &nbsp;&middot;&nbsp; Documentation</h2>
     <p>
-     Following deployment, I designed the comprehensive performance measurement framework and directed engineering teams in building centralized Tableau dashboards. By pulling and visualizing historical core metrics alongside Salesforce Service Cloud data trends, I monitored push volumes, click-through rates (CTR), and engagement velocity to identify workflow patterns and confirm sustained baseline user retention. The pipeline ran continuously on a platform serving 9 million users with over 10 billion notifications delivered.
-    </p>
-   </section>
-   <section class="section">
-    <div class="section-header">
-     <span class="section-num">
-      02
-     </span>
-     <h3>
-      Model-in-the-Loop Workflow: Tapping a Source Hiding in Plain Sight
-     </h3>
-    </div>
-    <p>
-     A live online government emergency data source was available to our team for years but was underutilized. Previous attempts to automate extraction from its drill-down feature, which contains the granular incident detail users need, failed repeatedly. I initially discovered that drill-down feature within our team and recognized what it contained: standardized first-responder jargon describing serious emergencies in real time, with a level of specificity that no other source in our workflow provided.
+      I build workflows that use language models where they help and catch them where they don't.
     </p>
     <p>
-     The jargon was the obstacle. Terse, highly abbreviated, and written for dispatch operators rather than general audiences, it was not usable in a user-facing notification workflow without translation. I introduced ChatGPT Enterprise with a customized editorial rulebook as the translation layer, building custom prompt guardrails to protect output integrity and converting raw incident data into clear, context-rich narratives. For example, I directed the LLM to never use “car” as a synonym for “vehicle,” as many emergencies involved trucks and motorcycles. I gave it specific logic to minimize context collapse errors by attributing information to reports and mentioning conflicting reports.
+      At Citizen I co-built the pipelines, wrote the editorial rules, ran the audits, and trained the teams. The work is in the sections below.
     </p>
-    <div style="margin: 28px 0 32px;">
-     <svg preserveaspectratio="xMidYMid meet" style="height:auto" viewbox="0 0 360 560" width="100%" xmlns="http://www.w3.org/2000/svg">
-      <style>
-       .title { font-family: 'Libre Baskerville', Georgia, serif; font-size: 16px; font-weight: 700; fill: #1a1a18; }
-    .label { font-family: 'DM Sans', sans-serif; font-size: 14px; fill: #1a1a18; }
-    .sub { font-family: 'DM Sans', sans-serif; font-size: 12px; fill: #4a4a45; }
-    .note { font-family: 'DM Sans', sans-serif; font-size: 11px; fill: #8a8a82; }
-    .box { fill: #ffffff; stroke: #d8d5cc; stroke-width: 1.5; rx: 8; }
-    .boxa { fill: #f2f0eb; stroke: #2d4a3e; stroke-width: 1.5; rx: 8; }
-    .arrow { stroke: #2d4a3e; stroke-width: 2; fill: none; marker-end: url(#a2); }
-      
-    .desktop-diagram { display: block; }
-    .mobile-diagram { display: none; }
-    @media (max-width: 740px) {
-      .desktop-diagram { display: none; }
-      .mobile-diagram { display: block; }
-    }
-    .diagram-svg { width: 100%; height: auto; display: block; }
+  </header>
 
-  </style>
-      <rect fill="#f7f5f0" height="560" width="360">
-      </rect>
-      <defs>
-       <marker id="a2" markerheight="6" markerwidth="8" orient="auto" refx="4" refy="3">
-        <polygon fill="#2d4a3e" points="0 0, 8 3, 0 6">
-        </polygon>
-       </marker>
-      </defs>
-      <text class="title" x="18" y="28">
-       Model-in-the-Loop Workflow
-      </text>
-      <rect class="box" height="100" width="300" x="30" y="50">
-      </rect>
-      <text class="label" text-anchor="middle" x="180" y="78">
-       Government Drill-Down Source
-      </text>
-      <text class="sub" text-anchor="middle" x="180" y="98">
-       terse first-responder jargon
-      </text>
-      <text class="note" text-anchor="middle" x="180" y="118">
-       e.g., "TC, VEH vs MC, NB I-5"
-      </text>
-      <text class="note" text-anchor="middle" x="180" y="135">
-       "multi-veh, lanes blocked"
-      </text>
-      <line class="arrow" x1="180" x2="180" y1="150" y2="175">
-      </line>
-      <rect class="boxa" height="140" width="300" x="30" y="175">
-      </rect>
-      <text class="label" text-anchor="middle" x="180" y="200">
-       ChatGPT Enterprise + Rulebook
-      </text>
-      <text class="sub" x="45" y="225">
-       • never "car" for "vehicle"
-      </text>
-      <text class="sub" x="45" y="245">
-       • attribute to reports
-      </text>
-      <text class="sub" x="45" y="265">
-       • surface conflicting reports
-      </text>
-      <text class="sub" x="45" y="285">
-       • custom prompt guardrails
-      </text>
-      <line class="arrow" x1="180" x2="180" y1="315" y2="340">
-      </line>
-      <rect class="box" height="90" width="300" x="30" y="340">
-      </rect>
-      <text class="label" text-anchor="middle" x="180" y="370">
-       Clear User-Facing Alert
-      </text>
-      <text class="sub" text-anchor="middle" x="180" y="392">
-       Major vehicle collision
-      </text>
-      <text class="sub" text-anchor="middle" x="180" y="410">
-       northbound I-5, multiple lanes
-      </text>
-      <text class="note" x="18" y="470">
-       Radio pipeline declining:
-      </text>
-      <text class="note" x="18" y="488">
-       encryption, errors, transcription
-      </text>
-      <text class="note" x="18" y="510">
-       → replaced by structured text
-      </text>
-     </svg>
-    </div>
-    <p>
-     The timing was critical. The first-responder radio pipeline, the original foundation of Citizen's workflow, was at risk. Human transcription errors, market changes, model intake failures, and increasing radio encryption were all reducing its reliability across key markets. The government URL workflow we built was a cleaner substitute. The signal-to-noise ratio exceeded radio: the source delivered structured text rather than audio, the jargon followed more standardized conventions than spoken dispatch, and the models grew increasingly capable at the translation task as they improved.
-    </p>
-    <p>
-     The use case centered on Citizen's largest market, where major vehicle collisions on freeways generated serious emergencies that users had no reliable way to track in real time. Incidents with corroborated text narratives regularly reached polygon notification distributions in the hundreds of thousands of users, often activating previously inactive accounts. Applied across hundreds of collision and fire emergencies per week, the integration made possible an estimated tens of millions of additional notifications over its two-plus year run.
-    </p>
-    <p>
-     The proposal faced initial organizational resistance. I documented the objections formally before proceeding, addressed data security and editorial concerns in writing, and received approval to run the experiment. It ran continuously for over two years, became the backbone of the workflow for that market, and at least three additional team members, including the video team manager, adopted it. In this way, we placed a model in the loop and maintained its effectiveness.
-    </p>
-   </section>
-   <section class="section">
+  <!-- 01 -->
+  <section class="section">
     <div class="section-header">
-     <span class="section-num">
-      03
-     </span>
-     <h3>
-      Independent LLM QA Auditing, Ticket Triage &amp; Queue Management
-     </h3>
+      <span class="section-num">01</span>
+      <h3>Automation Pipeline: Build, Measure, Confirm</h3>
     </div>
-    <p>
-     When automated language models entered high-stakes publishing workflows, existing evaluation rubrics designed for human analysts failed to capture critical model edge cases and hallucinations.
-    </p>
-    <div style="margin: 28px 0 32px;">
-     <svg preserveaspectratio="xMidYMid meet" style="height:auto" viewbox="0 0 360 540" width="100%" xmlns="http://www.w3.org/2000/svg">
-      <style>
-       .title { font-family: 'Libre Baskerville', Georgia, serif; font-size: 16px; font-weight: 700; fill: #1a1a18; }
-    .label { font-family: 'DM Sans', sans-serif; font-size: 14px; fill: #1a1a18; }
-    .sub { font-family: 'DM Sans', sans-serif; font-size: 12px; fill: #4a4a45; }
-    .big { font-family: 'Libre Baskerville', Georgia, serif; font-size: 32px; font-weight: 700; fill: #2d4a3e; }
-    .box { fill: #ffffff; stroke: #d8d5cc; stroke-width: 1.5; rx: 8; }
-    .arrow { stroke: #2d4a3e; stroke-width: 2; fill: none; marker-end: url(#a3); }
-      
-    .desktop-diagram { display: block; }
-    .mobile-diagram { display: none; }
-    @media (max-width: 740px) {
-      .desktop-diagram { display: none; }
-      .mobile-diagram { display: block; }
-    }
-    .diagram-svg { width: 100%; height: auto; display: block; }
 
-  </style>
-      <rect fill="#f7f5f0" height="540" width="360">
-      </rect>
-      <defs>
-       <marker id="a3" markerheight="6" markerwidth="8" orient="auto" refx="4" refy="3">
-        <polygon fill="#2d4a3e" points="0 0, 8 3, 0 6">
-        </polygon>
-       </marker>
-      </defs>
-      <text class="title" x="18" y="28">
-       Independent LLM QA Auditing
-      </text>
-      <rect class="box" height="80" width="300" x="30" y="50">
-      </rect>
-      <text class="label" text-anchor="middle" x="180" y="80">
-       1,000+ Live Model Outputs
-      </text>
-      <text class="sub" text-anchor="middle" x="180" y="102">
-       captured daily
-      </text>
-      <line class="arrow" x1="180" x2="180" y1="130" y2="155">
-      </line>
-      <rect class="box" height="90" width="300" x="30" y="155">
-      </rect>
-      <text class="label" text-anchor="middle" x="180" y="185">
-       OpenAI Codex / macOS Shortcuts / Bash
-      </text>
-      <text class="sub" text-anchor="middle" x="180" y="208">
-       adversarial auditing framework
-      </text>
-      <line class="arrow" x1="180" x2="180" y1="245" y2="270">
-      </line>
-      <rect class="box" height="100" width="300" x="30" y="270">
-      </rect>
-      <text class="label" text-anchor="middle" x="180" y="298">
-       Error Catalog
-      </text>
-      <text class="sub" x="60" y="322">
-       • Factual inaccuracy
-      </text>
-      <text class="sub" x="60" y="342">
-       • Compliance gaps
-      </text>
-      <text class="sub" x="60" y="362">
-       • Formatting bugs
-      </text>
-      <line class="arrow" x1="180" x2="180" y1="370" y2="395">
-      </line>
-      <rect class="box" fill="#f2f0eb" height="100" stroke="#2d4a3e" width="300" x="30" y="395">
-      </rect>
-      <text class="big" text-anchor="middle" x="180" y="435">
-       12%
-      </text>
-      <text class="label" text-anchor="middle" x="180" y="460">
-       Peak Error Rate
-      </text>
-      <text class="sub" text-anchor="middle" x="180" y="480">
-       reported to leadership
-      </text>
-     </svg>
+    <p>
+      I co-built an automated pipeline ingesting real-time government emergency data into the platform using Python, JSON payloads, and Zapier.
+      The goal was throughput: removing the manual step of translating dispatch data into user-facing alerts.
+    </p>
+
+    <div class="metrics-row">
+      <div class="metric-block">
+        <span class="metric">~3×</span>
+        <span class="metric-label">throughput increase</span>
+      </div>
+      <div class="metric-block">
+        <span class="metric">~4×</span>
+        <span class="metric-label">retention increase</span>
+      </div>
+      <div class="metric-block">
+        <span class="metric">9M+</span>
+        <span class="metric-label">users on platform</span>
+      </div>
     </div>
+
     <p>
-     To resolve these hidden product errors, I independently built a lightweight quality assurance infrastructure. Using OpenAI Codex, macOS Shortcuts and Bash scripts, I designed an adversarial auditing framework that captured and cataloged over 1,000 live model outputs across factual inaccuracy, compliance gaps, and formatting bugs while maintaining daily turnaround SLAs. The audit exposed an implicit 12% peak error rate, which I presented to organizational leadership to immediately recalibrate cross-functional QA standards and update frontline guidelines.
+      After deployment I designed the measurement layer: Tableau dashboards pulling from Salesforce Service Cloud,
+      tracking push volume, CTR, and engagement velocity. I also produced Loom tutorials explaining the pipeline
+      for technical and non-technical team members.
     </p>
-    <p>
-     In parallel, I managed continuous error-triage queues, converting automated system discrepancies into clear engineering tickets to bridge the communication gap between support operations and backend developers. To mitigate exponential model duplication errors after 2022, I spearheaded a merge workflow for geofenced notification sets, manually resolving and deduplicating over 100 broken notification paths to maintain production integrity under pressure.
-    </p>
-   </section>
-   <section class="section">
-    <div class="section-header">
-     <span class="section-num">
-      04
-     </span>
-     <h3>
-      Cross-Functional Enablement Delivery: Multimedia Creators Rollout
-     </h3>
+
+    <div class="diagram">
+      <svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#2d4a3e"/>
+          </marker>
+        </defs>
+
+        <!-- Node 1 -->
+        <rect x="10" y="70" width="140" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
+        <text x="80" y="96" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">Government</text>
+        <text x="80" y="112" text-anchor="middle" font-size="11" fill="#2a2a28">Emergency Data</text>
+
+        <!-- Arrow -->
+        <line x1="150" y1="100" x2="188" y2="100" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow1)"/>
+        <text x="169" y="93" text-anchor="middle" font-size="9" fill="#6a6a62">Python / Zapier</text>
+
+        <!-- Node 2 -->
+        <rect x="190" y="70" width="140" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
+        <text x="260" y="96" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">Citizen Platform</text>
+        <text x="260" y="112" text-anchor="middle" font-size="11" fill="#2a2a28">9M users</text>
+
+        <!-- Arrow -->
+        <line x1="330" y1="100" x2="368" y2="100" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow1)"/>
+        <text x="349" y="93" text-anchor="middle" font-size="9" fill="#6a6a62">measure</text>
+
+        <!-- Node 3 -->
+        <rect x="370" y="70" width="140" height="60" rx="3" fill="#f2f0eb" stroke="#2d4a3e" stroke-width="1.5"/>
+        <text x="440" y="96" text-anchor="middle" font-size="11" fill="#2d4a3e" font-weight="600">Tableau</text>
+        <text x="440" y="112" text-anchor="middle" font-size="11" fill="#2d4a3e">CTR · Push Vol · Retention</text>
+
+        <!-- Arrow -->
+        <line x1="510" y1="100" x2="548" y2="100" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+        <!-- Node 4 -->
+        <rect x="550" y="70" width="60" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
+        <text x="580" y="96" text-anchor="middle" font-size="10" fill="#2a2a28">Salesforce</text>
+        <text x="580" y="110" text-anchor="middle" font-size="10" fill="#2a2a28">SC</text>
+      </svg>
     </div>
-    <p>
-     Citizen's transformation into a video-first platform required building an operational capability that did not yet exist within the organization: onboarding and training external creators to rigid editorial and quality assurance standards at scale.
-    </p>
-    <p>
-     I served as the primary subject matter expert and technical enablement lead for this rollout. Over several months, I partnered directly with the Head of Marketing, two Product Managers, and moderation teams across Zoom, Slack, and the proprietary platform OS to engineer comprehensive learning assets.
-    </p>
-    <p>
-     I authored step-by-step written standard operating procedures (SOPs) on Slite and trained the Marketing team to monitor negative user sentiment signals inside Tableau dashboards. This cross-functional training program contributed directly to measurable DAU growth and supported a strategic enterprise video integration partnership with Axon Fusus for public safety centers.
-    </p>
-   </section>
-   <section class="section">
+  </section>
+
+  <!-- 02 -->
+  <section class="section">
     <div class="section-header">
-     <span class="section-num">
-      05
-     </span>
-     <h3>
-      Governance, Playbooks &amp; Prototype Adoption Without Authority
-     </h3>
+      <span class="section-num">02</span>
+      <h3>Model-in-the-Loop: Tapping a Source Hiding in Plain Sight</h3>
+    </div>
+
+    <p>
+      A structured government emergency feed had been available for years but sat unused.
+      Previous attempts to extract its drill-down layer automatically had failed.
+      I discovered that layer contained the most useful signal in the system:
+      real-time dispatch data for serious incidents, written in standardized first-responder jargon.
+    </p>
+
+    <p>
+      The jargon was the obstacle. I introduced ChatGPT Enterprise with a custom editorial rulebook
+      to translate it into clear user-facing narratives. The rulebook included specific constraints:
+      never substitute "car" for "vehicle" (many incidents involved trucks and motorcycles),
+      always attribute information to reports rather than stating it as fact,
+      and flag conflicting accounts explicitly.
+    </p>
+
+    <p>
+      The radio pipeline that had anchored the original workflow
+      was degrading from human transcription errors, encryption changes, and model intake failures.
+      The structured text feed was more consistent. Initial objections, including data security concerns,
+      were documented in the proposal before the experiment began; none proved founded,
+      and no further objections arose from leadership or users over two years of production.
+      It became the backbone of coverage in the platform's largest market,
+      and at least three other team members adopted it independently.
+    </p>
+
+    <div class="metrics-row">
+      <div class="metric-block">
+        <span class="metric">2+ yrs</span>
+        <span class="metric-label">production runtime</span>
+      </div>
+      <div class="metric-block">
+        <span class="metric">~tens of millions</span>
+        <span class="metric-label">additional notifications (est.)</span>
+      </div>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#2d4a3e"/>
+          </marker>
+        </defs>
+
+        <!-- Source -->
+        <rect x="130" y="10" width="160" height="50" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
+        <text x="210" y="31" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">Government Dispatch Feed</text>
+        <text x="210" y="48" text-anchor="middle" font-size="10" fill="#6a6a62">structured text · first-responder jargon</text>
+
+        <!-- Arrow down -->
+        <line x1="210" y1="60" x2="210" y2="93" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+        <!-- Model layer -->
+        <rect x="70" y="95" width="280" height="70" rx="3" fill="#f2f0eb" stroke="#2d4a3e" stroke-width="2"/>
+        <text x="210" y="122" text-anchor="middle" font-size="11" fill="#2d4a3e" font-weight="600">ChatGPT Enterprise + Editorial Rulebook</text>
+        <text x="210" y="140" text-anchor="middle" font-size="10" fill="#2a2a28">vehicle terminology · source attribution · conflict flagging</text>
+        <text x="210" y="155" text-anchor="middle" font-size="10" fill="#2a2a28">human review checkpoint</text>
+
+        <!-- Arrow down -->
+        <line x1="210" y1="165" x2="210" y2="198" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+        <!-- Output -->
+        <rect x="100" y="200" width="220" height="50" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
+        <text x="210" y="221" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">User-Facing Alert</text>
+        <text x="210" y="238" text-anchor="middle" font-size="10" fill="#6a6a62">polygon distribution · hundreds of thousands per incident</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h3>Model Output Evaluation: Independent QA at Production Scale</h3>
+    </div>
+
+    <p>
+      When language models entered the publishing workflow, the existing QA rubric, built for human analysts , 
+      missed model-specific failure modes. I built an independent audit system using OpenAI Codex,
+      macOS Shortcuts, and Bash scripts to capture and categorize live outputs,
+      working within normal SLA obligations and without dedicated infrastructure.
+    </p>
+
+    <div class="metrics-row">
+      <div class="metric-block">
+        <span class="metric">1,000+</span>
+        <span class="metric-label">outputs evaluated</span>
+      </div>
+      <div class="metric-block">
+        <span class="metric">12%</span>
+        <span class="metric-label">peak error rate found</span>
+      </div>
+    </div>
+
+    <p>
+      Error categories: factual inaccuracy, policy violations, privacy failures, formatting bugs.
+      Findings presented to leadership drove QA recalibration across teams.
+    </p>
+
+    <p>
+      Separate from the audit: over five years I submitted 50+ bug and feature tickets across Asana and Jira,
+      translating operational observations into structured engineering requests.
+      Many feature proposals went into production.
+    </p>
+
+    <p>
+      Also separate: after 2022, LLMs multiplied duplicate push notification series exponentially across geofenced sets.
+      I ran a sustained deduplication operation alongside daily SLA work,
+      manually resolving 100+ broken notification paths to maintain production integrity.
+    </p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#2d4a3e"/>
+          </marker>
+        </defs>
+
+        <!-- Live outputs -->
+        <rect x="10" y="50" width="120" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
+        <text x="70" y="76" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">Live Model</text>
+        <text x="70" y="92" text-anchor="middle" font-size="11" fill="#2a2a28">Outputs</text>
+
+        <line x1="130" y1="80" x2="163" y2="80" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+        <!-- Audit -->
+        <rect x="165" y="50" width="140" height="60" rx="3" fill="#f2f0eb" stroke="#2d4a3e" stroke-width="2"/>
+        <text x="235" y="73" text-anchor="middle" font-size="11" fill="#2d4a3e" font-weight="600">Codex + Bash</text>
+        <text x="235" y="89" text-anchor="middle" font-size="10" fill="#2a2a28">Capture · Categorize</text>
+        <text x="235" y="103" text-anchor="middle" font-size="10" fill="#2a2a28">1,000+ outputs</text>
+
+        <line x1="305" y1="80" x2="338" y2="80" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+        <!-- Findings split -->
+        <rect x="340" y="20" width="120" height="50" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
+        <text x="400" y="41" text-anchor="middle" font-size="10" fill="#2a2a28" font-weight="600">Leadership Report</text>
+        <text x="400" y="57" text-anchor="middle" font-size="10" fill="#6a6a62">QA recalibration</text>
+
+        <rect x="340" y="90" width="120" height="50" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
+        <text x="400" y="111" text-anchor="middle" font-size="10" fill="#2a2a28" font-weight="600">Engineering Tickets</text>
+        <text x="400" y="127" text-anchor="middle" font-size="10" fill="#6a6a62">100+ issues resolved</text>
+
+        <line x1="305" y1="72" x2="338" y2="45" stroke="#2d4a3e" stroke-width="1" marker-end="url(#arrow3)"/>
+        <line x1="305" y1="88" x2="338" y2="115" stroke="#2d4a3e" stroke-width="1" marker-end="url(#arrow3)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h3>Cross-Functional Training: Creator Program Rollout</h3>
+    </div>
+
+    <p>
+      Citizen's shift to video-first required onboarding external creators to editorial and QA standards
+      that didn't yet exist in that part of the organization.
+      I served as subject matter expert and training lead, working directly with
+      the Head of Marketing, two Product Managers, and the video moderation team.
+    </p>
+
+    <p>
+      Delivered training via Zoom, Slack, and Slite. Authored SOPs for editorial workflow and quality standards.
+      Built Tableau metric literacy into the program, specifically teaching teams to read negative
+      user sentiment signals and act on them before they compounded.
+    </p>
+
+    <p>
+      The program contributed to measurable DAU growth and supported Citizen's video partnership with Axon Fusus
+      for real-time safety center integration.
+    </p>
+  </section>
+
+  <!-- 05 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h3>Governance, Playbooks &amp; Internal Tools</h3>
     </div>
     <ul>
-     <li>
-      <strong>
-       Playbook Institutionalization:
-      </strong>
-      Authored and institutionalized 7+ technical AI workflow playbooks adopted across a 100+ person analyst organization. These documents standardized pipeline diagnostics, prompt engineering rules, and verification guardrails, allowing distributed teams to run processes autonomously.
-     </li>
-     <li>
-      <strong>
-       Prototype-to-Production Triage:
-      </strong>
-      Brought three high-leverage automation opportunities to internal hackathons, securing executive sign-off for core product updates. I designed an interface tool that surfaced user sentiment signals directly within the internal platform OS, and engineered a manual task-summarization utility shipped into production.
-     </li>
-     <li>
-      <strong>
-       Safety Policy Re-engineering:
-      </strong>
-      Directed mission-critical updates to operational guidelines and user notification nomenclature, managing high-stakes emergency workflows under tight regulatory compliance windows during missing persons cases involving high-risk dementia patients.
-     </li>
+      <li><strong>Playbooks:</strong> Authored 7 workflow playbooks adopted across a 100+ person analyst organization, covering prompt structure, pipeline diagnostics, and output review standards. Teams ran them without ongoing supervision.</li>
+      <li><strong>Internal tools:</strong> Brought three proposals to internal hackathons. Two shipped: a user sentiment widget surfaced in the production OS, and an automated summarization tool.</li>
+      <li><strong>Safety policy:</strong> Revised notification nomenclature and safety guidelines for high-risk missing persons workflows, coordinating with leadership under operational constraints.</li>
     </ul>
-   </section>
-   <section class="section">
+  </section>
+
+  <!-- 06 -->
+  <section class="section">
     <div class="section-header">
-     <span class="section-num">
-      06
-     </span>
-     <h3>
-      Technical Documentation, Systems Mapping &amp; Compliance Operations
-     </h3>
+      <span class="section-num">06</span>
+      <h3>Documentation, Research &amp; Compliance Work</h3>
     </div>
     <ul>
-     <li>
-      Over 15 years of experience creating technical reference materials, standard operating procedures, and searchable knowledge management frameworks for corporate, media, and institutional clients, translating abstract software structures into clear documentation.
-     </li>
-     <li>
-      Co-authored
-      <em>
-       Learning to Use the Cherokee Verb
-      </em>
-      , designing structured linguistic data validation pipelines, morphological classification rules, and multi-contributor version control systems to protect data fidelity.
-     </li>
-     <li>
-      Administered structured clinical evaluations within a psychology research laboratory under strict federal regulatory compliance protocols, translating detailed qualitative metrics into legally and medically defensible audit materials.
-     </li>
+      <li>15+ years producing technical documentation, SOPs, and knowledge systems for institutional, academic, and media clients.</li>
+      <li>Co-authored <em>Learning to Use the Cherokee Verb</em>, structured linguistic dataset, multi-contributor version control, morphological classification across a multi-year project.</li>
+      <li>Clinical psychology research analyst, structured evaluations under federal compliance protocols, producing legally and medically defensible documentation.</li>
     </ul>
-   </section>
-   <section class="section perspective">
+  </section>
+
+  <!-- 07 Perspective -->
+  <section class="section perspective">
     <div class="section-header">
-     <span class="section-num">
-      07
-     </span>
-     <h3>
-      Perspective
-     </h3>
+      <span class="section-num">07</span>
+      <h3>Perspective</h3>
     </div>
     <p>
-     Scaling language AI systems and honestly evaluating them require different orientations. Production environments optimize to surface what works, which means they tend to obscure what does not, particularly at the boundaries of model reliability.
+      Production systems optimize for output. They obscure what isn't working,
+      especially at the edges of model reliability.
     </p>
     <p>
-     Human oversight from outside the primary optimization loop surfaces these gaps. It also builds the institutional trust that lets organizations move faster on AI adoption, because the measurement infrastructure catches failures early rather than at scale.
+      Independent evaluation from outside the primary workflow surfaces those gaps.
+      Independent evaluation also builds institutional trust, letting teams move faster , 
+      because the measurement infrastructure catches failures early, before they compound.
     </p>
     <p>
-     This function does not disappear as models improve. It evolves in form and focus, shifting from catching factual errors to evaluating reasoning quality, from single-model audits to cross-model governance. The need for structured, honest measurement is durable.
+      The need for structured, honest measurement grows as models do.
+      It does not disappear; it shifts from catching factual errors to evaluating reasoning quality.
     </p>
-   </section>
-   <hr class="divider"/>
-   <footer class="contact">
+  </section>
+
+  <hr class="divider">
+
+  <footer class="contact">
     <p>
-     shimshonodess@gmail.com
-     <br/>
-     <a href="https://linkedin.com/in/shoshone" target="_blank">
-      linkedin.com/in/shoshone
-     </a>
-     <br/>
-     <a href="https://github.com/s-odess" target="_blank">
-      github.com/s-odess
-     </a>
+      shimshonodess@gmail.com<br>
+      <a href="https://linkedin.com/in/shoshone" target="_blank">linkedin.com/in/shoshone</a><br>
+      <a href="https://github.com/s-odess" target="_blank">github.com/s-odess</a>
     </p>
-   </footer>
-  </div>
- </body>
+  </footer>
+
+</div>
+</body>
 </html>
