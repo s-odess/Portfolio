@@ -3,459 +3,287 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shimshon Odess</title>
-<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-<link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-<link href="[https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap)" rel="stylesheet">
+<title>Shimshon Odess — Editor & Writer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
---ink: #111111;
---ink-light: #1e1e1c;
---ink-muted: #6a6a62;
---rule: #d8d5cc;
---bg: #f7f5f0;
---bg-section: #f2f0eb;
---accent: #2d4a3e;
---accent-light: #3d6354;
---serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
---sans: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-html { font-size: 17px; scroll-behavior: smooth; }
-body {
-background: var(--bg);
-color: var(--ink);
-font-family: var(--sans);
-font-weight: 400;
-line-height: 1.7;
-min-height: 100vh;
-}
-.page {
-max-width: 740px;
-margin: 0 auto;
-padding: 80px 40px 120px;
-opacity: 0;
-animation: fadeIn 0.6s ease forwards;
-}
-@keyframes fadeIn { to { opacity: 1; } }
-.hero {
-padding-bottom: 64px;
-margin-bottom: 64px;
-border-bottom: 1px solid var(--rule);
-}
-.hero h1 {
-font-family: var(--serif);
-font-size: clamp(2.4rem, 6vw, 3.2rem);
-font-weight: 700;
-letter-spacing: -0.03em;
-line-height: 1.1;
-color: var(--ink);
-margin-bottom: 12px;
-}
-.hero h2 {
-font-family: var(--sans);
-font-size: 0.85rem;
-font-weight: 500;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: var(--accent);
-margin-bottom: 36px;
-}
-.hero p {
-font-size: 1.12rem;
-color: var(--ink-light);
-margin-bottom: 16px;
-max-width: 600px;
-}
-.hero p:last-child { margin-bottom: 0; }
-.section {
-padding: 52px 0;
-border-bottom: 1px solid var(--rule);
-position: relative;
-}
-.section:last-of-type { border-bottom: none; }
-.section-header {
-display: flex;
-align-items: baseline;
-gap: 20px;
-margin-bottom: 28px;
-}
-.section-num {
-font-family: var(--serif);
-font-size: 0.8rem;
-font-style: italic;
-color: var(--ink-muted);
-letter-spacing: 0.06em;
-flex-shrink: 0;
-padding-top: 3px;
-}
-.section h3 {
-font-family: var(--serif);
-font-size: 1.2rem;
-font-weight: 700;
-color: var(--ink);
-line-height: 1.3;
-}
-.section p {
-font-size: 1.0rem;
-color: var(--ink-light);
-margin-bottom: 14px;
-}
-.section p:last-child { margin-bottom: 0; }
-.section ul {
-padding-left: 46px;
-margin-bottom: 20px;
-}
-.section li {
-font-size: 1.0rem;
-color: var(--ink-light);
-margin-bottom: 10px;
-}
-.section li:last-child { margin-bottom: 0; }
-.section.perspective {
-background: var(--bg-section);
-padding: 48px 40px;
-border-radius: 4px;
-border: 1px solid var(--rule);
-margin: 32px 0;
-}
-.section.perspective .section-num { color: var(--accent); }
-.section.perspective p { color: var(--ink); font-size: 1.0rem; }
-.section:not(.perspective) {
-padding-left: 0;
-border-left: 3px solid transparent;
-transition: border-color 0.2s ease, padding-left 0.2s ease;
-}
-.section:not(.perspective):hover {
-border-left-color: var(--accent);
-padding-left: 14px;
-}
-.diagram {
-margin: 32px 0 8px;
-overflow: visible;
-}
-.diagram svg {
-width: 100%;
-height: auto;
-display: block;
-}
-.diagram text {
-font-family: var(--sans), sans-serif;
-}
-.metric {
-display: inline-block;
-font-family: var(--serif);
-font-size: 1.6rem;
-font-weight: 700;
-color: var(--accent);
-margin-right: 6px;
-}
-.metric-label {
-font-size: 0.85rem;
-color: var(--ink-muted);
-text-transform: uppercase;
-letter-spacing: 0.06em;
-}
-.metrics-row {
-display: flex;
-gap: 40px;
-margin: 24px 0;
-flex-wrap: wrap;
-}
-.metric-block { display: flex; flex-direction: column; }
-.contact {
-padding-top: 56px;
-margin-top: 8px;
-}
-.contact p {
-font-size: 0.9rem;
-color: var(--ink-muted);
-line-height: 2.2;
-}
-.contact a {
-color: var(--accent);
-text-decoration: none;
-border-bottom: 1px solid transparent;
-transition: border-color 0.2s ease;
-}
-.contact a:hover { border-bottom-color: var(--accent); }
-.divider {
-border: none;
-border-top: 1px solid var(--rule);
-margin: 12px 0 32px;
-}
-@media (max-width: 600px) {
-.page { padding: 48px 24px 80px; }
-.section ul { padding-left: 24px; }
-.section-header { flex-direction: column; gap: 6px; }
-.section.perspective { padding: 32px 24px; }
-.metrics-row { gap: 24px; }
-}
+  :root{
+    --paper:#EFEAE0;
+    --paper-fold:#DDD5C3;
+    --ink:#1F1B16;
+    --ink-soft:#4A443C;
+    --pen:#A8332B;
+    --pen-soft:#C46A5E;
+    --sage:#5B6B5D;
+    --rule:#C9C0AC;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;} }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    font-size:18px;
+    line-height:1.6;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  a{color:var(--pen); text-decoration-thickness:1px;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--pen); outline-offset:3px;}
+
+  /* header */
+  header.wrap{padding-top:56px; padding-bottom:8px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin:0 0 18px;
+  }
+  h1.name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    margin:0 0 6px;
+    line-height:1.05;
+  }
+  .role{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:1.25rem;
+    color:var(--ink-soft);
+    margin:0 0 40px;
+  }
+
+  /* hero edit mark */
+  .hero-mark{
+    position:relative;
+    margin:0 0 56px;
+    padding:28px 28px 30px;
+    background:var(--paper-fold);
+    border-radius:2px;
+  }
+  .hero-mark .draft{
+    font-family:'Fraunces', serif;
+    font-size:clamp(1.15rem, 3.2vw, 1.55rem);
+    line-height:1.5;
+    color:var(--ink-soft);
+    text-decoration: line-through;
+    text-decoration-color: var(--pen);
+    text-decoration-thickness: 2px;
+    margin:0 0 4px;
+  }
+  .hero-mark .annot{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--pen);
+    display:block;
+    margin:2px 0 20px;
+  }
+  .hero-mark .annot::before{content:"→ ";}
+  .hero-mark .final{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(1.4rem, 4vw, 2rem);
+    line-height:1.35;
+    color:var(--ink);
+    margin:0;
+  }
+
+  /* nav rule */
+  .rule{border:none; border-top:1px solid var(--rule); margin:52px 0 40px;}
+
+  section.wrap{padding-bottom:8px;}
+  .sec-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin:0 0 10px;
+  }
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.7rem;
+    margin:0 0 18px;
+  }
+  p{margin:0 0 16px; max-width:64ch;}
+  .lede{font-size:1.15rem; color:var(--ink-soft);}
+
+  .entry{margin:0 0 34px;}
+  .entry h3{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    font-weight:600;
+    margin:0 0 4px;
+  }
+  .entry .meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--sage);
+    margin:0 0 10px;
+    display:block;
+  }
+  .entry p{margin:0;}
+
+  .stamp{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.04em;
+    color:var(--pen);
+    border:1px solid var(--pen-soft);
+    border-radius:3px;
+    padding:2px 8px;
+    margin:0 0 12px;
+  }
+
+  .chapter-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    background:var(--paper-fold);
+    padding:14px 18px;
+    border-radius:2px;
+    margin:0 0 28px;
+    max-width:64ch;
+  }
+
+  footer.wrap{padding:40px 24px 80px; }
+  footer p{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-soft);}
+  footer a{margin-right:18px;}
 </style>
 </head>
 <body>
-<div class="page">
-<header class="hero">
-<h1>Shimshon Odess</h1>
-<h2>Workflow Systems  ·  Model Output Evaluation  ·  Training  ·  Documentation</h2>
-<p>
-I build workflows that use language models where they help and catch them where they don't.
-</p>
-<p>
-I have a background in building real-time data pipelines for millions of app users, writing editorial process rules, running audits, and training teams. The work is in the sections below.
-</p>
+
+<header class="wrap">
+  <p class="eyebrow">Portfolio</p>
+  <h1 class="name">Shimshon Odess</h1>
+  <p class="role">Editor, writer, and documentation specialist</p>
+
+  <div class="hero-mark">
+    <p class="draft">I leverage AI-powered synergies to optimize cross-functional workflow transformation.</p>
+    <span class="annot">cut the jargon, say the thing</span>
+    <p class="final">I turn dense, messy material, contracts, research findings, model output, into something a person can actually read.</p>
+  </div>
 </header>
-<section class="section">
-<div class="section-header">
-<span class="section-num">01</span>
-<h3>Automation Pipeline: Capacity Planning & Infrastructure Transformation</h3>
-</div>
-<p>
-At Citizen, the free public safety app with over 9 million users and more than 10 billion notifications sent, I co-built an automated pipeline ingesting real-time government emergency data into the platform using Python, JSON payloads, and Zapier. The strategic objective was to decouple notification throughput from team headcount. By automating manual data extraction workflows, this high-throughput pipeline successfully absorbed a 66% reduction in operational baseline hours while scaling regional output by 3×, allowing the remaining team to preserve strict production SLAs under extreme resource constraints.
-</p>
-<div class="metrics-row">
-<div class="metric-block">
-<span class="metric">3×</span>
-<span class="metric-label">regional throughput scale</span>
-</div>
-<div class="metric-block">
-<span class="metric">~4×</span>
-<span class="metric-label">retention increase</span>
-</div>
-<div class="metric-block">
-<span class="metric">66%</span>
-<span class="metric-label">baseline hour shift absorbed</span>
-</div>
-</div>
-<p>
-After deployment, I designed the measurement layer: Tableau dashboards pulling from Salesforce Service Cloud, tracking push volume, CTR, and engagement velocity. I also produced Loom tutorials explaining the pipeline for technical and non-technical team members to ensure total cross-functional alignment.
-</p>
-<div class="diagram">
-<svg viewBox="0 0 620 200" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
-<defs>
-<marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-<path d="M0,0 L0,6 L8,3 z" fill="#2d4a3e"/>
-</marker>
-</defs>
-<rect x="10" y="70" width="140" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="80" y="96" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">Government</text>
-<text x="80" y="112" text-anchor="middle" font-size="11" fill="#2a2a28">Emergency Data</text>
-<line x1="150" y1="100" x2="188" y2="100" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow1)"/>
-<text x="169" y="93" text-anchor="middle" font-size="9" fill="#6a6a62">Python / Zapier</text>
-<rect x="190" y="70" width="140" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="260" y="96" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">Citizen Platform</text>
-<text x="260" y="112" text-anchor="middle" font-size="11" fill="#2a2a28">9M users</text>
-<line x1="330" y1="100" x2="368" y2="100" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow1)"/>
-<text x="349" y="93" text-anchor="middle" font-size="9" fill="#6a6a62">measure</text>
-<rect x="370" y="70" width="140" height="60" rx="3" fill="#f2f0eb" stroke="#2d4a3e" stroke-width="1.5"/>
-<text x="440" y="96" text-anchor="middle" font-size="11" fill="#2d4a3e" font-weight="600">Tableau</text>
-<text x="440" y="112" text-anchor="middle" font-size="11" fill="#2d4a3e">CTR · Push Vol · Retention</text>
-<line x1="510" y1="100" x2="548" y2="100" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow1)"/>
-<rect x="550" y="70" width="60" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="580" y="96" text-anchor="middle" font-size="10" fill="#2a2a28">Salesforce</text>
-<text x="580" y="110" text-anchor="middle" font-size="10" fill="#2a2a28">SC</text>
-</svg>
-</div>
-</section>
-<section class="section">
-<div class="section-header">
-<span class="section-num">02</span>
-<h3>Model-in-the-Loop: Tapping a Source Hiding in Plain Sight</h3>
-</div>
-<p>
-A structured government emergency feed had been available for years but sat unused. Previous attempts to extract its drill-down layer automatically had failed. I discovered that layer contained the most useful signal in the system: real-time dispatch data for serious incidents, written in standardized first-responder jargon.
-</p>
-<p>
-The jargon was the obstacle. I introduced ChatGPT Enterprise with a custom editorial rulebook to translate it into clear user-facing narratives. The rulebook included specific constraints: never substitute 'car' for 'vehicle' (many incidents involved trucks and motorcycles), always attribute information to reports rather than stating it as fact, and flag conflicting accounts explicitly.
-</p>
-<p>
-The radio pipeline that had anchored the original workflow was degrading from human transcription errors, encryption changes, and model intake failures. The structured text feed was more consistent. User feedback was consistently positive, as the data provided unique real-time perspectives. This workflow became the backbone of coverage in the platform's largest market. Beyond my immediate team (where three other analysts adopted it independently), the manager of the video moderation team and multiple video moderation team members adopted the workflow. It provided vital, real-time contextual data they critically needed to corroborate and validate incoming video feeds, which were frequently vague or unclear regarding active major emergencies in California.
-</p>
-<div class="metrics-row">
-<div class="metric-block">
-<span class="metric">2+ yrs</span>
-<span class="metric-label">production runtime</span>
-</div>
-<div class="metric-block">
-<span class="metric">~tens of millions</span>
-<span class="metric-label">additional notifications (est.)</span>
-</div>
-</div>
-<div class="diagram">
-<svg viewBox="0 0 420 260" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
-<defs>
-<marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-<path d="M0,0 L0,6 L8,3 z" fill="#2d4a3e"/>
-</marker>
-</defs>
-<rect x="130" y="10" width="160" height="50" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="210" y="31" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">Government Dispatch Feed</text>
-<text x="210" y="48" text-anchor="middle" font-size="10" fill="#6a6a62">structured text · first-responder jargon</text>
-<line x1="210" y1="60" x2="210" y2="93" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow2)"/>
-<rect x="70" y="95" width="280" height="70" rx="3" fill="#f2f0eb" stroke="#2d4a3e" stroke-width="2"/>
-<text x="210" y="122" text-anchor="middle" font-size="11" fill="#2d4a3e" font-weight="600">ChatGPT Enterprise + Editorial Rulebook</text>
-<text x="210" y="140" text-anchor="middle" font-size="10" fill="#2a2a28">vehicle terminology · source attribution · conflict flagging</text>
-<text x="210" y="155" text-anchor="middle" font-size="10" fill="#2a2a28">human review checkpoint</text>
-<line x1="210" y1="165" x2="210" y2="198" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow2)"/>
-<rect x="100" y="200" width="220" height="50" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="210" y="221" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">User-Facing Alert</text>
-<text x="210" y="238" text-anchor="middle" font-size="10" fill="#6a6a62">polygon distribution · hundreds of thousands per incident</text>
-</svg>
-</div>
-</section>
-<section class="section">
-<div class="section-header">
-<span class="section-num">03</span>
-<h3>Model Output Evaluation: Independent QA at Production Scale</h3>
-</div>
-<p>
-When language models entered the publishing workflow, the existing QA rubric, built for human analysts, missed model-specific failure modes. I built an independent audit system using OpenAI Codex, macOS Shortcuts, and Bash scripts to capture and categorize live outputs, working within normal SLA obligations and without dedicated infrastructure.
-</p>
-<div class="metrics-row">
-<div class="metric-block">
-<span class="metric">1,000+</span>
-<span class="metric-label">outputs evaluated</span>
-</div>
-<div class="metric-block">
-<span class="metric">12%</span>
-<span class="metric-label">peak error rate found</span>
-</div>
-</div>
-<p>
-Error categories included factual inaccuracy, policy violations, privacy failures, and formatting bugs. The data-driven insights from these audits were presented directly to executive leadership, driving an objective recalibration of overall publishing and text validation frameworks.
-</p>
-<p>
-Alongside this audit framework, over five years I submitted 50+ bug and feature tickets across Asana and Jira, translating daily operational observations into structured engineering requirements. Many of these feature proposals subsequently went into production.
-</p>
-<p>
-Concurrently, after 2022, automated content generation multiplied duplicate push notification series exponentially across geofenced sets. I ran a sustained deduplication operation alongside daily SLA work, manually resolving 100+ broken notification paths to maintain production data integrity.
-</p>
-<div class="diagram">
-<svg viewBox="0 0 560 160" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
-<defs>
-<marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-<path d="M0,0 L0,6 L8,3 z" fill="#2d4a3e"/>
-</marker>
-</defs>
-<rect x="10" y="50" width="120" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="70" y="76" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">Live Model</text>
-<text x="70" y="92" text-anchor="middle" font-size="11" fill="#2a2a28">Outputs</text>
-<line x1="130" y1="80" x2="163" y2="80" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow3)"/>
-<rect x="165" y="50" width="140" height="60" rx="3" fill="#f2f0eb" stroke="#2d4a3e" stroke-width="2"/>
-<text x="235" y="73" text-anchor="middle" font-size="11" fill="#2d4a3e" font-weight="600">Codex + Bash</text>
-<text x="235" y="89" text-anchor="middle" font-size="10" fill="#2a2a28">Capture · Categorize</text>
-<text x="235" y="103" text-anchor="middle" font-size="10" fill="#2a2a28">1,000+ outputs</text>
-<line x1="305" y1="80" x2="338" y2="80" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow3)"/>
-<rect x="340" y="20" width="120" height="50" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="400" y="41" text-anchor="middle" font-size="10" fill="#2a2a28" font-weight="600">Leadership Report</text>
-<text x="400" y="57" text-anchor="middle" font-size="10" fill="#6a6a62">QA recalibration</text>
-<rect x="340" y="90" width="120" height="50" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="400" y="111" text-anchor="middle" font-size="10" fill="#2a2a28" font-weight="600">Engineering Tickets</text>
-<text x="400" y="127" text-anchor="middle" font-size="10" fill="#6a6a62">100+ issues resolved</text>
-<line x1="305" y1="72" x2="338" y2="45" stroke="#2d4a3e" stroke-width="1" marker-end="url(#arrow3)"/>
-<line x1="305" y1="88" x2="338" y2="115" stroke="#2d4a3e" stroke-width="1" marker-end="url(#arrow3)"/>
-</svg>
-</div>
-</section>
-<section class="section">
-<div class="section-header">
-<span class="section-num">04</span>
-<h3>Cross-Functional Training & Global Vendor Operations</h3>
-</div>
-<p>
-Parallel to my core platform tasks, I spent several years leading training and operational alignment for Citizen's international operations footprint. I served as a primary training lead for approximately 100 offshore operations contractors, establishing and reinforcing standard operating procedures to govern their performance quality, data queue responses, and system interactions.
-</p>
-<p>
-Additionally, when Citizen shifted to a video-first architecture in launching its "Creators program," I acted as the core subject matter expert to build cross-functional readiness across new business domains, working alongside the Head of Marketing, two Product Managers, and our in-house video moderation squads.
-</p>
-<p>
-I designed and delivered this comprehensive training layout using Zoom, Slack, and Slite; I authored institutional SOPs for editorial validation and content quality. I explicitly built Tableau metrics literacy directly into our teams' workflows, training operators to read negative user sentiment trends and isolate product friction points before they escalated.
-</p>
-</section>
-<section class="section">
-<div class="section-header">
-<span class="section-num">05</span>
-<h3>Governance, Playbooks & Internal Tools</h3>
-</div>
-<ul>
-<li><strong>Playbooks:</strong> Authored 7 cross-functional workflow playbooks adopted across a 100+ person analyst organization, establishing structured rules for pipeline diagnostics, queue management, and output review standards. Teams ran them without ongoing supervision.</li>
-<li><strong>Internal Tools Strategy:</strong> Pitched three custom workflow optimization tools at internal hackathons. Two successfully shipped into production: a user sentiment widget surfaced in the core operating system, and an automated summarization utility.</li>
-<li><strong>Safety Policy Compliance:</strong> Revised notification workflows and structural guidelines for high-risk missing persons categories, coordinating directly with leadership to minimize liability under real-time response constraints.</li>
-</ul>
-</section>
-<section class="section">
-<div class="section-header">
-<span class="section-num">06</span>
-<h3>Documentation, Research & Compliance Work</h3>
-</div>
-<ul>
-<li>15+ years producing technical documentation, operational SOPs, and structured knowledge management systems for corporate, academic, and media clients.</li>
-<li>Co-authored <em>Learning to Use the Cherokee Verb</em>, designing a highly structured linguistic and morphological dataset featuring multi-contributor version control to guarantee documentation structural integrity.</li>
-<li>Served as a Clinical Psychology Lab research analyst, managing structured evaluations inside Electronic Health Records (EHR) under compliance parameters to yield legally and medically defensible technical documentation.</li>
-</ul>
-</section>
-  <section class="section">
-<div class="section-header">
-<span class="section-num">07</span>
-<h3>Automated Real-Time ETL Pipeline</h3>
-</div>
-<p>
-I built a headless data ingestion pipeline to extract, structure, and summarize high-risk public safety incidents from legacy government CAD (Computer-Aided Dispatch) systems. The primary challenge was navigating a dynamic ASP.NET web interface that obscured its underlying APIs. 
-</p>
-<p>
-I engineered a resilient extraction engine using Python and Playwright, implementing dynamic element targeting and fault-tolerant retry logic to handle state changes and postbacks. To process the raw dispatch jargon, I integrated the Gemini 1.5 Flash API into the workflow, transforming unstructured text into clean, one-sentence plain English summaries before writing the output to a structured JSON database.
-</p>
-<div class="diagram">
-<svg viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<marker id="arrow4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-<path d="M0,0 L0,6 L8,3 z" fill="#2d4a3e"/>
-</marker>
-</defs>
-<rect x="10" y="50" width="120" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="70" y="76" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">Legacy CAD System</text>
-<text x="70" y="92" text-anchor="middle" font-size="10" fill="#6a6a62">Dynamic Web State</text>
-<line x1="130" y1="80" x2="163" y2="80" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow4)"/>
-<rect x="165" y="50" width="140" height="60" rx="3" fill="#f2f0eb" stroke="#2d4a3e" stroke-width="2"/>
-<text x="235" y="73" text-anchor="middle" font-size="11" fill="#2d4a3e" font-weight="600">Python + Playwright</text>
-<text x="235" y="89" text-anchor="middle" font-size="10" fill="#2a2a28">Headless Extraction</text>
-<text x="235" y="103" text-anchor="middle" font-size="10" fill="#2a2a28">Fault-Tolerant Routing</text>
-<line x1="305" y1="80" x2="338" y2="80" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow4)"/>
-<rect x="340" y="50" width="100" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="390" y="76" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">LLM API</text>
-<text x="390" y="92" text-anchor="middle" font-size="10" fill="#6a6a62">NLP Summarization</text>
-<line x1="440" y1="80" x2="473" y2="80" stroke="#2d4a3e" stroke-width="1.5" marker-end="url(#arrow4)"/>
-<rect x="475" y="50" width="75" height="60" rx="3" fill="#fff" stroke="#d8d5cc" stroke-width="1.5"/>
-<text x="512.5" y="76" text-anchor="middle" font-size="11" fill="#2a2a28" font-weight="600">JSON</text>
-<text x="512.5" y="92" text-anchor="middle" font-size="10" fill="#6a6a62">Structured</text>
-</svg>
-</div>
-</section>
-<section class="section perspective">
-<div class="section-header">
-<span class="section-num">08</span>
-<h3>Perspective</h3>
-</div>
-<p>
-Production systems optimize for output. They obscure what isn't working, especially at the edges of model and system reliability.
-</p>
-<p>
-Independent evaluation from outside the primary workflow surfaces those gaps. Independent evaluation also builds institutional trust, letting teams move faster, because the measurement infrastructure catches failures early, before they compound.
-</p>
-<p>
-The need for structured, honest measurement grows as workflows scale. It does not disappear; it shifts from catching manual entry errors to evaluating system logic and reasoning quality.
-</p>
-</section>
-<hr class="divider">
-<footer class="contact">
-<p>
-shimshonodess@gmail.com
 
-<a href="[https://linkedin.com/in/shoshone](https://linkedin.com/in/shoshone)" target="_blank">linkedin.com/in/shoshone</a>
+<hr class="rule">
 
-<a href="[https://s-odess.github.io/Portfolio/](https://s-odess.github.io/Portfolio/)" target="_blank">s-odess.github.io/Portfolio</a>
-</p>
+<section class="wrap">
+  <p class="sec-label">About</p>
+  <h2>Fifteen years of editing, before the AI part started</h2>
+  <p class="lede">I've spent 15+ years as an editor, writer, and documentation specialist: technical editing, advertising copywriting, academic manuscript review, and long-form published writing across academic, nonprofit, and business clients.</p>
+  <p>For the last six years, I applied that same editorial judgment inside a 9-million-user AI platform: writing the rulebook that governed model output before it reached users, auditing 1,000+ live outputs to surface a 12% peak error rate, and authoring the playbooks that became standard practice across a 100-plus person team.</p>
+  <p>I'm at my best turning something dense, technical, or messy into something clear, whether that's a contract, a research finding, a style guide, or a model's output. The AI fluency is real and current, but editorial judgment is the through-line of the whole career.</p>
+</section>
+
+<hr class="rule">
+
+<section class="wrap">
+  <p class="sec-label">Editorial &amp; Content Writing</p>
+  <h2>Writing and editing, across contexts</h2>
+
+  <div class="entry">
+    <h3>Advertising Copywriting</h3>
+    <span class="meta">Independent · Multiple years, 2010–2020</span>
+    <p>Wrote advertising copy for clients as part of an independent consulting practice, shaping promotional material for varied audiences and industries.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Academic Writing Consulting</h3>
+    <span class="meta">Independent · Over a year</span>
+    <p>Ran a freelance writing consulting practice covering academic paper rewriting, editing, and proofreading, including dissertation review for a Stanford doctoral candidate.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Art and Architecture Criticism</h3>
+    <span class="meta">Freelance, 1099 · One year</span>
+    <p>Wrote freelance art criticism on a consistent basis for a publishing website, covering architecture and art history.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Published Linguistic Reference Work</h3>
+    <span class="meta">Co-author · Multi-year institutional project</span>
+    <p>Co-authored <em>Learning to Use the Cherokee Verb</em>, contributing original writing and full editorial oversight. Managed multi-contributor version control and structured data validation to keep the final published text consistent and accurate across dozens of revisions.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="wrap">
+  <p class="sec-label">Published Technical Writing</p>
+  <h2>Explaining AI in plain language, in public</h2>
+  <div class="entry">
+    <h3>LinkedIn content series</h3>
+    <span class="meta">Self-directed · Ongoing</span>
+    <p>Writing and publishing a sustained, multi-part series on enterprise AI economics and responsible technical terminology, including a critique of anthropomorphic language ("hallucination," "mistake") as applied to stateless systems, and a piece connecting classical philosophical method to AI epistemology. Reaches a public professional audience on a consistent publishing cadence.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="wrap">
+  <p class="sec-label">Documentation &amp; Governance</p>
+  <h2>Standards, written down well enough to run without me</h2>
+
+  <div class="entry">
+    <h3>Workflow &amp; Quality Playbooks</h3>
+    <span class="meta">Citizen · 2020–2026</span>
+    <p>Authored 7 workflow and quality playbooks, structured as step-by-step reference material rather than narrative explanation, that became the standard reference across a 100-plus person organization. Written so a colleague could execute the workflow correctly without asking me directly, that was always the real test of whether the documentation had done its job.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Clinical Research Writing</h3>
+    <span class="meta">Occidental College Clinical Psychology Lab · 2007–2010</span>
+    <p>Wrote and edited legally and medically defensible documentation from qualitative and quantitative case data at a clinical psychology research laboratory, administering structured diagnostic evaluations under federal compliance guidelines. The writing had to hold up under audit, early, direct training in how much precision editorial judgment carries in high-stakes settings.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="wrap">
+  <p class="sec-label">The AI Chapter</p>
+  <h2>Where the editorial instinct met production AI</h2>
+  <p class="chapter-note">The last six years, condensed. Full technical detail available on request.</p>
+
+  <div class="entry">
+    <span class="stamp">solo build, no mandate</span>
+    <h3>Model-in-the-Loop Workflow</h3>
+    <span class="meta">Citizen · ChatGPT Enterprise</span>
+    <p>Solo-designed a manual model-in-the-loop workflow with a custom editorial rulebook: source attribution required, conflicting reports flagged, a human review checkpoint before anything published. Built with no engineering support, later adopted organically by other teams.</p>
+  </div>
+
+  <div class="entry">
+    <span class="stamp">1,000+ outputs audited</span>
+    <h3>Independent LLM Quality Auditing</h3>
+    <span class="meta">Citizen</span>
+    <p>Built an evaluation framework (OpenAI Codex, macOS Shortcuts, Bash) across 1,000+ live outputs, defining concrete failure categories and surfacing a 12% peak error rate that drove a leadership-backed recalibration of quality standards.</p>
+  </div>
+
+  <div class="entry">
+    <span class="stamp">production, self-initiated</span>
+    <h3>CHP Dispatch Intelligence Pipeline</h3>
+    <span class="meta">Independent, 2024–Present</span>
+    <p>A Python and Playwright automation that scrapes live California Highway Patrol incident data, routes it through the Gemini API for plain-English summarization, and syncs structured output to a public repository.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<footer class="wrap">
+  <p>
+    <a href="mailto:shimshonodess@gmail.com">shimshonodess@gmail.com</a>
+    <a href="tel:4136584117">(413) 658-4117</a>
+    <a href="https://linkedin.com/in/shoshone">LinkedIn</a>
+  </p>
 </footer>
-</div>
+
 </body>
 </html>
