@@ -151,6 +151,7 @@
 
   .explainer{margin:16px 0 4px; max-width:360px;}
   .explainer video{display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px; background:var(--ink);}
+  .explainer.wide{max-width:100%;}
   .explainer figcaption{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-soft); margin-top:8px;}
 
   footer.wrap{padding:40px 24px 80px; }
@@ -227,7 +228,15 @@
     <span class="stamp">12% peak error rate</span>
     <h3>Output Quality Evaluation Framework</h3>
     <span class="meta">Citizen · OpenAI Codex, macOS Shortcuts, Bash</span>
-    <p>Built an evaluation framework auditing 1,000+ live outputs, defining concrete failure categories and surfacing a 12% peak error rate that drove a leadership-backed recalibration of quality standards. Included a time-series graph tracking quality trends over time.</p>
+    <p>Citizen's operations team began by listening to first-responder radio clips and writing notification copy by hand. Over time, language models took over the first draft, and the team reviewed each model-authored notification against two standards: empirical accuracy against the clip itself, and adherence to Citizen's editorial, style, privacy, and safety guidelines. I built an independent evaluation framework to measure how well those notifications met both standards.</p>
+    <p>I captured screenshots of more than 1,000 live outputs in real time, alongside my regular output and service-level obligations, audited each one against the standard, and defined concrete failure categories. A toolchain built with OpenAI Codex, macOS Shortcuts, and Bash turned the catalogue into a time-series graph of quality trends, which surfaced a 12% peak error rate. The findings reached leadership through my team and led to a leadership-backed recalibration of quality standards.</p>
+    <figure class="explainer wide">
+      <video controls playsinline preload="metadata" poster="audit-explainer-poster.jpg" aria-describedby="audit-desc">
+        <source src="audit-explainer.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+      </video>
+      <figcaption id="audit-desc">Ten-second illustrative reenactment of the audit: live outputs cataloged, the Codex, Shortcuts, and Bash toolchain, and the time-series graph with its 12% peak. The graph shown is a stylized rendering, not the audit data.</figcaption>
+    </figure>
   </div>
 
   <div class="entry">
