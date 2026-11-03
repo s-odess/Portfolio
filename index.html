@@ -149,6 +149,10 @@
     max-width:64ch;
   }
 
+  .explainer{margin:16px 0 4px; max-width:360px;}
+  .explainer video{display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px; background:var(--ink);}
+  .explainer figcaption{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-soft); margin-top:8px;}
+
   footer.wrap{padding:40px 24px 80px; }
   footer p{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-soft);}
   footer a{margin-right:18px;}
@@ -159,7 +163,7 @@
 <header class="wrap">
   <p class="eyebrow">Portfolio</p>
   <h1 class="name">Shimshon Odess</h1>
-  <p class="role">Operations and workflow systems: I build, measure, and document production AI workflows</p>
+  <p class="role">Operations and workflow systems: I build, measure, and document production language-model workflows</p>
 
   <div class="hero-mark">
     <span class="annot">define the standard, automate the work, verify the output</span>
@@ -171,9 +175,28 @@
 
 <section class="wrap">
   <p class="sec-label">About</p>
-  <h2>Production AI, held to an editorial standard</h2>
-  <p class="lede">For six years, I built and ran workflow systems at Citizen, a real-time public safety platform serving 9 million users, with more than 10 billion notifications sent. Citizen shifted from a consumer subscription model to B2B, video-first, ultimately distributing real-time video feeds into law enforcement real-time crime centers via a technology partnership with Axon.</p>
+  <h2>Production language-model workflows, held to an editorial standard</h2>
+  <p class="lede">For six years, I built and ran workflow systems at Citizen, a real-time public safety platform serving 9 million users, with more than 10 billion notifications sent. Citizen expanded from its consumer app into B2B, video-first partnerships, ultimately distributing real-time video feeds into law enforcement real-time crime centers via a technology partnership with Axon.</p>
   <p>I wrote the editorial rulebook governing a production workflow, built an evaluation framework that audited 1,000+ live outputs and surfaced a 12% peak error rate, and authored the playbooks that became standard practice across a 100-plus person organization. The technical work there included a Python, JSON, and Zapier automation, a custom Claude agent, and an audit toolchain built with OpenAI Codex, macOS Shortcuts, and Bash. Before and alongside that work, I built a long independent practice as an editor, writer, and researcher, and I apply the same discipline to both.</p>
+</section>
+
+<hr class="rule">
+
+<section class="wrap">
+  <p class="sec-label">B2B Pivot</p>
+  <h2>Launching the video-first creator program</h2>
+  <p class="chapter-note">Citizen expanded into B2B, video-first partnerships alongside its consumer app. This program supported that expansion.</p>
+
+  <div class="entry">
+    <span class="stamp">B2B pivot</span>
+    <span class="stamp">main operations contact</span>
+    <span class="stamp">program guide, primary author</span>
+    <h3>Creators Program Launch</h3>
+    <span class="meta">Citizen · Volunteered, outside my formal job description</span>
+    <p>Citizen bought and aggressively solicited user video, and staff imported each clip by hand, downloading the video file and uploading it into the proprietary operating system. I volunteered for the Creators Program on my own initiative, entirely outside my service-level commitments and job description. The program became tied to Citizen's later B2B partnership with Axon.</p>
+    <p>For several months I served as the main contact for the program within the operations team and introduced the team to it. I put together most of the program guide, written with the head of marketing and the head of the consumer subscription team. The guide defined which video content belonged in the app and which did not, including content too sensitive to publish regardless of its viral potential.</p>
+    <p>I trained freelance video creators to tailor their footage to Citizen's editorial guidelines, trained the people on the creators team, and worked on launch procedures that readied the team for video-first. Because submitted video arrived without editorial context, I built the model-in-the-loop workflow described below to write the narrative around it.</p>
+  </div>
 </section>
 
 <hr class="rule">
@@ -189,7 +212,14 @@
     <span class="stamp">2+ yrs runtime</span>
     <h3>Model-in-the-Loop Production Workflow</h3>
     <span class="meta">Citizen · ChatGPT Enterprise</span>
-    <p>Solo-designed and deployed a manual model-in-the-loop workflow with a custom editorial rulebook requiring source attribution, flagging of conflicting reports, and a human review checkpoint before publishing. Built independently with no engineering support and no mandate, the workflow ran in production for over two years, driving an estimated 1 million plus additional weekly notifications, my own estimate based on user volume and escalation rates, not an official platform figure.</p>
+    <p>Solo-designed and deployed a manual model-in-the-loop workflow with a custom editorial rulebook that translated first-responder jargon into clear narratives, required source attribution, flagged conflicting reports, and set a human review checkpoint before publishing. Built independently with no engineering support and no mandate, the workflow ran in production for over two years, driving an estimated 1 million plus additional weekly notifications, my own estimate based on user volume and escalation rates, not an official platform figure.</p>
+    <figure class="explainer">
+      <video controls playsinline preload="metadata" poster="workflow-explainer-poster.jpg" aria-describedby="explainer-desc">
+        <source src="workflow-explainer.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+      </video>
+      <figcaption id="explainer-desc">Ten-second reenactment of the workflow: the CHP incident page, ChatGPT Enterprise with the rulebook, and the resulting video coverage.</figcaption>
+    </figure>
   </div>
 
   <div class="entry">
@@ -259,7 +289,7 @@
   <div class="entry">
     <h3>Published Technical Writing</h3>
     <span class="meta">Self-directed · Paused</span>
-    <p>Wrote a multi-part LinkedIn series on enterprise AI economics and responsible technical language, including a critique of anthropomorphic terminology ("hallucination," "mistake") as applied to stateless automated systems. Maintained at a consistent cadence for a period, since paused to focus on the job search, with top posts pinned.</p>
+    <p>Wrote a multi-part LinkedIn series on enterprise language-model economics and responsible technical language, including a critique of anthropomorphic terminology ("hallucination," "mistake") as applied to stateless automated systems. Maintained at a consistent cadence for a period, since paused to focus on the job search, with top posts pinned.</p>
   </div>
 
   <div class="entry">
@@ -295,11 +325,11 @@
   <p class="chapter-note">The legal reasoning in the texts I study derives the general principle from the extreme, specific case. I study it every day, and it shapes how I test any standard: at the point where it almost breaks.</p>
 
   <div class="entry">
-    <span class="stamp">weekly quizzes</span>
-    <span class="stamp">bimonthly tests</span>
+    <span class="stamp">four quizzes weekly</span>
+    <span class="stamp">two tests monthly</span>
     <h3>Oraysa</h3>
     <span class="meta">Participant, amud v'chazara program · Jan 2024 – Present</span>
-    <p>Learning the oral tradition through a structured curriculum of weekly quizzes and bimonthly tests. The same discipline I bring to editorial and workflow standards professionally, defining a standard, testing against it repeatedly, and retaining what holds up, is one I build here.</p>
+    <p>Learning the oral tradition through a structured curriculum of four quizzes weekly and two tests monthly. The same discipline I bring to editorial and workflow standards professionally, defining a standard, testing against it repeatedly, and retaining what holds up, is one I build here.</p>
   </div>
 
   <div class="entry">
