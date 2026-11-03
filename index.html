@@ -149,6 +149,13 @@
     max-width:64ch;
   }
 
+  details.sec > summary{list-style:none; cursor:pointer; position:relative; padding-right:36px;}
+  details.sec > summary::-webkit-details-marker{display:none;}
+  details.sec > summary::after{content:"+"; position:absolute; right:0; top:2px; font-family:'IBM Plex Mono', monospace; font-size:22px; color:var(--pen);}
+  details.sec[open] > summary::after{content:"\2212";}
+  details.sec > summary h2{margin-bottom:18px;}
+  details.sec:not([open]) > summary h2{margin-bottom:6px;}
+
   .explainer{margin:16px 0 4px; max-width:360px;}
   .explainer video{display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px; background:var(--ink);}
   .explainer.wide{max-width:100%;}
@@ -176,35 +183,17 @@
 
 <section class="wrap">
   <p class="sec-label">About</p>
-  <h2>Production language-model workflows, held to an editorial standard</h2>
-  <p class="lede">For six years, I built and ran workflow systems at Citizen, a real-time public safety platform serving 9 million users, with more than 10 billion notifications sent. Citizen expanded from its consumer app into B2B, video-first partnerships, ultimately distributing real-time video feeds into law enforcement real-time crime centers via a technology partnership with Axon.</p>
-  <p>I wrote the editorial rulebook governing a production workflow, built an evaluation framework that audited 1,000+ live outputs and surfaced a 12% peak error rate, and authored the playbooks that became standard practice across a 100-plus person organization. The technical work there included a Python, JSON, and Zapier automation, a custom Claude agent, and an audit toolchain built with OpenAI Codex, macOS Shortcuts, and Bash. Before and alongside that work, I built a long independent practice as an editor, writer, and researcher, and I apply the same discipline to both.</p>
+  <p class="lede">For six years, I built and ran workflow systems at Citizen, a real-time public safety platform serving 9 million users, with more than 10 billion notifications sent. Citizen expanded from its consumer app into B2B, video-first partnerships, ultimately distributing real-time video feeds into law enforcement real-time crime centers via a technology partnership with Axon. I write the rules, evaluations, and documentation that hold a workflow's output to a measurable standard.</p>
 </section>
 
 <hr class="rule">
 
 <section class="wrap">
-  <p class="sec-label">B2B Pivot</p>
-  <h2>Launching the video-first creator program</h2>
-  <p class="chapter-note">Citizen expanded into B2B, video-first partnerships alongside its consumer app. This program supported that expansion.</p>
-
-  <div class="entry">
-    <span class="stamp">B2B pivot</span>
-    <span class="stamp">main operations contact</span>
-    <span class="stamp">program guide, primary author</span>
-    <h3>Creators Program Launch</h3>
-    <span class="meta">Citizen · Volunteered, outside my formal job description</span>
-    <p>Citizen bought and aggressively solicited user video, and staff imported each clip by hand, downloading the video file and uploading it into the proprietary operating system. I volunteered for the Creators Program on my own initiative, entirely outside my service-level commitments and job description. The program became tied to Citizen's later B2B partnership with Axon.</p>
-    <p>For several months I served as the main contact for the program within the operations team and introduced the team to it. I put together most of the program guide, written with the head of marketing and the head of the consumer subscription team. The guide defined which video content belonged in the app and which did not, including content too sensitive to publish regardless of its viral potential.</p>
-    <p>I trained freelance video creators to tailor their footage to Citizen's editorial guidelines, trained the people on the creators team, and worked on launch procedures that readied the team for video-first. Because submitted video arrived without editorial context, I built the model-in-the-loop workflow described below to write the narrative around it.</p>
-  </div>
-</section>
-
-<hr class="rule">
-
-<section class="wrap">
+<details class="sec" open>
+<summary>
   <p class="sec-label">Production Systems &amp; Automation</p>
   <h2>Built for accuracy at real scale</h2>
+</summary>
   <p class="chapter-note">Systems built for live production, combining automation with human-in-the-loop review.</p>
 
   <div class="entry">
@@ -245,13 +234,40 @@
     <span class="meta">Independent · Python, Playwright, Gemini API</span>
     <p>A self-initiated automation that scrapes live California Highway Patrol incident data using Python and Playwright, routes it through the Gemini API for plain-English summarization, and syncs structured output to a public GitHub repository.</p>
   </div>
+</details>
 </section>
 
 <hr class="rule">
 
 <section class="wrap">
+<details class="sec">
+<summary>
+  <p class="sec-label">B2B Pivot</p>
+  <h2>Launching the video-first creator program</h2>
+</summary>
+  <p class="chapter-note">Citizen expanded into B2B, video-first partnerships alongside its consumer app. This program supported that expansion.</p>
+
+  <div class="entry">
+    <span class="stamp">B2B pivot</span>
+    <span class="stamp">main operations contact</span>
+    <span class="stamp">program guide, primary author</span>
+    <h3>Creators Program Launch</h3>
+    <span class="meta">Citizen · Volunteered, outside my formal job description</span>
+    <p>Citizen bought and aggressively solicited user video, and staff imported each clip by hand, downloading the video file and uploading it into the proprietary operating system. I volunteered for the Creators Program on my own initiative, entirely outside my service-level commitments and job description. The program became tied to Citizen's later B2B partnership with Axon.</p>
+    <p>For several months I served as the main contact for the program within the operations team and introduced the team to it. I put together most of the program guide, written with the head of marketing and the head of the consumer subscription team. The guide defined which video content belonged in the app and which did not, including content too sensitive to publish regardless of its viral potential.</p>
+    <p>I trained freelance video creators to tailor their footage to Citizen's editorial guidelines, trained the people on the creators team, and worked on launch procedures that readied the team for video-first. Because submitted video arrived without editorial context, I built the model-in-the-loop workflow described below to write the narrative around it.</p>
+  </div>
+</details>
+</section>
+
+<hr class="rule">
+
+<section class="wrap">
+<details class="sec">
+<summary>
   <p class="sec-label">Operational Scale</p>
   <h2>Fast, accurate, and measurable</h2>
+</summary>
   <p class="note">What running a high-volume operation actually looked like day to day.</p>
 
   <div class="entry">
@@ -280,13 +296,17 @@
     <p>Iterated on push notification heading formats and calls to action for missing persons alerts, testing hundreds of variants for clarity and actionability. This editorial research contributed to a policy shift permitting radio analysts to approximate missing person names in coverage. Also served as overnight on-call responder via PagerDuty for platform incidents, escalating to engineering and management and reporting root cause and resolution after major incidents.</p>
     <p class="note">Per user and on-the-ground team feedback, notifications using this tested copy assisted in locating four missing people: an 85-year-old woman with dementia in Los Angeles, a missing child in Brooklyn, a missing son in the Bronx, and a teenager located at a New York City train station.</p>
   </div>
+</details>
 </section>
 
 <hr class="rule">
 
 <section class="wrap">
+<details class="sec">
+<summary>
   <p class="sec-label">Published Reference &amp; Technical Writing</p>
   <h2>Structured documentation and long-form research</h2>
+</summary>
 
   <div class="entry">
     <span class="stamp">Co-author · Published reference work</span>
@@ -306,13 +326,17 @@
     <span class="meta">Occidental College Clinical Psychology Lab · 2007–2010</span>
     <p>Administered structured diagnostic evaluations under federal compliance guidelines, producing legally and medically defensible documentation from qualitative and quantitative case data.</p>
   </div>
+</details>
 </section>
 
 <hr class="rule">
 
 <section class="wrap">
+<details class="sec">
+<summary>
   <p class="sec-label">Independent Writer &amp; Consultant</p>
   <h2>Self-Employed, 2010 – Present</h2>
+</summary>
   <p>Sixteen years of continuous editorial and research work, run concurrently with the systems work above.</p>
 
   <div class="entry">
@@ -324,13 +348,17 @@
     <h3>Building a Social Presence From Scratch</h3>
     <p>Created and built the Twitter account, from scratch, for Emmy-winning documentarian Stanley Nelson in 2012, conducted archival research alongside researcher Lewanne Jones, and co-organized conferences at PBS POV studios and with the Elder Financial Protection Network.</p>
   </div>
+</details>
 </section>
 
 <hr class="rule">
 
 <section class="wrap">
+<details class="sec">
+<summary>
   <p class="sec-label">Continuing Study</p>
   <h2>Finding the standard at the edge case</h2>
+</summary>
   <p class="chapter-note">The legal reasoning in the texts I study derives the general principle from the extreme, specific case. I study it every day, and it shapes how I test any standard: at the point where it almost breaks.</p>
 
   <div class="entry">
@@ -347,6 +375,7 @@
     <span class="meta">Student · Mar 2024 – Present</span>
     <p>Daily study of the Mishnah Berurah with R' Tzvi Thaler, working through legal reasoning text by text. Years of this kind of close reading are part of where my instinct for precision and edge-case thinking comes from.</p>
   </div>
+</details>
 </section>
 
 <hr class="rule">
