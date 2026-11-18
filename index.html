@@ -154,8 +154,8 @@
     <article id="model-in-the-loop">
       <h3>Model-in-the-loop production workflow</h3>
       <p class="meta">Solo build at Citizen on ChatGPT Enterprise</p>
-      <p>Users submitted video of emergencies that arrived without context. For California, Citizen’s largest market, I designed, built, and ran a model-in-the-loop workflow on ChatGPT Enterprise that translated first-responder jargon into clear narrative around that video, with no engineering or product support. The custom editorial rulebook I wrote for it required source attribution, flagging of conflicting reports, and a human review checkpoint before publishing.</p>
-      <p>The workflow ran in production for more than two years, cut manual processing by 10 minutes per push series, and drove an estimated <mark>1 million+ additional weekly notifications</mark> (my own estimate).</p>
+      <p>People sent in video of emergencies that arrived without context. For California, Citizen’s largest market, I designed, built, and ran a model-in-the-loop workflow on ChatGPT Enterprise that translated first-responder jargon into clear narrative around that video, with no engineering or product support. The custom editorial rulebook I wrote for it required source attribution, flagging of conflicting reports, and a human review checkpoint before publishing.</p>
+      <p>The workflow ran in production for more than two years, cut manual processing by 10 minutes per notification series, and drove an estimated <mark>1 million+ additional weekly notifications</mark> (my own estimate).</p>
       <figure>
         <video controls playsinline preload="metadata" width="1280" height="720" poster="workflow-explainer-poster.jpg?v=2" aria-describedby="explainer-desc">
           <source src="workflow-explainer.MP4?v=3" type="video/mp4">
@@ -164,28 +164,28 @@
         <figcaption id="explainer-desc">A ten-second reenactment: raw California Highway Patrol dispatch text, ChatGPT Enterprise applying the rulebook to write an incident summary, and the kind of roadway scene the coverage described. The screens and footage are generated illustrations, and Citizen’s proprietary system does not appear.</figcaption>
       </figure>
       <div class="steps">
-        <p><strong>Current state.</strong> One California emergency generated duplicate push series that carried little context or narrative.</p>
-        <p><strong>Future state.</strong> One consolidated narrative push series per incident.</p>
+        <p><strong>Current state.</strong> One California emergency generated duplicate notification series that carried little context or narrative.</p>
+        <p><strong>Future state.</strong> One consolidated narrative notification series per incident.</p>
         <p><strong>Implementation.</strong> I built the design as a skill in ChatGPT Enterprise with my manager’s approval, introduced operations teammates to it, trained the head of the video moderation team, and shared training materials through Slack. Analysts on the operations team, the video moderation team, and that team’s manager adopted the sourcing method.</p>
-        <p><strong>Measurement.</strong> I measured the change after launch from user volume and escalation rates.</p>
+        <p><strong>Measurement.</strong> I measured the change after launch from the number of people reached and escalation rates.</p>
       </div>
     </article>
 
     <article id="evaluation">
       <h3>Output quality evaluation framework</h3>
       <p class="meta">Built at Citizen with OpenAI Codex, macOS Shortcuts, and Bash</p>
-      <p>I audited more than 1,000 live outputs from Citizen’s automated radio-incident authoring model, a separate system from the workflow above. For the audit I built an independent evaluation framework, checked each output against service-level standards for accuracy, privacy, and editorial quality, defined concrete failure categories, tracked quality in a time-series graph, and surfaced a <mark>12% peak error rate</mark>. QA scores rose after a leadership-backed recalibration.</p>
+      <p>I audited more than 1,000 live drafts from Citizen’s automated radio-incident writing model, a separate system from the workflow above. For the audit I built an independent evaluation framework, checked each draft against standards for accuracy, privacy, and editorial quality, defined concrete failure categories, tracked quality in a time-series graph, and surfaced a <mark>12% peak error rate</mark>. QA scores rose after a leadership-backed recalibration.</p>
       <figure>
         <video controls playsinline preload="metadata" width="1280" height="720" poster="audit-explainer-poster.jpg" aria-describedby="audit-desc">
           <source src="audit-explainer.mp4?v=2" type="video/mp4">
           Your browser does not support embedded video.
         </video>
-        <figcaption id="audit-desc">A ten-second reenactment of the audit: outputs cataloged, the Codex, Shortcuts, and Bash toolchain, and the time-series graph with its peak. The graph is a stylized rendering, not the audit data.</figcaption>
+        <figcaption id="audit-desc">A ten-second reenactment of the audit: drafts cataloged, the Codex, Shortcuts, and Bash toolchain, and the time-series graph with its peak. The graph is a stylized rendering, not the audit data.</figcaption>
       </figure>
       <div class="steps">
-        <p><strong>Current state.</strong> The authoring model drafted notification copy from first-responder radio clips, and the operations team reviewed each draft for accuracy against the clip and for adherence to Citizen’s editorial, style, privacy, and safety guidelines. Citizen closely tracked the team’s error rate and kept no separate error rate for the model.</p>
+        <p><strong>Current state.</strong> The writing model drafted notification copy from first-responder radio clips, and the operations team reviewed each draft for accuracy against the clip and for adherence to Citizen’s editorial, style, privacy, and safety guidelines. Citizen closely tracked the team’s error rate and kept no separate error rate for the model.</p>
         <p><strong>Future state.</strong> The team, its manager, and leadership know the model’s own error rate.</p>
-        <p><strong>Implementation.</strong> I captured the outputs as screenshots in real time with hotkeys I built in macOS Shortcuts, alongside my regular output and service-level obligations, and audited each one against the standard.</p>
+        <p><strong>Implementation.</strong> I captured the drafts as screenshots in real time with hotkeys I built in macOS Shortcuts, alongside my regular work and service commitments, and audited each one against the standard.</p>
         <p><strong>Measurement.</strong> Bash scripts generated a time-series graph of quality in half-hour increments, which surfaced the peak.</p>
       </div>
     </article>
@@ -193,19 +193,19 @@
     <article id="arizona">
       <h3>Arizona regional pipeline</h3>
       <p class="meta">Built at Citizen with an engineer, using Python, JSON, Zapier, Slack, and Tableau</p>
-      <p>I partnered with an engineer to build a Python, JSON, and Zapier automation that converted jargon-heavy government source text into structured JSON. Together with the step-by-step workflow and quality playbooks I wrote, it scaled Arizona regional <mark>output 3x and retention&nbsp;4x</mark>.</p>
+      <p>I partnered with an engineer to build a Python, JSON, and Zapier automation that converted jargon-heavy government source text into structured JSON. Together with the step-by-step workflow and quality playbooks I wrote, it tripled the number of notifications produced in Arizona and increased retention fourfold.</p>
       <div class="steps">
         <p><strong>Current state.</strong> Static and interference on Phoenix and Tucson radio channels caused the team to miss major emergencies.</p>
         <p><strong>Future state.</strong> Automated notifications drawn from a public real-time feed of fire and medical emergency calls, a design I worked out with the engineer.</p>
-        <p><strong>Implementation.</strong> The automation connected to a nomenclature dictionary that translated first-responder jargon into notification copy, and it ran through Zapier and Slack. I wrote one guide for the operations team and a technical guide for engineers. The engineer and I co-built two Tableau dashboards over Salesforce Service Cloud data to monitor the automated pushes.</p>
-        <p><strong>Measurement.</strong> I measured the result in regional output and retention.</p>
+        <p><strong>Implementation.</strong> The automation connected to a nomenclature dictionary that translated first-responder jargon into notification copy, and it ran through Zapier and Slack. I wrote one guide for the operations team and a technical guide for engineers. The engineer and I co-built two Tableau dashboards over Salesforce Service Cloud data to monitor the automated notifications.</p>
+        <p><strong>Measurement.</strong> I measured the result by the number of notifications produced in the region and by retention.</p>
       </div>
     </article>
 
     <article id="agent">
       <h3>Notification optimization agent</h3>
       <p class="meta">Deployed at Citizen with a supervisor, on Claude</p>
-      <p>With a supervisor, I trained and deployed a custom Claude agent to manage notification optimization rules.</p>
+      <p>With a supervisor, I trained and deployed a custom Claude agent to manage rules for improving notifications.</p>
     </article>
 
     <article id="chp-pipeline">
@@ -217,7 +217,7 @@
           <source src="chp-pipeline-demo.mp4?v=2" type="video/mp4">
           Your browser does not support embedded video.
         </video>
-        <figcaption id="chp-desc">Screen recording of a live run in Ubuntu under WSL: the runner extracts 14 incidents from the CHP dashboard, Gemini writes plain-English summaries for three of them, and the output syncs to GitHub. The recording ends when the runner enters its 180-second wait.</figcaption>
+        <figcaption id="chp-desc">Screen recording of a live run in Ubuntu under WSL: the runner extracts 14 incidents from the CHP dashboard, Gemini writes plain-English summaries for three of them, and the results sync to GitHub. The recording ends when the runner enters its 180-second wait.</figcaption>
       </figure>
       <p><strong>How I build.</strong> I work through language-model-assisted development with Cursor, OpenAI Codex, Claude Code, Claude, and Gemini: I specify the task, review and test the model’s work, and iterate.</p>
       <p><strong>What I learned.</strong> The back end came together quickly, while the map front end I tried to build on top of it never worked, so I kept the pipeline and its JSON output. An earlier version captured the full dispatch log from each incident’s detail page, and restoring that depth is my next step.</p>
@@ -227,20 +227,20 @@
 
   <section id="creators">
     <h2>The Creators Program</h2>
-    <p>Citizen expanded into B2B, video-first partnerships alongside its consumer app, ultimately distributing real-time video feeds into law enforcement real-time crime centers via a technology partnership with Axon. Citizen also bought and aggressively solicited user video, and staff imported each clip by hand.</p>
-    <p>I volunteered to launch the Creators Program for the operations team, outside my job description, and kept meeting my service-level commitments throughout. The program supported the B2B expansion and later became tied to the Axon partnership. For several months I served as its main contact within the operations team and introduced the team to it. With the head of marketing and the head of the consumer subscription team, I wrote most of the program guide, which set standards for which user-submitted video belonged in the app, including content too sensitive to publish regardless of its viral potential.</p>
-    <p>I trained freelance video creators to tailor their footage to Citizen’s editorial guidelines, trained the creators team, and worked on launch procedures that readied the team for video-first. Because submitted video arrived without editorial context, I built the model-in-the-loop workflow above to write the narrative around it. Outside my job description, I also trained the head of marketing hands-on in Tableau for several months, so she could pull the engagement and growth metrics her role required.</p>
+    <p>Citizen expanded into B2B, video-first partnerships alongside its public-facing app, ultimately distributing real-time video feeds into law enforcement real-time crime centers via a technology partnership with Axon. Citizen also bought and aggressively solicited video from the public, and staff imported each clip by hand.</p>
+    <p>I volunteered to launch the Creators Program for the operations team, outside my job description, and kept meeting my service commitments throughout. The program supported the B2B expansion and later became tied to the Axon partnership. For several months I served as its main contact within the operations team and introduced the team to it. With the head of marketing and the head of the subscription team, I wrote most of the program guide, which set standards for which videos people sent in belonged in the app, including content too sensitive to publish regardless of its popularity.</p>
+    <p>I trained freelance video creators to tailor their footage to Citizen’s editorial guidelines, trained the creators team, and worked on launch procedures that readied the team for video-first. Because submitted video arrived without editorial context, I built the model-in-the-loop workflow above to write the narrative around it. Outside my job description, I also trained the head of marketing hands-on in Tableau for several months, so she could pull the engagement and growth numbers her role required.</p>
   </section>
 
   <section id="operations">
     <h2>Daily operations at Citizen, 2020–2026</h2>
-    <p><strong>Send decisions and on-call.</strong> I owned audience and send decisions for public safety notifications, with increasing responsibility as Citizen scaled. My copy regularly reached <mark>more than 1 million users per send</mark> and, for some notifications, all 9 million users. I processed radio and other audio source material at 2x speed or faster while holding editorial accuracy standards, and as on-call responder through PagerDuty, I paged engineering and escalated to management during severe incidents. I also wrote bug reports and feature-flag requests in Jira.</p>
-    <p><strong>Missing persons.</strong> I tested hundreds of heading and call-to-action variants for missing-person notifications for clarity and actionability, and I advocated for approximating names from radio coverage, which became policy. Per user and on-the-ground team feedback, notifications using this tested copy assisted in locating four missing people: an <span class="nowrap">85-year-old</span> woman with dementia in Los Angeles, a missing child in Brooklyn, a missing son in the Bronx, and a teenager located at a New York City train station. I also sourced missing-person cases directly from first-responder social media accounts.</p>
-    <p><strong>Playbooks.</strong> I authored seven step-by-step workflow and quality playbooks that became standard practice across a <span class="nowrap">100-plus person</span> organization.</p>
-    <p><strong>Training and quality review.</strong> Over roughly five years, I trained and quality-reviewed a rotating subset of about 100 offshore contractors in Kenya and Nepal on US address disambiguation, geography, and police procedure. I coordinated performance issues with Citizen managers and mentored US-based analysts.</p>
-    <p><strong>Requirements and deduplication.</strong> I submitted more than 50 engineering tickets in Jira and Asana that turned daily operational observations into structured requirements, and I coordinated with engineering on data integrity and privacy guardrails. For years I documented duplicate incident notifications in those tickets as automated, offshore, and user-submitted inputs multiplied. Engineering later built a deduplication tool for incidents with video.</p>
-    <p><strong>Measurement and user research.</strong> I analyzed click-through rate, share and disable ratio, estimated net audience growth, and push volume for selected pushes in Tableau, Sigma, and Sundial. Over several months I also conducted user research interviews with the UX research team and reviewed Tableau data and user comments to inform language-model deployment around user needs during Citizen’s expansion into B2B.</p>
-    <p><strong>Original content sourcing.</strong> I partnered with product and UX teams to identify unmet content needs, sourced content from state attorneys general in Illinois and New York, and matched it to critical-incident video coverage, which drove millions of additional context-rich notifications.</p>
+    <p><strong>Notification decisions and on-call.</strong> I owned decisions about who received public safety notifications and when, with increasing responsibility as Citizen scaled. My copy regularly reached <mark>more than 1 million people with a single notification</mark> and, for some notifications, all 9 million people. I processed radio and other audio source material at 2x speed or faster while holding editorial accuracy standards, and as on-call responder through PagerDuty, I paged engineering and escalated to management during severe incidents. I also wrote bug reports and feature-flag requests in Jira.</p>
+    <p><strong>Missing persons.</strong> I tested hundreds of heading and call-to-action variants for missing-person notifications for clarity and actionability, and I advocated for approximating names from radio coverage, which became policy. Based on feedback from people and the on-the-ground team, notifications using this tested copy assisted in locating four missing people: an <span class="nowrap">85-year-old</span> woman with dementia in Los Angeles, a missing child in Brooklyn, a missing son in the Bronx, and a teenager located at a New York City train station. I also found missing-person cases directly through first-responder social media accounts.</p>
+    <p><strong>Playbooks.</strong> I authored seven step-by-step workflow and quality playbooks that became standard practice across an organization of more than 100 people.</p>
+    <p><strong>Training and quality review.</strong> Over roughly five years, I trained and quality-reviewed a rotating group of about 100 offshore contractors in Kenya and Nepal on US address disambiguation, geography, and police procedure. I coordinated performance issues with Citizen managers and mentored US-based analysts.</p>
+    <p><strong>Requirements and deduplication.</strong> I submitted more than 50 engineering tickets in Jira and Asana that turned daily operational observations into clear requirements, and I coordinated with engineering on data accuracy and privacy safeguards. For years I documented duplicate incident notifications in those tickets as automated, offshore, and video submitted by the public multiplied. Engineering later built a tool to prevent duplicate notifications for incidents with video.</p>
+    <p><strong>Measurement and research with people.</strong> I analyzed click-through rate, the ratio of people who shared or disabled notifications, estimated growth in the number of people reached, and the number of notifications sent using Tableau, Sigma, and Sundial. Over several months I also interviewed people with the UX research team and reviewed Tableau data and comments from people to inform how we used language models to meet people's needs during Citizen’s expansion into B2B.</p>
+    <p><strong>Original content sourcing.</strong> I partnered with product and UX teams to identify gaps in the information we provided, sourced content from state attorneys general in Illinois and New York, and matched it to critical-incident video coverage, which drove millions of additional context-rich notifications.</p>
   </section>
 
   <section id="writing">
