@@ -1,497 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shimshon Odess | Operations and Workflow Systems</title>
 <meta name="description" content="Portfolio of Shimshon Odess: production language-model workflows, output evaluation, automation, and documentation.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shimshon Odess">
+<meta property="og:description" content="I build language-model workflows that hold up in production. Then I check their work.">
+<meta property="og:url" content="https://s-odess.github.io/Portfolio/">
 <style>
-  :root{
-    --paper:#EFEAE0;
-    --paper-fold:#DDD5C3;
-    --ink:#1F1B16;
-    --ink-soft:#4A443C;
-    --pen:#A8332B;
-    --pen-soft:#C46A5E;
-    --sage:#5B6B5D;
-    --rule:#C9C0AC;
-    --maxw:760px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;} }
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Source Serif 4', serif;
-    font-size:18px;
-    line-height:1.6;
-  }
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
-  .mono{font-family:'IBM Plex Mono', monospace;}
-  a{color:var(--pen); text-decoration-thickness:1px;}
-  a:focus-visible, button:focus-visible, summary:focus-visible{outline:2px solid var(--pen); outline-offset:3px;}
-
-  header.wrap{padding-top:56px; padding-bottom:8px;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--sage);
-    margin:0 0 18px;
-  }
-  h1.name{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:clamp(2.4rem, 6vw, 3.6rem);
-    margin:0 0 6px;
-    line-height:1.05;
-  }
-  .role{
-    font-family:'Fraunces', serif;
-    font-style:italic;
-    font-weight:400;
-    font-size:1.25rem;
-    color:var(--ink-soft);
-    margin:0 0 40px;
+  :root {
+    --paper: #ffffff;
+    --ink: #000000;
+    --quiet: #595959;
+    --link: #1f3fd1;
+    --visited: #64308f;
+    --highlight: #ffe866;
   }
 
-  .hero-mark{
-    position:relative;
-    margin:0 0 56px;
-    padding:28px 28px 30px;
-    background:var(--paper-fold);
-    border-radius:2px;
-  }
-  .hero-mark .annot{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    color:var(--pen);
-    display:block;
-    margin:0 0 12px;
-  }
-  .hero-mark .annot::before{content:"→ ";}
-  .hero-mark .final{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:clamp(1.4rem, 4vw, 2rem);
-    line-height:1.35;
-    color:var(--ink);
-    margin:0;
+  * { box-sizing: border-box; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    color-scheme: light;
   }
 
-  .rule{border:none; border-top:1px solid var(--rule); margin:52px 0 40px;}
-
-  section.wrap{padding-bottom:8px;}
-  .sec-label{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    color:var(--sage);
-    margin:0 0 10px;
-  }
-  h2{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:1.7rem;
-    margin:0 0 18px;
-  }
-  p{margin:0 0 16px; max-width:64ch;}
-  .lede{font-size:1.15rem; color:var(--ink-soft);}
-  .note{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--ink-soft);
-    max-width:64ch;
-    margin:0 0 20px;
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+    font-size: clamp(1.0625rem, 0.97rem + 0.4vw, 1.1875rem);
+    line-height: 1.5;
+    font-kerning: normal;
   }
 
-  .entry{margin:0 0 38px;}
-  .entry h3{
-    font-family:'Fraunces', serif;
-    font-size:1.15rem;
-    font-weight:600;
-    margin:0 0 4px;
-  }
-  .entry .meta{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    color:var(--sage);
-    margin:0 0 10px;
-    display:block;
-  }
-  .entry p{margin:0 0 10px;}
-
-  .stamp{
-    display:inline-block;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.04em;
-    color:var(--pen);
-    border:1px solid var(--pen-soft);
-    border-radius:3px;
-    padding:2px 8px;
-    margin:0 8px 12px 0;
+  header, main, footer {
+    max-width: 34em;
+    margin: 0 auto;
+    padding: 0 1.25rem;
   }
 
-  .chapter-note{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--ink-soft);
-    background:var(--paper-fold);
-    padding:14px 18px;
-    border-radius:2px;
-    margin:0 0 28px;
-    max-width:64ch;
+  header { padding-top: clamp(2.75rem, 9vw, 6rem); }
+
+  h1 {
+    font-size: 1.15em;
+    line-height: 1.3;
+    margin: 0 0 1.5rem;
   }
 
-  /* Current state, future state, implementation, measurement */
-  .steps{
-    margin:16px 0 16px;
-    padding:0;
-    max-width:64ch;
-    border-top:1px solid var(--rule);
+  .lede {
+    font-size: clamp(1.75rem, 1.2rem + 2vw, 2.3rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 2.25rem;
   }
-  .steps > div{
-    display:grid;
-    grid-template-columns:168px 1fr;
-    column-gap:18px;
-    padding:11px 0 12px;
-    border-bottom:1px solid var(--rule);
-  }
-  .steps dt{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.05em;
-    text-transform:uppercase;
-    color:var(--pen);
-    padding-top:4px;
-  }
-  .steps dt span{color:var(--sage); margin-right:8px;}
-  .steps dd{margin:0; font-size:16.5px; line-height:1.5;}
-  @media (max-width:560px){
-    .steps > div{grid-template-columns:1fr; row-gap:2px;}
-    .steps dt{padding-top:0;}
+  .lede > span { display: block; text-wrap: pretty; }
+
+  p { margin: 0 0 1em; text-wrap: pretty; }
+
+  .nowrap { white-space: nowrap; }
+
+  section { margin-top: 4.5rem; }
+
+  h2 {
+    font-size: 1.3em;
+    line-height: 1.25;
+    margin: 0 0 1.25rem;
   }
 
-  details.sec > summary{list-style:none; cursor:pointer; position:relative; padding-right:36px;}
-  details.sec > summary::-webkit-details-marker{display:none;}
-  details.sec > summary::after{content:"+"; position:absolute; right:0; top:2px; font-family:'IBM Plex Mono', monospace; font-size:22px; color:var(--pen);}
-  details.sec[open] > summary::after{content:"\2212";}
-  details.sec > summary h2{margin-bottom:18px;}
-  details.sec:not([open]) > summary h2{margin-bottom:6px;}
+  h3 {
+    font-size: 1.05em;
+    line-height: 1.3;
+    margin: 0;
+  }
 
-  .explainer{margin:18px 0 4px; max-width:100%;}
-  .explainer video{display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px; background:var(--ink);}
-  .explainer figcaption{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-soft); margin-top:8px; max-width:64ch;}
+  article + article { margin-top: 3rem; }
 
-  footer.wrap{padding:40px 24px 80px; }
-  footer p{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-soft);}
-  footer a{margin-right:18px;}
+  .meta {
+    color: var(--quiet);
+    font-size: 0.875em;
+    margin: 0.2rem 0 0.9rem;
+  }
+
+  .steps { margin-top: 1.5rem; }
+  .steps p { margin-bottom: 0.55em; }
+
+  figure { margin: 1.75rem 0; }
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #000;
+  }
+
+  figcaption {
+    color: var(--quiet);
+    font-size: 0.875em;
+    line-height: 1.45;
+    margin-top: 0.6rem;
+  }
+
+  mark {
+    background: var(--highlight);
+    color: inherit;
+    padding: 0 0.12em;
+    border-radius: 0.15em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+  }
+  a:visited { color: var(--visited); }
+  @media (hover: hover) {
+    a:hover { background: var(--highlight); }
+  }
+  a:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+  }
+
+  ::selection { background: var(--highlight); color: var(--ink); }
+
+  footer {
+    margin-top: 5rem;
+    padding-bottom: 4rem;
+  }
 </style>
 </head>
 <body>
 
-<header class="wrap">
-  <p class="eyebrow">Portfolio</p>
-  <h1 class="name">Shimshon Odess</h1>
-  <p class="role">Operations and workflow systems: I build, measure, and document production language-model workflows</p>
-
-  <div class="hero-mark">
-    <span class="annot">current state, future state, implementation, measurement</span>
-    <p class="final">I map how a workflow runs today, design and build its future state, and measure the result after launch.</p>
-  </div>
+<header>
+  <h1>Shimshon Odess</h1>
+  <p class="lede"><span>I build <span class="nowrap">language-model</span> workflows that hold&nbsp;up in&nbsp;production.</span> <span>Then I check their work.</span></p>
 </header>
 
-<hr class="rule">
+<main>
+  <p>For six years I built and ran workflow systems at Citizen, a real-time public safety platform that serves 9 million users and has sent more than 10 billion notifications. I map how a workflow runs today, design and build its future state, test language-model output against defined failure categories, and measure the result after launch. I also write the rulebooks, playbooks, and guides that hold the output to a standard.</p>
+  <p>I helped the operations team absorb a <mark>66% reduction in operational baseline hours</mark> as its workload grew, by combining language-model workflows, automation, and playbooks with faster model deployment and more frequent checks of model output.</p>
+  <p>I am based in Amherst, Massachusetts. Write to me at <a href="mailto:shimshonodess@gmail.com">shimshonodess@gmail.com</a>, or find me on <a href="https://linkedin.com/in/shoshone" target="_blank" rel="noopener">LinkedIn</a>.</p>
 
-<section class="wrap">
-  <p class="sec-label">About</p>
-  <p class="lede">For six years, I built and ran workflow systems at Citizen, a real-time public safety platform that serves 9 million users and has sent more than 10 billion notifications. Citizen expanded into B2B, video-first partnerships alongside its consumer app, ultimately distributing real-time video feeds into law enforcement real-time crime centers via a technology partnership with Axon.</p>
-  <p class="lede">I map the current state of a workflow, design and implement the future state, test language model output against defined failure categories, and measure the results after launch. I also write the rulebooks, playbooks, and guides that hold the output to a standard.</p>
-</section>
+  <section id="systems">
+    <h2>Systems I built</h2>
 
-<hr class="rule">
+    <article id="model-in-the-loop">
+      <h3>Model-in-the-loop production workflow</h3>
+      <p class="meta">Solo build at Citizen on ChatGPT Enterprise</p>
+      <p>Users submitted video of emergencies that arrived without context. For California, Citizen’s largest market, I designed, built, and ran a model-in-the-loop workflow on ChatGPT Enterprise that translated first-responder jargon into clear narrative around that video, with no engineering or product support. The custom editorial rulebook I wrote for it required source attribution, flagging of conflicting reports, and a human review checkpoint before publishing.</p>
+      <p>The workflow ran in production for more than two years, cut manual processing by 10 minutes per push series, and drove an estimated <mark>1 million+ additional weekly notifications</mark> (my own estimate).</p>
+      <figure>
+        <video controls playsinline preload="metadata" width="1280" height="720" poster="workflow-explainer-poster.jpg?v=2" aria-describedby="explainer-desc">
+          <source src="workflow-explainer.MP4?v=3" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+        <figcaption id="explainer-desc">A ten-second reenactment: raw California Highway Patrol dispatch text, ChatGPT Enterprise applying the rulebook to write an incident summary, and the kind of roadway scene the coverage described. The screens and footage are generated illustrations, and Citizen’s proprietary system does not appear.</figcaption>
+      </figure>
+      <div class="steps">
+        <p><strong>Current state.</strong> One California emergency generated duplicate push series that carried little context or narrative.</p>
+        <p><strong>Future state.</strong> One consolidated narrative push series per incident.</p>
+        <p><strong>Implementation.</strong> I built the design as a skill in ChatGPT Enterprise with my manager’s approval, introduced operations teammates to it, trained the head of the video moderation team, and shared training materials through Slack. Analysts on the operations team, the video moderation team, and that team’s manager adopted the sourcing method.</p>
+        <p><strong>Measurement.</strong> I measured the change after launch from user volume and escalation rates.</p>
+      </div>
+    </article>
 
-<section class="wrap">
-<details class="sec" open>
-<summary>
-  <p class="sec-label">Production Systems &amp; Automation</p>
-  <h2>Built for accuracy at real scale</h2>
-</summary>
-  <p class="chapter-note">Systems built for live production, combining automation with human-in-the-loop review. Each Citizen project below follows one sequence: current state, future state, implementation, measurement.</p>
+    <article id="evaluation">
+      <h3>Output quality evaluation framework</h3>
+      <p class="meta">Built at Citizen with OpenAI Codex, macOS Shortcuts, and Bash</p>
+      <p>I audited more than 1,000 live outputs from Citizen’s automated radio-incident authoring model, a separate system from the workflow above. For the audit I built an independent evaluation framework, checked each output against service-level standards for accuracy, privacy, and editorial quality, defined concrete failure categories, tracked quality in a time-series graph, and surfaced a <mark>12% peak error rate</mark>. QA scores rose after a leadership-backed recalibration.</p>
+      <figure>
+        <video controls playsinline preload="metadata" width="1280" height="720" poster="audit-explainer-poster.jpg" aria-describedby="audit-desc">
+          <source src="audit-explainer.mp4?v=2" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+        <figcaption id="audit-desc">A ten-second reenactment of the audit: outputs cataloged, the Codex, Shortcuts, and Bash toolchain, and the time-series graph with its peak. The graph is a stylized rendering, not the audit data.</figcaption>
+      </figure>
+      <div class="steps">
+        <p><strong>Current state.</strong> The authoring model drafted notification copy from first-responder radio clips, and the operations team reviewed each draft for accuracy against the clip and for adherence to Citizen’s editorial, style, privacy, and safety guidelines. Citizen closely tracked the team’s error rate and kept no separate error rate for the model.</p>
+        <p><strong>Future state.</strong> The team, its manager, and leadership know the model’s own error rate.</p>
+        <p><strong>Implementation.</strong> I captured the outputs as screenshots in real time with hotkeys I built in macOS Shortcuts, alongside my regular output and service-level obligations, and audited each one against the standard.</p>
+        <p><strong>Measurement.</strong> Bash scripts generated a time-series graph of quality in half-hour increments, which surfaced the peak.</p>
+      </div>
+    </article>
 
-  <div class="entry">
-    <span class="stamp">est. 1M+ notifications weekly</span>
-    <span class="stamp">solo build, no engineering support</span>
-    <span class="stamp">2+ yrs runtime</span>
-    <h3>Model-in-the-Loop Production Workflow</h3>
-    <span class="meta">Citizen · ChatGPT Enterprise</span>
-    <p>I designed, built, and ran a model-in-the-loop workflow on ChatGPT Enterprise for California, Citizen's largest market, with no engineering or product support. Users submitted video of emergencies that arrived without context, and the workflow translated first-responder jargon into clear narrative around that video. The custom editorial rulebook I wrote for it required source attribution, flagging of conflicting reports, and a human review checkpoint before publishing.</p>
-    <p>The workflow ran in production for more than two years, cut manual processing by 10 minutes per push series, and drove an estimated 1 million plus additional weekly notifications (my own estimate from user volume and escalation rates).</p>
-    <dl class="steps">
-      <div><dt><span>01</span>Current state</dt><dd>One California emergency generated duplicate push series that carried little context or narrative.</dd></div>
-      <div><dt><span>02</span>Future state</dt><dd>One consolidated narrative push series per incident.</dd></div>
-      <div><dt><span>03</span>Implementation</dt><dd>I built the design as a skill in ChatGPT Enterprise with my manager's approval, introduced operations teammates to it, trained the head of the video moderation team on the workflow, and shared training materials through Slack. Analysts on the operations team, the video moderation team, and that team's manager adopted the sourcing method.</dd></div>
-      <div><dt><span>04</span>Measurement</dt><dd>I measured the change after launch from user volume and escalation rates.</dd></div>
-    </dl>
-    <figure class="explainer">
-      <video controls playsinline preload="metadata" width="1280" height="720" poster="workflow-explainer-poster.jpg?v=2" aria-describedby="explainer-desc">
-        <source src="workflow-explainer.MP4?v=3" type="video/mp4">
-        Your browser does not support embedded video.
-      </video>
-      <figcaption id="explainer-desc">Ten-second illustrative reenactment of the workflow: raw California Highway Patrol dispatch text, ChatGPT Enterprise applying the rulebook to write an incident summary, and the kind of roadway scene the resulting coverage described. The screens and footage are generated illustrations. Citizen's proprietary system does not appear.</figcaption>
-    </figure>
-  </div>
+    <article id="arizona">
+      <h3>Arizona regional pipeline</h3>
+      <p class="meta">Built at Citizen with an engineer, using Python, JSON, Zapier, Slack, and Tableau</p>
+      <p>I partnered with an engineer to build a Python, JSON, and Zapier automation that converted jargon-heavy government source text into structured JSON. Together with the step-by-step workflow and quality playbooks I wrote, it scaled Arizona regional <mark>output 3x and retention&nbsp;4x</mark>.</p>
+      <div class="steps">
+        <p><strong>Current state.</strong> Static and interference on Phoenix and Tucson radio channels caused the team to miss major emergencies.</p>
+        <p><strong>Future state.</strong> Automated notifications drawn from a public real-time feed of fire and medical emergency calls, a design I worked out with the engineer.</p>
+        <p><strong>Implementation.</strong> The automation connected to a nomenclature dictionary that translated first-responder jargon into notification copy, and it ran through Zapier and Slack. I wrote one guide for the operations team and a technical guide for engineers. The engineer and I co-built two Tableau dashboards over Salesforce Service Cloud data to monitor the automated pushes.</p>
+        <p><strong>Measurement.</strong> I measured the result in regional output and retention.</p>
+      </div>
+    </article>
 
-  <div class="entry">
-    <span class="stamp">1,000+ outputs audited</span>
-    <span class="stamp">12% peak error rate</span>
-    <h3>Output Quality Evaluation Framework</h3>
-    <span class="meta">Citizen · OpenAI Codex, macOS Shortcuts, Bash</span>
-    <p>Citizen's operations team began by listening to first-responder radio clips and writing notification copy by hand. Over time, an automated authoring model took over the first draft, and the team reviewed each model-authored notification against two standards: empirical accuracy against the clip itself, and adherence to Citizen's editorial, style, privacy, and safety guidelines. That authoring model was a separate system from the ChatGPT Enterprise workflow above.</p>
-    <p>I built an independent evaluation framework with OpenAI Codex, macOS Shortcuts, and Bash and audited more than 1,000 live outputs from that model against service-level standards for accuracy, privacy, and editorial quality. I defined concrete failure categories, tracked quality in a time-series graph, and surfaced a 12% peak error rate. QA scores rose after a leadership-backed recalibration.</p>
-    <dl class="steps">
-      <div><dt><span>01</span>Current state</dt><dd>Citizen closely tracked the operations team's error rate and kept no separate error rate for the automated authoring model whose outputs the team reviewed.</dd></div>
-      <div><dt><span>02</span>Future state</dt><dd>The team, its manager, and leadership know the model's own error rate.</dd></div>
-      <div><dt><span>03</span>Implementation</dt><dd>I captured the 1,000+ outputs as screenshots in real time with hotkeys I built in macOS Shortcuts, alongside my regular output and service-level obligations, and audited each one against the standard.</dd></div>
-      <div><dt><span>04</span>Measurement</dt><dd>Bash scripts generated a time-series graph of quality in half-hour increments, which surfaced the 12% peak.</dd></div>
-    </dl>
-    <figure class="explainer">
-      <video controls playsinline preload="metadata" width="1280" height="720" poster="audit-explainer-poster.jpg" aria-describedby="audit-desc">
-        <source src="audit-explainer.mp4?v=2" type="video/mp4">
-        Your browser does not support embedded video.
-      </video>
-      <figcaption id="audit-desc">Ten-second illustrative reenactment of the audit: live outputs cataloged, the Codex, Shortcuts, and Bash toolchain, and the time-series graph with its 12% peak. The graph shown is a stylized rendering, not the audit data.</figcaption>
-    </figure>
-  </div>
+    <article id="agent">
+      <h3>Notification optimization agent</h3>
+      <p class="meta">Deployed at Citizen with a supervisor, on Claude</p>
+      <p>With a supervisor, I trained and deployed a custom Claude agent to manage notification optimization rules.</p>
+    </article>
 
-  <div class="entry">
-    <span class="stamp">66% hour reduction absorbed</span>
-    <span class="stamp">3× regional output</span>
-    <span class="stamp">4× retention</span>
-    <span class="stamp">built with an engineer</span>
-    <h3>Arizona Regional Pipeline</h3>
-    <span class="meta">Citizen · Python, JSON, Zapier, Slack, Tableau</span>
-    <p>I partnered with an engineer to build a Python, JSON, and Zapier automation that converted jargon-heavy government source text into structured JSON. Paired with the step-by-step workflow and quality playbooks I wrote, the automation absorbed a 66% reduction in operational baseline hours while Arizona regional output scaled 3x and retention 4x.</p>
-    <dl class="steps">
-      <div><dt><span>01</span>Current state</dt><dd>Static and interference on Phoenix and Tucson radio channels caused the team to miss major emergencies.</dd></div>
-      <div><dt><span>02</span>Future state</dt><dd>Automated notifications drawn from a public real-time feed of fire and medical emergency calls, a design I worked out with the engineer.</dd></div>
-      <div><dt><span>03</span>Implementation</dt><dd>The automation connected to a nomenclature dictionary that translated first-responder jargon into notification copy, and it ran through Zapier and Slack. I wrote one guide for the operations team and a technical guide for engineers. The engineer and I co-built two Tableau dashboards over Salesforce Service Cloud data to monitor the automated pushes.</dd></div>
-      <div><dt><span>04</span>Measurement</dt><dd>I measured the result in operational hours, regional output, and retention.</dd></div>
-    </dl>
-  </div>
+    <article id="chp-pipeline">
+      <h3>CHP Dispatch Intelligence Pipeline</h3>
+      <p class="meta">Independent project built with Python, Playwright, the Gemini API, and the GitHub REST API</p>
+      <p>I built this Python pipeline to automate a workflow I ran by hand for two years at Citizen. Playwright extracts live California Highway Patrol incident data from a legacy ASP.NET dispatch dashboard and opens each incident’s detail page for the location and coordinates. The pipeline sends the records to the Gemini API, where a constrained prompt turns dispatch shorthand into plain-English summaries. The code retries on rate-limit and server errors, caps each run to protect the API quota, and publishes structured JSON to a public GitHub repository through the GitHub REST API.</p>
+      <figure>
+        <video controls playsinline preload="metadata" width="1360" height="704" poster="chp-pipeline-poster.jpg" aria-describedby="chp-desc">
+          <source src="chp-pipeline-demo.mp4?v=2" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+        <figcaption id="chp-desc">Screen recording of a live run in Ubuntu under WSL: the runner extracts 14 incidents from the CHP dashboard, Gemini writes plain-English summaries for three of them, and the output syncs to GitHub. The recording ends when the runner enters its 180-second wait.</figcaption>
+      </figure>
+      <p><strong>How I build.</strong> I work through language-model-assisted development with Cursor, OpenAI Codex, Claude Code, Claude, and Gemini: I specify the task, review and test the model’s work, and iterate.</p>
+      <p><strong>What I learned.</strong> The back end came together quickly, while the map front end I tried to build on top of it never worked, so I kept the pipeline and its JSON output. An earlier version captured the full dispatch log from each incident’s detail page, and restoring that depth is my next step.</p>
+      <p>The pipeline runs from the command line, and the repository includes a GitHub Actions workflow. Read the <a href="https://github.com/s-odess/chp-hotspots-map" target="_blank" rel="noopener">source code and README on GitHub</a>.</p>
+    </article>
+  </section>
 
-  <div class="entry">
-    <span class="stamp">built with a supervisor</span>
-    <h3>Notification Optimization Agent</h3>
-    <span class="meta">Citizen · Claude</span>
-    <p>With a supervisor, I trained and deployed a custom Claude agent to manage notification optimization rules.</p>
-  </div>
+  <section id="creators">
+    <h2>The Creators Program</h2>
+    <p>Citizen expanded into B2B, video-first partnerships alongside its consumer app, ultimately distributing real-time video feeds into law enforcement real-time crime centers via a technology partnership with Axon. Citizen also bought and aggressively solicited user video, and staff imported each clip by hand.</p>
+    <p>I volunteered to launch the Creators Program for the operations team, outside my job description, and kept meeting my service-level commitments throughout. The program supported the B2B expansion and later became tied to the Axon partnership. For several months I served as its main contact within the operations team and introduced the team to it. With the head of marketing and the head of the consumer subscription team, I wrote most of the program guide, which set standards for which user-submitted video belonged in the app, including content too sensitive to publish regardless of its viral potential.</p>
+    <p>I trained freelance video creators to tailor their footage to Citizen’s editorial guidelines, trained the creators team, and worked on launch procedures that readied the team for video-first. Because submitted video arrived without editorial context, I built the model-in-the-loop workflow above to write the narrative around it. Outside my job description, I also trained the head of marketing hands-on in Tableau for several months, so she could pull the engagement and growth metrics her role required.</p>
+  </section>
 
-  <div class="entry" id="chp-pipeline">
-    <span class="stamp">independent build</span>
-    <span class="stamp">source code on GitHub</span>
-    <h3>CHP Dispatch Intelligence Pipeline</h3>
-    <span class="meta">Independent · Python, Playwright, Gemini API, GitHub REST API</span>
-    <p>I built this independent Python pipeline to automate a workflow I ran by hand for two years at Citizen. Playwright extracts live California Highway Patrol incident data from a legacy ASP.NET dispatch dashboard and opens each incident's detail page for the location and coordinates. The pipeline sends the records to the Gemini API, where a constrained prompt turns dispatch shorthand into plain-English summaries. The code retries on rate-limit and server errors, caps each run to protect the API quota, and publishes structured JSON to a public GitHub repository through the GitHub REST API.</p>
-    <p>I build through language-model-assisted development (Cursor, OpenAI Codex, Claude Code, Claude, Gemini): I specify the task, review and test the model's work, and iterate.</p>
-    <p>What I learned: the back end came together quickly, while the map front end I tried to build on top of it never worked, so I kept the pipeline and its JSON output. An earlier version captured the full dispatch log from each incident's detail page, and restoring that depth is my next step.</p>
-    <p>The pipeline runs from the command line, and the repository includes a GitHub Actions workflow. <a href="https://github.com/s-odess/chp-hotspots-map" target="_blank" rel="noopener">Source code and README</a>.</p>
-    <figure class="explainer">
-      <video controls playsinline preload="metadata" width="1360" height="704" poster="chp-pipeline-poster.jpg" aria-describedby="chp-desc">
-        <source src="chp-pipeline-demo.mp4?v=2" type="video/mp4">
-        Your browser does not support embedded video.
-      </video>
-      <figcaption id="chp-desc">Screen recording of a live run in Ubuntu under WSL: the runner extracts 14 incidents from the CHP dashboard, Gemini writes plain-English summaries for three of them, and the output syncs to GitHub. The recording ends when the runner enters its 180-second wait.</figcaption>
-    </figure>
-  </div>
-</details>
-</section>
+  <section id="operations">
+    <h2>Daily operations at Citizen, 2020–2026</h2>
+    <p><strong>Send decisions and on-call.</strong> I owned audience and send decisions for public safety notifications, with increasing responsibility as Citizen scaled. My copy regularly reached <mark>more than 1 million users per send</mark> and, for some notifications, all 9 million users. I processed radio and other audio source material at 2x speed or faster while holding editorial accuracy standards, and as on-call responder through PagerDuty, I paged engineering and escalated to management during severe incidents. I also wrote bug reports and feature-flag requests in Jira.</p>
+    <p><strong>Missing persons.</strong> I tested hundreds of heading and call-to-action variants for missing-person notifications for clarity and actionability, and I advocated for approximating names from radio coverage, which became policy. Per user and on-the-ground team feedback, notifications using this tested copy assisted in locating four missing people: an <span class="nowrap">85-year-old</span> woman with dementia in Los Angeles, a missing child in Brooklyn, a missing son in the Bronx, and a teenager located at a New York City train station. I also sourced missing-person cases directly from first-responder social media accounts.</p>
+    <p><strong>Playbooks.</strong> I authored seven step-by-step workflow and quality playbooks that became standard practice across a <span class="nowrap">100-plus person</span> organization.</p>
+    <p><strong>Training and quality review.</strong> Over roughly five years, I trained and quality-reviewed a rotating subset of about 100 offshore contractors in Kenya and Nepal on US address disambiguation, geography, and police procedure. I coordinated performance issues with Citizen managers and mentored US-based analysts.</p>
+    <p><strong>Requirements and deduplication.</strong> I submitted more than 50 engineering tickets in Jira and Asana that turned daily operational observations into structured requirements, and I coordinated with engineering on data integrity and privacy guardrails. For years I documented duplicate incident notifications in those tickets as automated, offshore, and user-submitted inputs multiplied. Engineering later built a deduplication tool for incidents with video.</p>
+    <p><strong>Measurement and user research.</strong> I analyzed click-through rate, share and disable ratio, estimated net audience growth, and push volume for selected pushes in Tableau, Sigma, and Sundial. Over several months I also conducted user research interviews with the UX research team and reviewed Tableau data and user comments to inform language-model deployment around user needs during Citizen’s expansion into B2B.</p>
+    <p><strong>Original content sourcing.</strong> I partnered with product and UX teams to identify unmet content needs, sourced content from state attorneys general in Illinois and New York, and matched it to critical-incident video coverage, which drove millions of additional context-rich notifications.</p>
+  </section>
 
-<hr class="rule">
+  <section id="writing">
+    <h2>Writing and research</h2>
+    <p><strong><cite>Learning to Use the Cherokee Verb</cite>.</strong> I co-authored all editorial material for this published reference work, a multi-year institutional project and the final work of the late Durbin Feeling, the preeminent expert on the Cherokee language. I wrote the editorial content, commentary, and verb conjugations and compiled the 180+ page reference across dozens of revisions under version control. The Cherokee Nation publishes it on its website, where you can <a href="https://language.cherokee.org/media/vnihnhms/learning-to-use-the-cherokee-verb.pdf" target="_blank" rel="noopener">read the full text</a>.</p>
+    <p><strong>Published technical writing.</strong> I write an ongoing, self-directed, multi-part LinkedIn series on enterprise language-model economics and responsible technical language, including a critique of anthropomorphic terminology (“hallucination,” “mistake”) as applied to stateless automated systems.</p>
+    <p><strong>Clinical research writing.</strong> At the Occidental College Clinical Psychology Lab from 2007 to 2010, I administered structured diagnostic evaluations under federal compliance protocols and handled protected health information in electronic health records. The documentation withstood audit.</p>
+  </section>
 
-<section class="wrap">
-<details class="sec">
-<summary>
-  <p class="sec-label">B2B Expansion</p>
-  <h2>Launching the video-first creator program</h2>
-</summary>
-  <p class="chapter-note">Citizen expanded into B2B, video-first partnerships alongside its consumer app. This program supported that expansion.</p>
+  <section id="independent">
+    <h2>Independent writer and consultant, 2010–present</h2>
+    <p>I have carried on this editorial and research work for sixteen years, alongside the systems work above.</p>
+    <p><strong>Documentation and workflow consulting.</strong> I advised academic, nonprofit, and small business clients on documentation governance and structured workflow design, and I completed contract QA and testing, technical support, and operations work for multiple startups.</p>
+    <p><strong>Arts and architecture criticism.</strong> I published 317 feature articles on art and architecture, entirely before large language models were commercially available. Much of the work required original archival research on little-known figures.</p>
+    <p><strong>Social media and archival research.</strong> I built the Twitter account from scratch for Emmy-winning documentarian Stanley Nelson in 2012, conducted archival research alongside researcher Lewanne Jones, and co-organized conferences at PBS POV studios and with the Elder Financial Protection Network.</p>
+  </section>
 
-  <div class="entry">
-    <span class="stamp">B2B expansion</span>
-    <span class="stamp">main operations contact</span>
-    <span class="stamp">program guide, primary author</span>
-    <h3>Creators Program Launch</h3>
-    <span class="meta">Citizen · Volunteered, outside my formal job description</span>
-    <p>Citizen bought and aggressively solicited user video, and staff imported each clip by hand, downloading the video file and uploading it into the proprietary operating system. I volunteered to launch the Creators Program for the operations team on my own initiative, outside my job description, and kept meeting my service-level commitments throughout. The program later became tied to Citizen's partnership with Axon.</p>
-    <p>For several months I served as the program's main contact within the operations team and introduced the team to it. I wrote most of the program guide with the head of marketing and the head of the consumer subscription team. The guide set standards for which user-submitted video belonged in the app and which did not, including content too sensitive to publish regardless of its viral potential.</p>
-    <p>I trained freelance video creators to tailor their footage to Citizen's editorial guidelines, trained the people on the creators team, and worked on launch procedures that readied the team for video-first. Because submitted video arrived without editorial context, I built the model-in-the-loop workflow described above to write the narrative around it.</p>
-    <p>While we worked together on the launch, I trained the head of marketing hands-on in Tableau for several months, also outside my job description, so that she could pull the engagement and growth metrics her role required.</p>
-  </div>
-</details>
-</section>
+  <section id="study">
+    <h2>Continuing study</h2>
+    <p>The legal reasoning in the texts I study derives the general principle from the extreme, specific case. I study it every day, and it shapes how I test any standard: at the point where it almost breaks.</p>
+    <p><strong>Oraysa.</strong> Participant in the amud v’chazara program since January 2024. Learning the oral tradition through a structured curriculum of four quizzes weekly and bimonthly tests. The same discipline I bring to editorial and workflow standards professionally, defining a standard, testing against it repeatedly, and retaining what holds up, is one I build here.</p>
+    <p><strong>Mishnah Berurah Yomi.</strong> Student since March 2024. Daily study of the Mishnah Berurah with R’ Tzvi Thaler, working through legal reasoning text by text. Years of this kind of close reading are part of where my instinct for precision and edge-case thinking comes from.</p>
+  </section>
+</main>
 
-<hr class="rule">
-
-<section class="wrap">
-<details class="sec">
-<summary>
-  <p class="sec-label">Operational Scale</p>
-  <h2>Fast, accurate, and measurable</h2>
-</summary>
-  <p class="note">What running a high-volume operation looked like day to day.</p>
-
-  <div class="entry">
-    <span class="stamp">7 playbooks</span>
-    <span class="stamp">100-plus person organization</span>
-    <h3>Workflow &amp; Quality Playbooks</h3>
-    <span class="meta">Citizen · 2020–2026</span>
-    <p>I authored seven step-by-step workflow and quality playbooks that became standard practice across a 100-plus person organization.</p>
-  </div>
-
-  <div class="entry">
-    <span class="stamp">50+ engineering tickets</span>
-    <h3>Requirements &amp; Deduplication</h3>
-    <span class="meta">Citizen · Jira, Asana</span>
-    <p>I submitted more than 50 engineering tickets in Jira and Asana that turned daily operational observations into structured requirements, and I coordinated with engineering on data integrity and privacy guardrails.</p>
-    <p>For years I documented duplicate incident notifications in those tickets as automated, offshore, and user-submitted inputs multiplied, and I turned the failure pattern into engineering requirements. Engineering later built a deduplication tool for incidents with video.</p>
-  </div>
-
-  <div class="entry">
-    <span class="stamp">about 100 contractors</span>
-    <span class="stamp">roughly 5 yrs</span>
-    <h3>Training &amp; Quality Review</h3>
-    <p>I trained and quality-reviewed a rotating subset of about 100 offshore contractors in Kenya and Nepal over roughly five years on US address disambiguation, geography, and police procedure. I coordinated performance issues with Citizen managers and mentored US-based analysts.</p>
-  </div>
-
-  <div class="entry">
-    <h3>Measurement &amp; User Research</h3>
-    <span class="meta">Citizen · Tableau, Sigma, Sundial</span>
-    <p>I analyzed click-through rate, share and disable ratio, estimated net audience growth, and push volume for selected pushes in Tableau, Sigma, and Sundial. I also conducted user research interviews with the UX research team over several months and reviewed Tableau data and user comments to inform language model deployment around user needs during Citizen's expansion into B2B.</p>
-  </div>
-
-  <div class="entry">
-    <span class="stamp">1M+ users per send</span>
-    <h3>Daily Operations &amp; On-Call</h3>
-    <span class="meta">Citizen · PagerDuty, Jira</span>
-    <p>I owned audience and send decisions for public safety notifications, with increasing responsibility as Citizen scaled. My copy regularly reached more than 1 million users per send and, for some notifications, all 9 million users.</p>
-    <p>I processed radio and other audio source material at 2x speed or faster while holding editorial accuracy standards. As on-call responder through PagerDuty, I paged engineering and escalated to management during severe incidents, and I wrote bug reports and feature-flag requests in Jira.</p>
-  </div>
-
-  <div class="entry">
-    <h3>Original Content Sourcing</h3>
-    <p>I partnered with product and UX teams to identify unmet content needs, sourced content from state attorneys general in Illinois and New York, and matched it to critical-incident video coverage, which drove millions of additional context-rich notifications. I also sourced missing-person cases directly from first-responder social media accounts.</p>
-  </div>
-
-  <div class="entry">
-    <span class="stamp">4 cases, per user &amp; team feedback</span>
-    <h3>Missing Persons Editorial Work</h3>
-    <span class="meta">Citizen · Incident response</span>
-    <p>I tested hundreds of heading and call-to-action variants for missing-person notifications for clarity and actionability, and I advocated for approximating names from radio coverage, which became policy.</p>
-    <p class="note">Per user and on-the-ground team feedback, notifications using this tested copy assisted in locating four missing people: an 85-year-old woman with dementia in Los Angeles, a missing child in Brooklyn, a missing son in the Bronx, and a teenager located at a New York City train station.</p>
-  </div>
-</details>
-</section>
-
-<hr class="rule">
-
-<section class="wrap">
-<details class="sec">
-<summary>
-  <p class="sec-label">Published Reference &amp; Technical Writing</p>
-  <h2>Structured documentation and long-form research</h2>
-</summary>
-
-  <div class="entry">
-    <span class="stamp">Co-author · Published reference work</span>
-    <h3>Learning to Use the Cherokee Verb</h3>
-    <span class="meta">Multi-year institutional project</span>
-    <p>I co-authored all editorial material for this published reference work, the final work of the late Durbin Feeling, the preeminent expert on the Cherokee language. I wrote the editorial content, commentary, and verb conjugations and compiled the 180+ page reference across dozens of revisions under version control. The Cherokee Nation publishes it on its website. <a href="https://language.cherokee.org/media/vnihnhms/learning-to-use-the-cherokee-verb.pdf" target="_blank" rel="noopener">Read the full text</a>.</p>
-  </div>
-
-  <div class="entry">
-    <h3>Published Technical Writing</h3>
-    <span class="meta">Self-directed · Ongoing</span>
-    <p>I wrote a multi-part LinkedIn series on enterprise language-model economics and responsible technical language, including a critique of anthropomorphic terminology ("hallucination," "mistake") as applied to stateless automated systems.</p>
-  </div>
-
-  <div class="entry">
-    <h3>Clinical Research Writing</h3>
-    <span class="meta">Occidental College Clinical Psychology Lab · 2007–2010</span>
-    <p>I administered structured diagnostic evaluations under federal compliance protocols and handled protected health information in Electronic Health Records. The documentation withstood audit.</p>
-  </div>
-</details>
-</section>
-
-<hr class="rule">
-
-<section class="wrap">
-<details class="sec">
-<summary>
-  <p class="sec-label">Independent Writer &amp; Consultant</p>
-  <h2>Self-Employed, 2010 – Present</h2>
-</summary>
-  <p>Sixteen years of continuous editorial and research work, run concurrently with the systems work above.</p>
-
-  <div class="entry">
-    <h3>Documentation &amp; Workflow Consulting</h3>
-    <p>I advised academic, nonprofit, and small business clients on documentation governance and structured workflow design, and I completed contract QA and testing, technical support, and operations work for multiple startups.</p>
-  </div>
-
-  <div class="entry">
-    <h3>Arts &amp; Architecture Criticism</h3>
-    <p>I published 317 feature articles on art and architecture, entirely before large language models were commercially available. Much of the work required original archival research on little-known figures.</p>
-  </div>
-
-  <div class="entry">
-    <h3>Building a Social Presence From Scratch</h3>
-    <p>I built the Twitter account from scratch for Emmy-winning documentarian Stanley Nelson in 2012, conducted archival research alongside researcher Lewanne Jones, and co-organized conferences at PBS POV studios and with the Elder Financial Protection Network.</p>
-  </div>
-</details>
-</section>
-
-<hr class="rule">
-
-<section class="wrap">
-<details class="sec">
-<summary>
-  <p class="sec-label">Continuing Study</p>
-  <h2>Finding the standard at the edge case</h2>
-</summary>
-  <p class="chapter-note">The legal reasoning in the texts I study derives the general principle from the extreme, specific case. I study it every day, and it shapes how I test any standard: at the point where it almost breaks.</p>
-
-  <div class="entry">
-    <span class="stamp">four quizzes weekly</span>
-    <span class="stamp">two tests monthly</span>
-    <h3>Oraysa</h3>
-    <span class="meta">Participant, amud v'chazara program · Jan 2024 – Present</span>
-    <p>Learning the oral tradition through a structured curriculum of four quizzes weekly and two tests monthly. The same discipline I bring to editorial and workflow standards professionally, defining a standard, testing against it repeatedly, and retaining what holds up, is one I build here.</p>
-  </div>
-
-  <div class="entry">
-    <span class="stamp">daily study</span>
-    <h3>Mishnah Berurah Yomi</h3>
-    <span class="meta">Student · Mar 2024 – Present</span>
-    <p>Daily study of the Mishnah Berurah with R' Tzvi Thaler, working through legal reasoning text by text. Years of this kind of close reading are part of where my instinct for precision and edge-case thinking comes from.</p>
-  </div>
-</details>
-</section>
-
-<hr class="rule">
-
-<footer class="wrap">
-  <p>
-    <a href="mailto:shimshonodess@gmail.com">shimshonodess@gmail.com</a>
-    <a href="tel:4136584117">(413) 658-4117</a>
-    <a href="https://linkedin.com/in/shoshone">LinkedIn</a>
-  </p>
+<footer>
+  <p>Thanks for reading. You can reach me at <a href="mailto:shimshonodess@gmail.com">shimshonodess@gmail.com</a>, at <a href="tel:+14136584117">(413) 658-4117</a>, or on <a href="https://linkedin.com/in/shoshone" target="_blank" rel="noopener">LinkedIn</a>.</p>
 </footer>
 
 </body>
